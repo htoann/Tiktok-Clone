@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
 function DefaultLayout({ children }) {
   return (
     <div>
-      <Header />
+      <Navbar />
       <div className="container">
         <Sidebar />
         <div className="content">{children}</div>

@@ -1,22 +1,11 @@
 import React from "react";
-import Home from "~/pages/Home";
-import Following from "~/pages/Following";
 import { Route } from "react-router-dom";
 import DefaultLayout from "~/components/layout/DefaultLayout";
-
-// export const publicRoutes = [
-//   { path: "/", component: <Home /> },
-//   { path: "/following", component: <Following /> },
-// ];
-
-// export const publicRoutes = () => {
-//   return (
-//     <>
-//       <Route path="/" element={<Home />} />
-//       <Route path="/following" element={<Following />} />
-//     </>
-//   );
-// };
+import Following from "~/pages/Following";
+import Home from "~/pages/Home";
+import NotFound from "~/pages/notfound";
+import Profile from "~/pages/Profile";
+import Upload from "~/pages/Upload";
 
 export const publicRoutes = (
   <>
@@ -36,6 +25,16 @@ export const publicRoutes = (
         </DefaultLayout>
       }
     />
+    <Route
+      path="/profile"
+      element={
+        <DefaultLayout>
+          <Profile />
+        </DefaultLayout>
+      }
+    />
+    <Route path="/upload" element={<Upload />} />
+    <Route path="*" element={<NotFound />} />
   </>
 );
 
