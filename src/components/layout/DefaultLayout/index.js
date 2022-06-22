@@ -4,10 +4,10 @@ import Sidebar from "./Sidebar";
 
 function DefaultLayout({ children }) {
   return (
-    <div>
+    <div className="defaultLayout">
       <Navbar />
       <div className="container">
-        <Sidebar />
+        <Sidebar className="sidebar" />
         <div className="content">{children}</div>
       </div>
     </div>
