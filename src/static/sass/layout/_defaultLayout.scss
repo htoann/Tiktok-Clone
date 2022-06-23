@@ -4,22 +4,11 @@
   align-items: center;
 
   .container {
-    width: 1150px;
+    width: var(--default-layout-width);
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1 1 auto;
-
-    .sidebar {
-      flex-shrink: 0;
-      padding: 20px 0 26px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      min-height: 100%;
-      padding-left: 8px;
-    }
 
     .content {
       margin-right: 16px;

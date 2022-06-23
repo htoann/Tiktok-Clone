@@ -1,0 +1,10 @@
+.sidebar {
+  flex-shrink: 0;
+  padding: 20px 0 26px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+  padding-left: 8px;
+}
