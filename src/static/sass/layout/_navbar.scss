@@ -4,15 +4,16 @@
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
   display: flex;
   justify-content: center;
+  padding: 0 20px;
 
   .navbar__inner {
     height: 100%;
     width: var(--default-layout-width);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .navbar__logo {
-      width: 10%;
     }
 
     .navbar__search {
@@ -63,6 +64,9 @@
     .navbar__right {
       margin: auto 0;
       font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       .navbar__right__upload {
         margin-right: 20px;
@@ -94,6 +98,10 @@
       }
 
       .navbar__right__mail {
+        margin-right: 20px;
+      }
+
+      .navbar__right__avatar {
       }
     }
   }

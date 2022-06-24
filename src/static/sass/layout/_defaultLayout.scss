@@ -4,19 +4,23 @@
   align-items: center;
 
   .container {
-    width: var(--default-layout-width);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 auto;
+    width: calc(var(--default-layout-width) + 40px);
+    margin: auto;
+    // flex: 1 1 auto;
+    margin-top: 10px;
+    padding: 0 20px;
 
     .content {
-      margin-right: 16px;
-      margin-left: 16px;
-      width: 692px;
-      max-width: 692px;
-      padding: 24px 0;
-      position: relative;
+      width: 100%;
+      // margin-right: 16px;
+      // margin-left: 16px;
+      // width: 692px;
+      // max-width: 692px;
+      // padding: 24px 0;
+      // position: relative;
     }
   }
 }
