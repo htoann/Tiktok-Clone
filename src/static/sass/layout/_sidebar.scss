@@ -35,8 +35,8 @@
     margin-bottom: 20px;
   }
 
-  .sidebar__suggest {
-    .sidebar__suggest__title {
+  .sidebar__list {
+    .sidebar__title {
       margin-bottom: 8px;
       font-size: 14px;
       line-height: 20px;
@@ -44,7 +44,7 @@
       font-weight: 600;
     }
 
-    .sidebar__suggest__account {
+    .sidebar__item {
       padding: 8px 0;
       display: flex;
       flex-direction: row;
@@ -56,7 +56,7 @@
       cursor: pointer;
     }
 
-    .sidebar__suggest__seeAll {
+    .sidebar__seeAll {
       color: rgb(254, 44, 85);
       font-weight: 600;
       font-size: 14px;

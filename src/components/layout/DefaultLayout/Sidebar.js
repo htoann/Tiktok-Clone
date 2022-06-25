@@ -21,18 +21,46 @@ function Sidebar() {
         </div>
       </div>
       <hr className="hr" />
-      <div className="sidebar__suggest">
-        <p className="sidebar__suggest__title">Tài khoản được đề xuất</p>
-        <div className="sidebar__suggest__account">Trần Hữu Toàn</div>
-        <div className="sidebar__suggest__account">Trần Hữu Toàn</div>
-        <div className="sidebar__suggest__account">Trần Hữu Toàn</div>
-        <div className="sidebar__suggest__account">Trần Hữu Toàn</div>
-        <div className="sidebar__suggest__account">Trần Hữu Toàn</div>
+      <div className="sidebar__list">
+        <p className="sidebar__title">Tài khoản được đề xuất</p>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
         <div>
-          <p className="sidebar__suggest__seeAll">Xem tất cả</p>
+          <p className="sidebar__seeAll">Xem tất cả</p>
         </div>
       </div>
       <hr className="hr" />
+      <div className="sidebar__list">
+        <p className="sidebar__title">Các tài khoản đang follow</p>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div>
+          <p className="sidebar__seeAll">Xem tất cả</p>
+        </div>
+      </div>
+      <hr className="hr" />
+      <div className="sidebar__list">
+        <p className="sidebar__title">Khám phá</p>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div className="sidebar__item">Trần Hữu Toàn</div>
+        <div>
+          <p className="sidebar__seeAll">Xem tất cả</p>
+        </div>
+      </div>
     </div>
   );
 }

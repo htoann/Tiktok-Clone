@@ -102,8 +102,20 @@ function Navbar() {
             <FaPlus className="navbar__right__upload__plus" />
             <span className="navbar__right__upload__text">Tải lên</span>
           </button>
-          <FaRegPaperPlane className="navbar__right__message" />
-          <FaRegCommentAlt className="navbar__right__mail" />
+          <div className="navbar__right__menu navbar__right__message">
+            <FaRegPaperPlane />
+            <div className="narvbar__right__hover__content">
+              <div className="navbar__right__hover__arrow"></div>
+              <div className="navbar__right__hover__inner">Tin nhắn</div>
+            </div>
+          </div>
+          <div className="navbar__right__menu navbar__right__mail">
+            <FaRegCommentAlt />
+            <div className="narvbar__right__hover__content">
+              <div className="navbar__right__hover__arrow"></div>
+              <div className="navbar__right__hover__inner">Hộp thư</div>
+            </div>
+          </div>
           <div className="navbar__right__avatar">Pic</div>
         </div>
       </div>

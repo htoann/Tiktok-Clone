@@ -7,11 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(var(--default-layout-width) + 40px);
+    width: calc(var(--default-layout-width));
     margin: auto;
     // flex: 1 1 auto;
-    margin-top: 10px;
-    padding: 0 20px;
+    padding: 25px 20px;
 
     .content {
       width: 100%;
