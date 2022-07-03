@@ -142,6 +142,13 @@
 
       .navbar__right__avatar {
         cursor: pointer;
+
+        .navbar__right__avatar__inner {
+          padding: 20px;
+          border: 1px solid white;
+          // box-shadow: 5px 5px 5px 5px xrgb(0 0 0 / 12%);
+          // border-radius: 5px;
+        }
       }
     }
   }
