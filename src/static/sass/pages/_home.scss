@@ -1,5 +1,49 @@
 .home {
-  video {
-    height: 500px;
+  .recommend__list__item__container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 0;
+    position: relative;
+    max-width: 692px;
+
+    .content__container {
+      margin-left: 12px;
+      width: 624px;
+      flex: 1 1 624px;
+
+      .text__info__container {
+        //
+
+        .author {
+          //
+        }
+
+        .button__follow {
+          //
+        }
+
+        .video__desc {
+          //
+        }
+
+        .video__music {
+          //
+        }
+      }
+
+      .video__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        .video__card {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }

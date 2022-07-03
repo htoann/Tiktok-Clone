@@ -46,16 +46,36 @@ function Navbar() {
             </div>
           </div>
           <div className="navbar__right__avatar">
-            <div className="navbar__right__avatar__pic">Pic</div>
+            <img
+              className="navbar__right__avatar__pic"
+              src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
+              alt=""
+            />
             <div className="navbar__right__avatar__inner">
-              <div>Xem hồ sơ</div>
-              <div>Nhận xu</div>
-              <div>Cài đặt</div>
-              <div>Tiếng Việt</div>
-              <div>Phản hồi và trợ giúp</div>
-              <div>Phím tắt trên bàn phím</div>
-              <div>Xem hồ sơ</div>
-              <div>Phím tắt trên bàn phím</div>
+              <div className="navbar__right__avatar__inner__text">
+                Xem hồ sơ
+              </div>
+              <div className="navbar__right__avatar__inner__text">Nhận xu</div>
+              <div className="navbar__right__avatar__inner__text">Cài đặt</div>
+              <div className="navbar__right__avatar__inner__text">
+                Tiếng Việt
+              </div>
+              <div className="navbar__right__avatar__inner__text">
+                Phản hồi và trợ giúp
+              </div>
+              <div className="navbar__right__avatar__inner__text">
+                Phím tắt trên bàn phím
+              </div>
+              <div className="navbar__right__avatar__inner__text">
+                Xem hồ sơ
+              </div>
+              <div className="navbar__right__avatar__inner__text">
+                Phím tắt trên bàn phím
+              </div>
+              <hr />
+              <div className="navbar__right__avatar__inner__text">
+                Đăng xuất
+              </div>
             </div>
           </div>
         </div>

@@ -143,11 +143,44 @@
       .navbar__right__avatar {
         cursor: pointer;
 
+        &:hover {
+          .navbar__right__avatar__inner {
+            display: block;
+          }
+        }
+
+        .navbar__right__avatar__pic {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+        }
+
         .navbar__right__avatar__inner {
-          padding: 20px;
           border: 1px solid white;
-          // box-shadow: 5px 5px 5px 5px xrgb(0 0 0 / 12%);
-          // border-radius: 5px;
+          position: absolute;
+          box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 12%);
+          border-radius: 10px;
+          margin-top: 10px;
+          margin-left: -90px;
+          display: none;
+
+          .navbar__right__avatar__inner__text {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 20px;
+
+            &:hover {
+              background-color: rgba(22, 24, 35, 0.06);
+            }
+          }
+
+          &:before {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            top: -10px;
+          }
         }
       }
     }
