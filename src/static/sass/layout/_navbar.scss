@@ -11,9 +11,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
 
     .navbar__logo {
+      padding: 0 10px;
     }
 
     .navbar__search {
@@ -178,8 +179,8 @@
             content: " ";
             position: absolute;
             width: 100%;
-            height: 10px;
-            top: -10px;
+            height: 30px;
+            top: -20px;
           }
         }
       }

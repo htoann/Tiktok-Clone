@@ -6,14 +6,15 @@ import {
   FaPlus,
 } from "react-icons/fa";
 import Logo from "~/assets/images/logo.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__inner">
-        <div>
+        <Link to="/" className="logo">
           <img src={Logo} alt="Tiktok" />
-        </div>
+        </Link>
 
         <form className="navbar__search">
           <input
