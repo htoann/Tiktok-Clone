@@ -3,7 +3,13 @@
 
 :root {
   --primary: #fe2c55;
-  // --
+  --gray: rgba(22, 24, 35, 0.03);
+  --grayx2: rgba(22, 24, 35, 0.06);
+  --grayx3: rgba(22, 24, 35, 0.12);
+  --grayx4: rgba(84, 84, 84, 0.92);
+  --text-white: rgb(255, 255, 255);
+  --text-black: #161823;
+  --red: rgba(254, 44, 85, 1);
 
   --default-layout-navbar-height: 60px;
   --default-layout-width: 1150px;

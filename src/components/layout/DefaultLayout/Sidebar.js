@@ -9,9 +9,9 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__tabs">
-        <Link to="/" className="sidebar__tab">
-          <FaHome className="sidebar__icon sidebar__active" />
-          <h2 className="sidebar__title sidebar__active">Dành cho bạn</h2>
+        <Link to="/" className="sidebar__tab sidebar__active">
+          <FaHome className="sidebar__icon" />
+          <h2 className="sidebar__title">Dành cho bạn</h2>
         </Link>
         <Link to="/following" className="sidebar__tab">
           <BsPeople className="sidebar__icon" />

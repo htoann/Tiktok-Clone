@@ -13,10 +13,10 @@
       text-decoration: none;
       padding: 12px 10px;
       border-radius: 5px;
-      color: black;
+      color: var(--text-black);
 
       &:hover {
-        background-color: rgba(22, 24, 35, 0.06);
+        background-color: var(--gray);
       }
 
       .sidebar__icon {
@@ -29,10 +29,10 @@
         font-size: 18px;
         margin-left: 10px;
       }
+    }
 
-      .sidebar__active {
-        color: rgba(254, 44, 85, 1);
-      }
+    .sidebar__active {
+      color: var(--red);
     }
   }
 
@@ -47,7 +47,7 @@
       margin-bottom: 8px;
       font-size: 14px;
       line-height: 20px;
-      color: rgba(22, 24, 35, 0.75);
+      color: var(--title-black);
       font-weight: 600;
       padding: 0 10px;
     }
@@ -64,7 +64,7 @@
       cursor: pointer;
 
       &:hover {
-        background: rgba(22, 24, 35, 0.06);
+        background: var(--grayx2);
       }
 
       .sidebar__item__avatar {
