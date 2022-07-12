@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome } from "react-icons/fa";
 import { BsPeople } from "react-icons/bs";
 import { BsCameraVideo } from "react-icons/bs";
+import Avatar from "~/assets/images/Avatar.jpeg";
 
 function Sidebar() {
   return (
@@ -24,43 +25,23 @@ function Sidebar() {
       <div className="sidebar__list">
         <p className="sidebar__title">Tài khoản được đề xuất</p>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div>
@@ -71,83 +52,43 @@ function Sidebar() {
       <div className="sidebar__list">
         <p className="sidebar__title">Các tài khoản đang follow</p>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div className="sidebar__item">
-          <img
-            className="sidebar__item__avatar"
-            src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-            alt=""
-          />
+          <img className="sidebar__item__avatar" src={Avatar} alt="" />
           <div className="sidebar__item__name">Trần Hữu Toàn</div>
         </div>
         <div>

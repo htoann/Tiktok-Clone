@@ -6,6 +6,7 @@ import {
   FaPlus,
 } from "react-icons/fa";
 import Logo from "~/assets/images/logo.svg";
+import Avatar from "~/assets/images/Avatar.jpeg";
 
 function Navbar() {
   return (
@@ -46,11 +47,7 @@ function Navbar() {
             </div>
           </div>
           <div className="navbar__right__avatar">
-            <img
-              className="navbar__right__avatar__pic"
-              src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tiktok-obj/1606241605534722.jpeg?x-expires=1657033200&x-signature=hyDZ4jFbPVmGVVgqKH6bxMDCbQE%3D"
-              alt=""
-            />
+            <img className="navbar__right__avatar__pic" src={Avatar} alt="" />
             <div className="navbar__right__avatar__inner">
               <div className="navbar__right__avatar__inner__text">
                 Xem hồ sơ
