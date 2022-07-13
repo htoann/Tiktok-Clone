@@ -53,3 +53,20 @@ input,
 a[href] {
   text-decoration: none;
 }
+
+// Custom scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(22, 24, 35, 0.06);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(22, 24, 35, 0.06);
+}

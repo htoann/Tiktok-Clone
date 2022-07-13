@@ -2,104 +2,113 @@
   width: 692px;
   height: 670px;
 
-  .recommend__list__item__container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 20px 0;
-    position: relative;
-    max-width: 692px;
+  margin-right: 16px;
+  margin-left: 16px;
+  max-width: 692px;
+  padding: 24px 0;
+  position: relative;
 
-    .avatar-author {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
+  .main__container {
+    // display: flex;
+    // flex-direction: column;
 
-    .content__container {
-      margin-left: 12px;
+    .recommend__list__item__container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 20px 0;
+      position: relative;
+      max-width: 692px;
+      margin-left: 80px;
 
-      // flex: 1 1 624px;
+      .avatar-author {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
 
-      .text__info__container {
-        display: flex;
+      .content__container {
+        margin-left: 12px;
 
-        .text__info {
-          width: 80%;
+        // flex: 1 1 624px;
 
-          .author__container {
-            .username__author {
-              font-weight: 700;
-              font-size: 18px;
-              line-height: 25px;
-              display: inline-block;
-              margin-right: 4px;
+        .text__info__container {
+          display: flex;
+
+          .text__info {
+            width: 80%;
+
+            .author__container {
+              .username__author {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 25px;
+                display: inline-block;
+                margin-right: 4px;
+              }
+
+              .name__author {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                display: inline-block;
+                line-height: 28px;
+                margin-left: 4px;
+              }
             }
+          }
 
-            .name__author {
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 20px;
-              display: inline-block;
-              line-height: 28px;
-              margin-left: 4px;
-            }
+          .button__follow__author {
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            color: rgba(254, 44, 85, 1);
+            border-color: rgba(254, 44, 85, 1);
+            background-color: rgba(255, 255, 255, 1);
+            min-width: 106px;
+            min-height: 28px;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 600;
+            font-family: ProximaNova, PingFangSC, sans-serif;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 8px;
+            cursor: pointer;
+            right: -75px;
+            position: absolute;
+            top: 28px;
+            min-width: 88px;
+            padding: 0 10px;
+          }
+
+          .video__desc__text {
+          }
+
+          .video__music {
+            //
           }
         }
 
-        .button__follow__author {
-          border-width: 1px;
-          border-style: solid;
-          border-radius: 4px;
-          color: rgba(254, 44, 85, 1);
-          border-color: rgba(254, 44, 85, 1);
-          background-color: rgba(255, 255, 255, 1);
-          min-width: 106px;
-          min-height: 28px;
-          font-size: 16px;
-          line-height: 22px;
-          font-weight: 600;
-          font-family: ProximaNova, PingFangSC, sans-serif;
+        .video__wrapper {
           display: flex;
-          position: relative;
-          align-items: center;
-          justify-content: center;
-          padding: 6px 8px;
-          cursor: pointer;
-          right: -60px;
-          position: absolute;
-          top: 28px;
-          min-width: 88px;
-          padding: 0 10px;
-        }
+          flex-direction: row;
+          align-items: flex-end;
+          margin-top: 10px;
 
-        // .video__desc-text {
-        //   font-size: 16px;
-        //   line-height: 22px;
-        //   display: inline-block; /* so height and width actually take affect */
-        //   max-width: 8%;
-        //   height: 1em; /* so overflow hidden works and keeps text on one row */
-        //   overflow: hidden;
-        //   text-overflow: ellipsis;
-        //   white-space: nowrap; /* important to show ellipsis, or words will just be broken off */
-        // }
+          .video__card {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
 
-        .video__music {
-          //
-        }
-      }
-
-      .video__wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-
-        .video__card {
-          display: block;
-          // width: 100%;
-          // height: 100%;
-          object-fit: cover;
+            video {
+              border-radius: 10px;
+            }
+          }
         }
       }
     }

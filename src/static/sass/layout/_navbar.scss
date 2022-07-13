@@ -4,6 +4,11 @@
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: var(--text-white);
 
   .navbar__inner {
     height: 100%;
@@ -35,7 +40,7 @@
         line-height: 22px;
         background: transparent;
         width: 300px;
-        padding: 12px 16px;
+        padding: 12px 8px;
       }
 
       .navbar__search__icon {
@@ -68,7 +73,7 @@
       justify-content: center;
 
       .navbar__right__upload {
-        margin-right: 20px;
+        margin-right: 25px;
         background: transparent;
         cursor: pointer;
 
@@ -98,7 +103,7 @@
       }
 
       .navbar__right__menu {
-        margin-right: 20px;
+        margin-right: 25px;
         cursor: pointer;
 
         &:hover {
@@ -162,6 +167,8 @@
           margin-top: 10px;
           margin-left: -90px;
           display: none;
+          background: var(--text-white);
+          z-index: 2;
 
           .navbar__right__avatar__inner__text {
             font-size: 16px;

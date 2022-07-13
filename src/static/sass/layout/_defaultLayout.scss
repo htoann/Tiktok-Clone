@@ -4,13 +4,21 @@
   align-items: center;
 
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(var(--default-layout-width));
-    margin: auto;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // width: calc(var(--default-layout-width));
+    // margin: auto;
     // flex: 1 1 auto;
-    padding: 25px 20px;
+    // padding: 25px 20px;
+
+    margin-top: 60px;
+    display: flex;
+    width: 100vw;
+    max-width: 1150px;
+    justify-content: space-between;
+    align-self: center;
+    flex: 1 1 auto;
 
     .content {
       width: 100%;

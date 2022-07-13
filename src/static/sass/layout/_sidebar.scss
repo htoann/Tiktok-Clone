@@ -5,95 +5,116 @@
   align-items: stretch;
   width: 348px;
 
-  .sidebar__tabs {
-    .sidebar__tab {
-      display: flex;
-      text-decoration: none;
-      padding: 12px 10px;
-      border-radius: 5px;
-      color: var(--text-black);
+  .sidebar__scrollbar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: right top;
+    top: 80px;
+    bottom: 0;
+    background: var(--text-white);
+    position: fixed;
+    z-index: 9;
+    padding-right: 120px;
+    padding-left: 20px;
 
-      &:hover {
-        background-color: var(--gray);
+    .sidebar__tabs {
+      .sidebar__tab {
+        display: flex;
+        text-decoration: none;
+        padding: 12px 10px;
+        border-radius: 5px;
+        color: var(--text-black);
+
+        &:hover {
+          background-color: var(--gray);
+        }
+
+        .sidebar__icon {
+          font-size: 24px;
+        }
+
+        .sidebar__title {
+          font-weight: 700;
+          line-height: 25px;
+          font-size: 18px;
+          margin-left: 10px;
+        }
       }
 
-      .sidebar__icon {
-        font-size: 24px;
+      .sidebar__active {
+        color: var(--red);
       }
+    }
 
+    .hr {
+      color: gray;
+      opacity: 0.1;
+      margin-bottom: 20px;
+    }
+
+    .sidebar__list {
       .sidebar__title {
-        font-weight: 700;
-        line-height: 25px;
-        font-size: 18px;
-        margin-left: 10px;
-      }
-    }
-
-    .sidebar__active {
-      color: var(--red);
-    }
-  }
-
-  .hr {
-    color: gray;
-    opacity: 0.1;
-    margin-bottom: 20px;
-  }
-
-  .sidebar__list {
-    .sidebar__title {
-      margin-bottom: 8px;
-      font-size: 14px;
-      line-height: 20px;
-      color: var(--text-gray);
-      font-weight: 600;
-      padding: 0 10px;
-    }
-
-    .sidebar__item {
-      padding: 8px 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      position: relative;
-      border-radius: 4px;
-      transition: background 200ms ease-in-out 0s;
-      cursor: pointer;
-
-      &:hover {
-        background: var(--grayx2);
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--text-gray);
+        font-weight: 600;
+        padding: 0 10px;
       }
 
-      .sidebar__item__avatar {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        margin-right: 10px;
+      .sidebar__item {
+        padding: 8px 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        border-radius: 4px;
+        transition: background 200ms ease-in-out 0s;
+        cursor: pointer;
+
+        &:hover {
+          background: var(--grayx2);
+        }
+
+        .sidebar__item__avatar {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .sidebar__item__name {
+          color: rgb(22, 24, 35);
+          font-family: "IBM Plex Sans", SofiaPro, Arial, Tahoma, PingFangSC,
+            sans-serif;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 22px;
+          margin-top: -2px;
+          max-width: 260px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .verify__author {
+          margin-left: 4px;
+        }
       }
 
-      .sidebar__item__name {
-        color: rgb(22, 24, 35);
-        font-family: "IBM Plex Sans", SofiaPro, Arial, Tahoma, PingFangSC,
-          sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 22px;
-        margin-top: -2px;
-        max-width: 260px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
+      .sidebar__seeAll {
+        color: rgb(254, 44, 85);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        cursor: pointer;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        padding-left: 10px;
       }
-    }
-
-    .sidebar__seeAll {
-      color: rgb(254, 44, 85);
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 20px;
-      cursor: pointer;
-      margin-top: 8px;
-      margin-bottom: 15px;
     }
   }
 }
