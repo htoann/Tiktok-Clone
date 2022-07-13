@@ -1,4 +1,7 @@
 .home {
+  width: 692px;
+  height: 670px;
+
   .recommend__list__item__container {
     display: flex;
     flex-direction: row;
@@ -7,25 +10,80 @@
     position: relative;
     max-width: 692px;
 
+    .avatar-author {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
     .content__container {
       margin-left: 12px;
-      width: 624px;
-      flex: 1 1 624px;
+
+      // flex: 1 1 624px;
 
       .text__info__container {
-        //
+        display: flex;
 
-        .author {
-          //
+        .text__info {
+          width: 80%;
+
+          .author__container {
+            .username__author {
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 25px;
+              display: inline-block;
+              margin-right: 4px;
+            }
+
+            .name__author {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+              display: inline-block;
+              line-height: 28px;
+              margin-left: 4px;
+            }
+          }
         }
 
-        .button__follow {
-          //
+        .button__follow__author {
+          border-width: 1px;
+          border-style: solid;
+          border-radius: 4px;
+          color: rgba(254, 44, 85, 1);
+          border-color: rgba(254, 44, 85, 1);
+          background-color: rgba(255, 255, 255, 1);
+          min-width: 106px;
+          min-height: 28px;
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 600;
+          font-family: ProximaNova, PingFangSC, sans-serif;
+          display: flex;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          padding: 6px 8px;
+          cursor: pointer;
+          right: -60px;
+          position: absolute;
+          top: 28px;
+          min-width: 88px;
+          padding: 0 10px;
         }
 
-        .video__desc {
-          //
-        }
+        // .video__desc-text {
+        //   font-size: 16px;
+        //   line-height: 22px;
+        //   display: inline-block; /* so height and width actually take affect */
+        //   max-width: 8%;
+        //   height: 1em; /* so overflow hidden works and keeps text on one row */
+        //   overflow: hidden;
+        //   text-overflow: ellipsis;
+        //   white-space: nowrap; /* important to show ellipsis, or words will just be broken off */
+        // }
 
         .video__music {
           //
@@ -39,8 +97,8 @@
 
         .video__card {
           display: block;
-          width: 100%;
-          height: 100%;
+          // width: 100%;
+          // height: 100%;
           object-fit: cover;
         }
       }

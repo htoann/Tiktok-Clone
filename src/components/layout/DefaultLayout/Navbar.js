@@ -16,7 +16,6 @@ function Navbar() {
         <Link to="/" className="logo">
           <img src={Logo} alt="Tiktok" />
         </Link>
-
         <form className="navbar__search">
           <input
             className="navbar__search__input"

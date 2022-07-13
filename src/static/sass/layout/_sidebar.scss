@@ -4,8 +4,6 @@
   flex-direction: column;
   align-items: stretch;
   width: 348px;
-  // padding-right: 100px;
-  padding: 0 10px;
 
   .sidebar__tabs {
     .sidebar__tab {
@@ -47,7 +45,7 @@
       margin-bottom: 8px;
       font-size: 14px;
       line-height: 20px;
-      color: var(--title-black);
+      color: var(--text-gray);
       font-weight: 600;
       padding: 0 10px;
     }
@@ -56,7 +54,6 @@
       padding: 8px 10px;
       display: flex;
       flex-direction: row;
-      -webkit-box-align: center;
       align-items: center;
       position: relative;
       border-radius: 4px;

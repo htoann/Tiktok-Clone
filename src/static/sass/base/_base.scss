@@ -9,6 +9,7 @@
   --grayx4: rgba(84, 84, 84, 0.92);
   --text-white: rgb(255, 255, 255);
   --text-black: #161823;
+  --text-gray: rgba(22, 24, 35, 0.75);
   --red: rgba(254, 44, 85, 1);
 
   --default-layout-navbar-height: 60px;
@@ -40,4 +41,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  text-decoration: none;
 }
