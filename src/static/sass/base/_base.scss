@@ -1,21 +1,6 @@
 @import "normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-:root {
-  --primary: #fe2c55;
-  --gray: rgba(22, 24, 35, 0.03);
-  --grayx2: rgba(22, 24, 35, 0.06);
-  --grayx3: rgba(22, 24, 35, 0.12);
-  --grayx4: rgba(84, 84, 84, 0.92);
-  --text-white: rgb(255, 255, 255);
-  --text-black: #161823;
-  --text-gray: rgba(22, 24, 35, 0.75);
-  --red: rgba(254, 44, 85, 1);
-
-  --default-layout-navbar-height: 60px;
-  --default-layout-width: 1150px;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +16,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
   line-height: 1.5;
