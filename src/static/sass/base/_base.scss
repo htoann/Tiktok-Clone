@@ -16,7 +16,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased; 
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -55,3 +55,18 @@ a[href] {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(22, 24, 35, 0.06);
 }
+
+////////////////@at-root
+///
+///
+///
+// position: absolute;
+//     width: 100%;
+//     margin-top: 8px;
+//     background: rgb(255, 255, 255);
+//     box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+//     border-radius: 8px;
+//     padding-top: 8px;
+//     box-sizing: border-box;
+//     max-height: min((100vh - 96px) - 60px, 734px);
+//     overflow: hidden auto;

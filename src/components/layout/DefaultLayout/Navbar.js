@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaSearch,
   FaRegPaperPlane,
@@ -8,25 +8,39 @@ import {
 import Logo from "~/assets/images/logo.svg";
 import { Link } from "react-router-dom";
 import Avatar from "~/assets/images/Avatar.jpeg";
+import Tippy from "@tippyjs/react/headless";
 
 function Navbar() {
+  const [searchResult, setSearchResult] = useState([]);
+
   return (
     <header className="navbar">
       <div className="navbar__inner">
         <Link to="/" className="logo">
           <img src={Logo} alt="Tiktok" />
         </Link>
-        <form className="navbar__search">
-          <input
-            className="navbar__search__input"
-            type="text"
-            placeholder="Tìm kiếm tài khoản và video"
-          />
-          <span className="navbar__search__line"></span>
-          <button className="navbar__search__icon">
-            <FaSearch />
-          </button>
-        </form>
+        <Tippy
+          visible={searchResult.length > 0}
+          interactive={true}
+          render={(attrs) => (
+            <div className="box" tabIndex="-1" {...attrs}>
+              My tippy box
+            </div>
+          )}
+        >
+          <form className="navbar__search">
+            <input
+              className="navbar__search__input"
+              type="text"
+              placeholder="Tìm kiếm tài khoản và video"
+            />
+            <span className="navbar__search__line"></span>
+            <button className="navbar__search__icon">
+              <FaSearch />
+            </button>
+          </form>
+        </Tippy>
+
         <div className="navbar__right">
           <button className="navbar__right__upload">
             <FaPlus className="navbar__right__upload__plus" />

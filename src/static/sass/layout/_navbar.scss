@@ -29,10 +29,13 @@
       background: var(--grayx2);
       border-radius: 92px;
       position: relative;
-      // overflow: hidden;
-      max-width: 800px;
       margin: 8px 20px;
       display: flex;
+      caret-color: var(--red);
+
+      &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+      }
 
       .navbar__search__input {
         font-weight: 400;
@@ -54,6 +57,9 @@
 
         &:hover {
           background: var(--gray);
+          // border-radius-: 92px;
+          border-top-right-radius: 92px;
+          border-bottom-right-radius: 92px;
         }
       }
 
@@ -139,9 +145,6 @@
           color: var(--text-white);
           padding: 8px;
         }
-      }
-
-      .navbar__right__mail {
       }
 
       .navbar__right__avatar {
