@@ -4,14 +4,6 @@
   align-items: center;
 
   .container {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // width: calc(var(--default-layout-width));
-    // margin: auto;
-    // flex: 1 1 auto;
-    // padding: 25px 20px;
-
     margin-top: 60px;
     display: flex;
     width: 100vw;
@@ -19,13 +11,13 @@
     justify-content: space-between;
     align-self: center;
     flex: 1 1 auto;
+    height: 100vh;
+    gap: 80px;
 
     .content {
       width: 100%;
-      // margin-right: 16px;
-      // margin-left: 16px;
-      // width: 692px;
-      // max-width: 692px;
+      margin-right: 16px;
+      margin-left: 16px;
       // padding: 24px 0;
       // position: relative;
     }

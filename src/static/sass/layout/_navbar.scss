@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 30px;
+    padding-left: 20px;
     padding-right: 20px;
 
     .navbar__logo {
@@ -49,7 +49,7 @@
         cursor: pointer;
         background: transparent;
         margin-left: 0;
-        color: var(--grayx4);
+        color: rgba(22, 24, 35, 0.34);
         font-size: 18px;
 
         &:hover {

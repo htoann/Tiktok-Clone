@@ -1,9 +1,11 @@
 .sidebar {
   flex-shrink: 0;
+  padding: 16px 0 26px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   width: 348px;
+  padding-left: 10px;
 
   .sidebar__scrollbar {
     overflow-x: hidden;
@@ -18,7 +20,6 @@
     position: fixed;
     z-index: 9;
     padding-right: 120px;
-    padding-left: 20px;
 
     .sidebar__tabs {
       .sidebar__tab {

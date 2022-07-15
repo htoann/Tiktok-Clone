@@ -1,10 +1,7 @@
 .home {
-  width: 692px;
-  height: 670px;
+  // width: 692px;
 
-  margin-right: 16px;
-  margin-left: 16px;
-  max-width: 692px;
+  // max-width: 692px;
   padding: 24px 0;
   position: relative;
 
@@ -19,7 +16,6 @@
       padding: 20px 0;
       position: relative;
       max-width: 692px;
-      margin-left: 80px;
 
       .avatar-author {
         width: 56px;
@@ -78,7 +74,7 @@
             justify-content: center;
             padding: 6px 8px;
             cursor: pointer;
-            right: -75px;
+            right: 0;
             position: absolute;
             top: 28px;
             min-width: 88px;

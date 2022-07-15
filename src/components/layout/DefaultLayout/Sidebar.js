@@ -54,27 +54,27 @@ function Sidebar() {
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div>
             <p className="sidebar__seeAll">Xem tất cả</p>
@@ -86,52 +86,52 @@ function Sidebar() {
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div className="sidebar__item">
             <img className="sidebar__item__avatar" src={Avatar} alt="" />
             <div className="sidebar__item__name">cristiano_ronaldo</div>
-            <img className='verify__author' src={Verify} alt='' />
+            <img className="verify__author" src={Verify} alt="" />
           </div>
           <div>
             <p className="sidebar__seeAll">Xem tất cả</p>
