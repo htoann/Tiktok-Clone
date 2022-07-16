@@ -1,0 +1,40 @@
+.account__item {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  transition: background 200ms ease-in-out 0s;
+  cursor: pointer;
+  padding-right: 120px;
+
+  &:hover {
+    background: var(--gray);
+  }
+
+  .account__item__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .account__item__name {
+    color: rgb(22, 24, 35);
+    font-family: "IBM Plex Sans", SofiaPro, Arial, Tahoma, PingFangSC,
+      sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: -2px;
+    max-width: 260px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .verify__author {
+    margin-left: 4px;
+  }
+}

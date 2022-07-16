@@ -7,11 +7,20 @@ import {
 } from "react-icons/fa";
 import Logo from "~/assets/images/logo.svg";
 import { Link } from "react-router-dom";
-import Avatar from "~/assets/images/Avatar.jpeg";
 import Tippy from "@tippyjs/react/headless";
+import { useEffect } from "react";
+import Popper from "~/components/Popper";
+import AccountItem from "~/components/AccountItem";
+import Avatar from "~/assets/images/Avatar.jpeg";
 
 function Navbar() {
   const [searchResult, setSearchResult] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSearchResult([1, 2]);
+    }, 1000);
+  }, []);
 
   return (
     <header className="navbar">
@@ -21,10 +30,14 @@ function Navbar() {
         </Link>
         <Tippy
           visible={searchResult.length > 0}
-          interactive={true}
+          interactive
           render={(attrs) => (
-            <div className="box" tabIndex="-1" {...attrs}>
-              My tippy box
+            <div className="search__results" tabIndex="-1" {...attrs}>
+              <Popper>
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+              </Popper>
             </div>
           )}
         >

@@ -165,7 +165,7 @@
         .navbar__right__avatar__inner {
           border: 1px solid white;
           position: absolute;
-          box-shadow: 5px 5px 5px 5px rgb(0 0 0 / 12%);
+          box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
           border-radius: 10px;
           margin-top: 10px;
           margin-left: -90px;
@@ -200,6 +200,10 @@
           }
         }
       }
+    }
+
+    .search__results {
+      width: 365px;
     }
   }
 }
