@@ -24,7 +24,7 @@ function Sidebar() {
             onClick={() => handleClick(1)}
           >
             <FaHome className="sidebar__icon" />
-            <h2 className="sidebar__title">Dành cho bạn</h2>
+            <h2 className="sidebar__title">For you</h2>
           </Link>
           <Link
             to="/following"
@@ -34,7 +34,7 @@ function Sidebar() {
             onClick={() => handleClick(2)}
           >
             <BsPeople className="sidebar__icon" />
-            <h2 className="sidebar__title">Đang Follow</h2>
+            <h2 className="sidebar__title">Following</h2>
           </Link>
           <Link
             to="/live"
@@ -49,31 +49,31 @@ function Sidebar() {
         </div>
         <hr className="hr" />
         <div className="sidebar__list">
-          <p className="account__title">Tài khoản được đề xuất</p>
+          <p className="account__title">Suggested accounts</p>
           <AccountItem />
           <AccountItem />
           <AccountItem />
           <AccountItem />
           <AccountItem />
           <div>
-            <p className="sidebar__seeAll">Xem tất cả</p>
+            <p className="sidebar__seeAll">See All</p>
           </div>
         </div>
         <hr className="hr" />
         <div className="sidebar__list">
-          <p className="account__title">Các tài khoản đang follow</p>
+          <p className="account__title">Following accounts</p>
           <AccountItem />
           <AccountItem />
           <AccountItem />
           <AccountItem />
           <AccountItem />
           <div>
-            <p className="sidebar__seeAll">Xem tất cả</p>
+            <p className="sidebar__seeAll">See more</p>
           </div>
         </div>
         <hr className="hr" />
         <div className="sidebar__list">
-          <p className="account__title">Khám phá</p>
+          <p className="account__title">Discover</p>
         </div>
       </div>
     </div>

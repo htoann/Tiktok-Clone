@@ -16,11 +16,11 @@ import Avatar from "~/assets/images/Avatar.jpeg";
 function Navbar() {
   const [searchResult, setSearchResult] = useState([]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setSearchResult([1, 2]);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setSearchResult([1, 2]);
+  //   }, 1000);
+  // }, []);
 
   return (
     <header className="navbar">
@@ -89,18 +89,10 @@ function Navbar() {
                 Feedback and help
               </div>
               <div className="navbar__right__avatar__inner__text">
-                Phím tắt trên bàn phím
+                Keyboard shortcuts
               </div>
-              <div className="navbar__right__avatar__inner__text">
-                Xem hồ sơ
-              </div>
-              <div className="navbar__right__avatar__inner__text">
-                Phím tắt trên bàn phím
-              </div>
-              <hr />
-              <div className="navbar__right__avatar__inner__text">
-                Đăng xuất
-              </div>
+              <hr className="hr" />
+              <div className="navbar__right__avatar__inner__text">Log out</div>
             </div>
           </div>
         </div>
