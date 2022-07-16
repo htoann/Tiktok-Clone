@@ -34,6 +34,7 @@ function Navbar() {
           render={(attrs) => (
             <div className="search__results" tabIndex="-1" {...attrs}>
               <Popper>
+                <div className="account__title">Account</div>
                 <AccountItem />
                 <AccountItem />
                 <AccountItem />
@@ -45,7 +46,7 @@ function Navbar() {
             <input
               className="navbar__search__input"
               type="text"
-              placeholder="Tìm kiếm tài khoản và video"
+              placeholder="Search accounts and videos"
             />
             <span className="navbar__search__line"></span>
             <button className="navbar__search__icon">
@@ -57,35 +58,35 @@ function Navbar() {
         <div className="navbar__right">
           <button className="navbar__right__upload">
             <FaPlus className="navbar__right__upload__plus" />
-            <span className="navbar__right__upload__text">Tải lên</span>
+            <span className="navbar__right__upload__text">Upload</span>
           </button>
           <div className="navbar__right__menu navbar__right__message">
             <FaRegPaperPlane />
             <div className="narvbar__right__hover__content">
               <div className="navbar__right__hover__arrow"></div>
-              <div className="navbar__right__hover__inner">Tin nhắn</div>
+              <div className="navbar__right__hover__inner">Messages</div>
             </div>
           </div>
           <div className="navbar__right__menu navbar__right__mail">
             <FaRegCommentAlt />
             <div className="narvbar__right__hover__content">
               <div className="navbar__right__hover__arrow"></div>
-              <div className="navbar__right__hover__inner">Hộp thư</div>
+              <div className="navbar__right__hover__inner">Inbox</div>
             </div>
           </div>
           <div className="navbar__right__avatar">
             <img className="navbar__right__avatar__pic" src={Avatar} alt="" />
             <div className="navbar__right__avatar__inner">
               <div className="navbar__right__avatar__inner__text">
-                Xem hồ sơ
-              </div>
-              <div className="navbar__right__avatar__inner__text">Nhận xu</div>
-              <div className="navbar__right__avatar__inner__text">Cài đặt</div>
-              <div className="navbar__right__avatar__inner__text">
-                Tiếng Việt
+                View profile
               </div>
               <div className="navbar__right__avatar__inner__text">
-                Phản hồi và trợ giúp
+                Get coins
+              </div>
+              <div className="navbar__right__avatar__inner__text">Settings</div>
+              <div className="navbar__right__avatar__inner__text">English</div>
+              <div className="navbar__right__avatar__inner__text">
+                Feedback and help
               </div>
               <div className="navbar__right__avatar__inner__text">
                 Phím tắt trên bàn phím

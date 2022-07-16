@@ -55,3 +55,18 @@ a[href] {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(22, 24, 35, 0.06);
 }
+
+.hr {
+  color: grayx3;
+  opacity: 0.1;
+  margin-bottom: 20px;
+}
+
+.account__title {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-gray);
+  font-weight: 600;
+  padding: 0 10px;
+}

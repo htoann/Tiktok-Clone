@@ -49,7 +49,7 @@ function Sidebar() {
         </div>
         <hr className="hr" />
         <div className="sidebar__list">
-          <p className="sidebar__title">Tài khoản được đề xuất</p>
+          <p className="account__title">Tài khoản được đề xuất</p>
           <AccountItem />
           <AccountItem />
           <AccountItem />
@@ -61,7 +61,7 @@ function Sidebar() {
         </div>
         <hr className="hr" />
         <div className="sidebar__list">
-          <p className="sidebar__title">Các tài khoản đang follow</p>
+          <p className="account__title">Các tài khoản đang follow</p>
           <AccountItem />
           <AccountItem />
           <AccountItem />
@@ -73,7 +73,7 @@ function Sidebar() {
         </div>
         <hr className="hr" />
         <div className="sidebar__list">
-          <p className="sidebar__title">Khám phá</p>
+          <p className="account__title">Khám phá</p>
         </div>
       </div>
     </div>
