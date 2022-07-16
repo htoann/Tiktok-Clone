@@ -2,7 +2,7 @@ import React from "react";
 import Siu from "~/assets/videos/Siu.mp4";
 import Avatar from "~/assets/images/Avatar.jpeg";
 import Verify from "~/assets/images/verify.svg";
-import { FaHeart, FaRegCommentDots, FaShare } from "react-icons/fa";
+import { FaHeart, FaCommentDots, FaShare } from "react-icons/fa";
 
 function Home() {
   return (
@@ -31,19 +31,26 @@ function Home() {
             </div>
             <div className="video__wrapper">
               <div className="video__card">
-                <video controls src={Siu} loop autoPlay muted></video>
+                <video controls src={Siu} loop muted></video>
               </div>
               <div className="action__items">
-                <div className="like__button">
-                  <FaHeart className="icon" />
+                <div className="action__button">
+                  <div className="icon">
+                    <FaHeart />
+                  </div>
                   <strong className="count">484.3K</strong>
                 </div>
-                <div className="comment__button">
-                  <FaRegCommentDots className="icon" />
+                <div className="action__button">
+                  <div className="icon">
+                    <FaCommentDots />
+                  </div>
                   <strong className="count">502</strong>
                 </div>
-                <div className="share__button">
-                  <FaShare className="icon" />
+                <div className="action__button">
+                  <div className="icon">
+                    <FaShare />
+                  </div>
+
                   <strong className="count">7482</strong>
                 </div>
               </div>
