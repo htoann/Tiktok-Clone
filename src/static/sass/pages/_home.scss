@@ -5,11 +5,11 @@
   padding: 24px 0;
   position: relative;
 
-  .main__container {
+  .main-container {
     // display: flex;
     // flex-direction: column;
 
-    .recommend__list__item__container {
+    .recommend-list-item-container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -23,20 +23,20 @@
         border-radius: 50%;
       }
 
-      .content__container {
+      .content-container {
         margin-left: 12px;
 
         // flex: 1 1 624px;
 
-        .text__info__container {
+        .text-info-container {
           display: flex;
 
-          .text__info {
+          .text-info {
             inline-size: 500px;
             overflow: hidden;
 
-            .author__container {
-              .username__author {
+            .author-container {
+              .username-author {
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 25px;
@@ -44,7 +44,7 @@
                 margin-right: 4px;
               }
 
-              .name__author {
+              .name-author {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 20px;
@@ -54,48 +54,22 @@
               }
             }
           }
-
-          .button__follow__author {
-            border-width: 1px;
-            border-style: solid;
-            border-radius: 4px;
-            color: rgba(254, 44, 85, 1);
-            border-color: rgba(254, 44, 85, 1);
-            background-color: rgba(255, 255, 255, 1);
-            min-width: 106px;
-            min-height: 28px;
-            font-size: 16px;
-            line-height: 22px;
-            font-weight: 600;
-            font-family: ProximaNova, PingFangSC, sans-serif;
-            display: flex;
-            position: relative;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 8px;
-            cursor: pointer;
-            right: 0;
-            position: absolute;
-            top: 28px;
-            min-width: 88px;
-            padding: 0 10px;
-          }
         }
 
-        .video__wrapper {
+        .video-wrapper {
           display: flex;
           flex-direction: row;
           align-items: flex-end;
           margin-top: 10px;
 
-          .video__card {
+          .video-card {
             video {
               border-radius: 10px;
               width: 350px;
             }
           }
 
-          .action__items {
+          .action-items {
             border: none;
             background: none;
             outline: none;
@@ -107,7 +81,7 @@
             flex-direction: column;
             margin-left: 20px;
 
-            .action__button {
+            .action-button {
               display: flex;
               flex-direction: column;
             }

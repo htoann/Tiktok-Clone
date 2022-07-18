@@ -4,6 +4,7 @@ import {
   FaRegPaperPlane,
   FaRegCommentAlt,
   FaPlus,
+  FaEllipsisV,
 } from "react-icons/fa";
 import Logo from "~/assets/images/logo.svg";
 import { Link } from "react-router-dom";
@@ -12,9 +13,12 @@ import { useEffect } from "react";
 import Popper from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Avatar from "~/assets/images/Avatar.jpeg";
+import Button from "~/components/Button";
+import { IoEllipsisVertical } from "react-icons/io5";
 
 function Navbar() {
   const [searchResult, setSearchResult] = useState([]);
+  const [user, setUser] = useState([]);
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -22,9 +26,17 @@ function Navbar() {
   //   }, 1000);
   // }, []);
 
+  const handleLogout = () => {
+    setUser("");
+  };
+
+  const handleLogin = () => {
+    setUser([]);
+  };
+
   return (
     <header className="navbar">
-      <div className="navbar__inner">
+      <div className="navbar-inner">
         <Link to="/" className="logo">
           <img src={Logo} alt="Tiktok" />
         </Link>
@@ -32,9 +44,9 @@ function Navbar() {
           visible={searchResult.length > 0}
           interactive
           render={(attrs) => (
-            <div className="search__results" tabIndex="-1" {...attrs}>
+            <div className="search-results" tabIndex="-1" {...attrs}>
               <Popper>
-                <div className="account__title">Account</div>
+                <div className="account-title">Account</div>
                 <AccountItem />
                 <AccountItem />
                 <AccountItem />
@@ -42,59 +54,75 @@ function Navbar() {
             </div>
           )}
         >
-          <form className="navbar__search">
+          <form className="navbar-search">
             <input
-              className="navbar__search__input"
+              className="navbar-search-input"
               type="text"
               placeholder="Search accounts and videos"
             />
-            <span className="navbar__search__line"></span>
-            <button className="navbar__search__icon">
+            <span className="navbar-search-line"></span>
+            <button className="navbar-search-icon">
               <FaSearch />
             </button>
           </form>
         </Tippy>
 
-        <div className="navbar__right">
-          <button className="navbar__right__upload">
-            <FaPlus className="navbar__right__upload__plus" />
-            <span className="navbar__right__upload__text">Upload</span>
+        <div className="navbar-right">
+          <button className="navbar-right-upload">
+            <FaPlus className="navbar-right-upload-plus" />
+            <span className="navbar-right-upload-text">Upload</span>
           </button>
-          <div className="navbar__right__menu navbar__right__message">
-            <FaRegPaperPlane />
-            <div className="narvbar__right__hover__content">
-              <div className="navbar__right__hover__arrow"></div>
-              <div className="navbar__right__hover__inner">Messages</div>
-            </div>
-          </div>
-          <div className="navbar__right__menu navbar__right__mail">
-            <FaRegCommentAlt />
-            <div className="narvbar__right__hover__content">
-              <div className="navbar__right__hover__arrow"></div>
-              <div className="navbar__right__hover__inner">Inbox</div>
-            </div>
-          </div>
-          <div className="navbar__right__avatar">
-            <img className="navbar__right__avatar__pic" src={Avatar} alt="" />
-            <div className="navbar__right__avatar__inner">
-              <div className="navbar__right__avatar__inner__text">
-                View profile
+          {user ? (
+            <>
+              <div className="navbar-right-menu navbar-right-message">
+                <FaRegPaperPlane />
+                <div className="narvbar-right-hover-content">
+                  <div className="navbar-right-hover-arrow"></div>
+                  <div className="navbar-right-hover-inner">Messages</div>
+                </div>
               </div>
-              <div className="navbar__right__avatar__inner__text">
-                Get coins
+              <div className="navbar-right-menu navbar-right-mail">
+                <FaRegCommentAlt />
+                <div className="narvbar-right-hover-content">
+                  <div className="navbar-right-hover-arrow"></div>
+                  <div className="navbar-right-hover-inner">Inbox</div>
+                </div>
               </div>
-              <div className="navbar__right__avatar__inner__text">Settings</div>
-              <div className="navbar__right__avatar__inner__text">English</div>
-              <div className="navbar__right__avatar__inner__text">
-                Feedback and help
+              <div className="navbar-right-avatar">
+                <img className="navbar-right-avatar-pic" src={Avatar} alt="" />
+                <div className="navbar-right-avatar-inner">
+                  <div className="navbar-right-avatar-inner-text">
+                    View profile
+                  </div>
+                  <div className="navbar-right-avatar-inner-text">
+                    Get coins
+                  </div>
+                  <div className="navbar-right-avatar-inner-text">Settings</div>
+                  <div className="navbar-right-avatar-inner-text">English</div>
+                  <div className="navbar-right-avatar-inner-text">
+                    Feedback and help
+                  </div>
+                  <div className="navbar-right-avatar-inner-text">
+                    Keyboard shortcuts
+                  </div>
+                  <hr className="hr" />
+                  <div
+                    className="navbar-right-avatar-inner-text"
+                    onClick={handleLogout}
+                  >
+                    Log out
+                  </div>
+                </div>
               </div>
-              <div className="navbar__right__avatar__inner__text">
-                Keyboard shortcuts
-              </div>
-              <hr className="hr" />
-              <div className="navbar__right__avatar__inner__text">Log out</div>
-            </div>
-          </div>
+            </>
+          ) : (
+            <>
+              <Button primary onClick={handleLogin}>
+                Log in
+              </Button>
+              <IoEllipsisVertical className="menu-login" />
+            </>
+          )}
         </div>
       </div>
     </header>

@@ -49,20 +49,18 @@ a[href] {
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
   background: rgba(22, 24, 35, 0.06);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(22, 24, 35, 0.06);
+  overflow: auto;
+  visibility: hidden;
 }
 
 .hr {
   color: grayx3;
   opacity: 0.1;
   margin-bottom: 15px;
+  padding: 0 10px !important;
 }
 
-.account__title {
+.account-title {
   margin-bottom: 8px;
   font-size: 14px;
   line-height: 20px;

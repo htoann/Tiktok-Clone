@@ -7,7 +7,14 @@
   width: 348px;
   padding-left: 10px;
 
-  .sidebar__scrollbar {
+  &:hover {
+    ::-webkit-scrollbar-thumb {
+      background: rgba(22, 24, 35, 0.06);
+      visibility: visible;
+    }
+  }
+
+  .sidebar-scrollbar {
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
@@ -16,27 +23,28 @@
     perspective-origin: right top;
     top: 80px;
     bottom: 0;
-    background: var(--text-white);
+    background: var(--white);
     position: fixed;
     z-index: 9;
+    max-width: 348px;
 
-    .sidebar__tabs {
-      .sidebar__tab {
+    .sidebar-tabs {
+      .sidebar-tab {
         display: flex;
         text-decoration: none;
         padding: 10px 10px;
         border-radius: 5px;
-        color: var(--text-black);
+        color: var(--black);
 
         &:hover {
           background-color: var(--gray);
         }
 
-        .sidebar__icon {
+        .sidebar-icon {
           font-size: 24px;
         }
 
-        .sidebar__title {
+        .sidebar-title {
           font-weight: 700;
           line-height: 25px;
           font-size: 18px;
@@ -44,13 +52,25 @@
         }
       }
 
-      .sidebar__active {
+      .sidebar-active {
         color: var(--red);
       }
     }
 
-    .sidebar__list {
-      .sidebar__seeAll {
+    .sidebar-login {
+      position: relative;
+      padding: 8px 8px 42px 8px;
+      margin: 0;
+
+      .login-tip {
+        color: rgba(22, 24, 35, 0.5);
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    .sidebar-list {
+      .sidebar-seeAll {
         color: rgb(254, 44, 85);
         font-weight: 500;
         font-size: 14px;
@@ -62,4 +82,8 @@
       }
     }
   }
+}
+
+.hr {
+  margin-top: 10px;
 }

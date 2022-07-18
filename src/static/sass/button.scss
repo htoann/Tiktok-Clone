@@ -1,0 +1,71 @@
+.btn-wrapper {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 25px;
+  background-color: var(--white);
+}
+
+.btn-primary {
+  color: var(--white);
+  background-color: var(--red);
+  border: none;
+  margin-left: 16px;
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      #fe2c55;
+  }
+}
+
+.btn-outline {
+  border-width: 1px;
+  border-style: solid;
+  color: var(--red);
+  border-color: var(--red);
+  background-color: var(--white);
+  min-width: 106px;
+  min-height: 28px;
+  line-height: 22px;
+  font-weight: 600;
+  display: flex;
+  position: relative;
+  padding: 6px 8px;
+  right: 0;
+  position: absolute;
+  top: 28px;
+  min-width: 88px;
+  padding: 0 10px;
+
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.06);
+  }
+}
+
+.btn-large {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  color: rgba(254, 44, 85, 1);
+  border-color: rgba(254, 44, 85, 1);
+  background-color: rgba(255, 255, 255, 1);
+  min-width: 168px;
+  min-height: 48px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 600;
+  font-family: SofiaPro, PingFangSC, sans-serif;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  user-select: none;
+  cursor: pointer;
+  width: 100%;
+}
