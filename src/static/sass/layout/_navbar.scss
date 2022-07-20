@@ -57,7 +57,6 @@
 
         &:hover {
           background: var(--gray);
-          // border-radius-: 92px;
           border-top-right-radius: 92px;
           border-bottom-right-radius: 92px;
         }
@@ -78,10 +77,16 @@
       align-items: center;
       justify-content: center;
 
-      .navbar-right-upload {
-        background: transparent;
+      .navbar-right-action {
         cursor: pointer;
 
+        &:not(:first-child) {
+          margin-left: 28px;
+        }
+      }
+
+      .navbar-right-upload {
+        background: transparent;
         padding: 0 16px;
         height: 36px;
         border: 1px solid var(--grayx3);
@@ -92,9 +97,7 @@
         }
 
         .navbar-right-upload-plus {
-          height: 20px;
-          width: 20px;
-          margin-right: 8px;
+          margin-right: 10px;
           padding-top: 5px;
         }
 
@@ -107,14 +110,7 @@
         }
       }
 
-      .navbar-right-message {
-        margin-left: 25px;
-      }
-
       .navbar-right-menu {
-        margin-right: 25px;
-        cursor: pointer;
-
         &:hover {
           .narvbar-right-hover-content {
             display: block;
@@ -151,8 +147,6 @@
       }
 
       .navbar-right-avatar {
-        cursor: pointer;
-
         &:hover {
           .navbar-right-avatar-inner {
             display: block;
@@ -215,7 +209,6 @@
 
     .menu-login {
       margin-left: 14px;
-      cursor: pointer;
       padding: 0 4px;
       font-size: 28px;
     }

@@ -9,6 +9,10 @@
   font-size: 16px;
   padding: 8px 25px;
   background-color: var(--white);
+
+  + btn-wrapper {
+    margin-left: 8px;
+  }
 }
 
 .btn-primary {

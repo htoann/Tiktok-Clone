@@ -30,7 +30,7 @@ function Home() {
             </div>
             <div className="video-wrapper">
               <div className="video-card">
-                <video controls src={Siu} autoPlay loop muted></video>
+                <video controls src={Siu} loop muted></video>
               </div>
               <div className="action-items">
                 <div className="action-button">

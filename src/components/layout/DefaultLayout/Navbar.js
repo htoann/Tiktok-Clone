@@ -68,27 +68,27 @@ function Navbar() {
         </Tippy>
 
         <div className="navbar-right">
-          <button className="navbar-right-upload">
+          <button className="navbar-right-upload navbar-right-action">
             <FaPlus className="navbar-right-upload-plus" />
             <span className="navbar-right-upload-text">Upload</span>
           </button>
           {user ? (
             <>
-              <div className="navbar-right-menu navbar-right-message">
+              <div className="navbar-right-menu navbar-right-message navbar-right-action">
                 <FaRegPaperPlane />
                 <div className="narvbar-right-hover-content">
                   <div className="navbar-right-hover-arrow"></div>
                   <div className="navbar-right-hover-inner">Messages</div>
                 </div>
               </div>
-              <div className="navbar-right-menu navbar-right-mail">
+              <div className="navbar-right-menu navbar-right-mail navbar-right-action">
                 <FaRegCommentAlt />
                 <div className="narvbar-right-hover-content">
                   <div className="navbar-right-hover-arrow"></div>
                   <div className="navbar-right-hover-inner">Inbox</div>
                 </div>
               </div>
-              <div className="navbar-right-avatar">
+              <div className="navbar-right-avatar navbar-right-action">
                 <img className="navbar-right-avatar-pic" src={Avatar} alt="" />
                 <div className="navbar-right-avatar-inner">
                   <div className="navbar-right-avatar-inner-text">
