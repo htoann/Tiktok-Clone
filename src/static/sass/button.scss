@@ -9,9 +9,14 @@
   font-size: 16px;
   padding: 8px 25px;
   background-color: var(--white);
+  user-select: none;
 
   + btn-wrapper {
     margin-left: 8px;
+  }
+
+  &.disabled {
+    pointer-events: none;
   }
 }
 
@@ -64,12 +69,19 @@
   line-height: 25px;
   font-weight: 600;
   font-family: SofiaPro, PingFangSC, sans-serif;
-  display: flex;
-  position: relative;
-  align-items: center;
   justify-content: center;
   padding: 6px 8px;
-  user-select: none;
-  cursor: pointer;
   width: 100%;
+}
+
+.btn-text {
+  padding: 8px 16px;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--black);
+
+  &:hover {
+    background-color: var(--gray);
+  }
 }

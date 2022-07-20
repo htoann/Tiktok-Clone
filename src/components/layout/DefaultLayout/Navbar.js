@@ -68,10 +68,11 @@ function Navbar() {
         </Tippy>
 
         <div className="navbar-right">
-          <button className="navbar-right-upload navbar-right-action">
+          {/* <button className="navbar-right-upload navbar-right-action">
             <FaPlus className="navbar-right-upload-plus" />
             <span className="navbar-right-upload-text">Upload</span>
-          </button>
+          </button> */}
+          <Button text>Upload</Button>
           {user ? (
             <>
               <div className="navbar-right-menu navbar-right-message navbar-right-action">

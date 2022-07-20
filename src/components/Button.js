@@ -7,8 +7,9 @@ function Button({
   href,
   primary = false,
   outline = false,
-  small = false,
+  text = false,
   large = false,
+  disabled = false,
   children,
   onClick,
   ...passProps
@@ -18,6 +19,15 @@ function Button({
     onClick,
     ...passProps,
   };
+
+  // Remove event listeners when the button is disabled
+  if (disabled) {
+    Object.keys(props).forEach((key) => {
+      if (key.startsWith("on") && typeof props[key] === "function") {
+        delete props[key];
+      }
+    });
+  }
 
   if (to) {
     props.to = to;
@@ -30,7 +40,9 @@ function Button({
   let classes = classNames("btn-wrapper", {
     "btn-primary": primary,
     "btn-outline": outline,
+    "btn-text": text,
     "btn-large": large,
+    disabled,
   });
 
   return (
