@@ -85,26 +85,34 @@ function Navbar() {
                   <div className="navbar-right-hover-inner">Inbox</div>
                 </div>
               </div>
-              <div className="navbar-right-avatar navbar-right-action">
-                <img className="navbar-right-avatar-pic" src={Avatar} alt="" />
-                <div className="navbar-right-avatar-inner">
-                  <div className="navbar-right-avatar-inner-text">
+              <div className="navbar-right-dropdown navbar-right-action">
+                <img
+                  className="navbar-right-dropdown-pic"
+                  src={Avatar}
+                  alt=""
+                />
+                <div className="navbar-right-dropdown-inner">
+                  <div className="navbar-right-dropdown-inner-text">
                     View profile
                   </div>
-                  <div className="navbar-right-avatar-inner-text">
+                  <div className="navbar-right-dropdown-inner-text">
                     Get coins
                   </div>
-                  <div className="navbar-right-avatar-inner-text">Settings</div>
-                  <div className="navbar-right-avatar-inner-text">English</div>
-                  <div className="navbar-right-avatar-inner-text">
+                  <div className="navbar-right-dropdown-inner-text">
+                    Settings
+                  </div>
+                  <div className="navbar-right-dropdown-inner-text">
+                    English
+                  </div>
+                  <div className="navbar-right-dropdown-inner-text">
                     Feedback and help
                   </div>
-                  <div className="navbar-right-avatar-inner-text">
+                  <div className="navbar-right-dropdown-inner-text">
                     Keyboard shortcuts
                   </div>
                   <hr className="hr" />
                   <div
-                    className="navbar-right-avatar-inner-text"
+                    className="navbar-right-dropdown-inner-text"
                     onClick={handleLogout}
                   >
                     Log out
@@ -117,7 +125,20 @@ function Navbar() {
               <Button primary onClick={handleLogin}>
                 Log in
               </Button>
-              <IoEllipsisVertical className="menu-login" />
+              <div className="navbar-right-dropdown navbar-right-action">
+                <IoEllipsisVertical className="navbar-right-dropdown-icon" />
+                <div className="navbar-right-dropdown-inner">
+                  <div className="navbar-right-dropdown-inner-text">
+                    English
+                  </div>
+                  <div className="navbar-right-dropdown-inner-text">
+                    Feedback and help
+                  </div>
+                  <div className="navbar-right-dropdown-inner-text">
+                    Keyboard shortcuts
+                  </div>
+                </div>
+              </div>
             </>
           )}
         </div>
