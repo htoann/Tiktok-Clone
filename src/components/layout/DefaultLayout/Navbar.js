@@ -4,12 +4,10 @@ import {
   FaRegPaperPlane,
   FaRegCommentAlt,
   FaPlus,
-  FaEllipsisV,
 } from "react-icons/fa";
 import Logo from "~/assets/images/logo.svg";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
-import { useEffect } from "react";
 import Popper from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Avatar from "~/assets/images/Avatar.jpeg";
@@ -68,11 +66,9 @@ function Navbar() {
         </Tippy>
 
         <div className="navbar-right">
-          {/* <button className="navbar-right-upload navbar-right-action">
-            <FaPlus className="navbar-right-upload-plus" />
-            <span className="navbar-right-upload-text">Upload</span>
-          </button> */}
-          <Button text>Upload</Button>
+          <Button text leftIcon={<FaPlus />}>
+            Upload
+          </Button>
           {user ? (
             <>
               <div className="navbar-right-menu navbar-right-message navbar-right-action">

@@ -12,6 +12,9 @@ function Button({
   disabled = false,
   children,
   onClick,
+  className,
+  leftIcon,
+  rightIcon,
   ...passProps
 }) {
   let Comp = "button";
@@ -38,6 +41,7 @@ function Button({
   }
 
   let classes = classNames("btn-wrapper", {
+    [className]: className,
     "btn-primary": primary,
     "btn-outline": outline,
     "btn-text": text,
@@ -47,7 +51,9 @@ function Button({
 
   return (
     <Comp className={classes} {...props}>
-      <span>{children}</span>
+      {leftIcon && <span className="btn-icon">{leftIcon}</span>}
+      <span className="btn-title">{children}</span>
+      {rightIcon && <span className="btn-icon">{rightIcon}</span>}
     </Comp>
   );
 }

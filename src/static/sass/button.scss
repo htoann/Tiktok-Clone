@@ -77,11 +77,20 @@
 .btn-text {
   padding: 8px 16px;
   border: 1px solid rgba(22, 24, 35, 0.12);
-  font-weight: 600;
+  font-weight: 550;
   font-size: 16px;
   color: var(--black);
 
   &:hover {
     background-color: var(--gray);
   }
+}
+
+.btn-icon + .btn-title,
+.btn-title + .btn-icon {
+  margin-left: 8px;
+}
+
+.btn-icon {
+  display: flex;
 }
