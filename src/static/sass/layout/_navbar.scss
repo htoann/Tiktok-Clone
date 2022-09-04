@@ -82,6 +82,7 @@
 
         &:not(:first-child) {
           margin-left: 28px;
+          // margin-left: 20px;
         }
       }
 
@@ -132,7 +133,6 @@
           padding: 0 4px;
           font-size: 28px;
           display: flex;
-          margin-left: 0;
         }
 
         .navbar-right-dropdown-pic {
@@ -140,47 +140,34 @@
           height: 32px;
           border-radius: 50%;
         }
+      }
 
-        .navbar-right-dropdown-inner {
-          border: 1px solid white;
-          position: absolute;
-          box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
-          border-radius: 10px;
-          margin-top: 10px;
-          margin-left: -90px;
-          display: none;
-          background: var(--white);
-          z-index: 2;
+      .navbar-menu-items {
+        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 8px 0px;
+        width: 224px;
+        list-style: none;
 
-          .navbar-right-dropdown-inner-text {
-            font-size: 16px;
-            font-weight: 500;
-            padding: 8px 20px;
+        .navbar-right-dropdown-inner-text {
+          font-size: 16px;
+          font-weight: 500;
+          padding: 8px 20px;
+          cursor: pointer;
 
-            &:hover {
-              background-color: var(--grayx2);
-            }
+          &:hover {
+            background-color: var(--grayx2);
           }
+        }
 
-          .navbar-right-dropdown-inner-text:first-child {
-            margin-top: 8px;
-          }
+        .navbar-right-dropdown-inner-text:last-child {
+          margin-bottom: 8px;
+        }
 
-          .navbar-right-dropdown-inner-text:last-child {
-            margin-bottom: 8px;
-          }
-
-          &:before {
-            content: " ";
-            position: absolute;
-            width: 100%;
-            height: 30px;
-            top: -20px;
-          }
-
-          .hr {
-            margin-bottom: 0;
-          }
+        .hr {
+          margin-bottom: 0;
         }
       }
     }

@@ -85,60 +85,81 @@ function Navbar() {
                   <div className="navbar-right-hover-inner">Inbox</div>
                 </div>
               </div>
-              <div className="navbar-right-dropdown navbar-right-action">
-                <img
-                  className="navbar-right-dropdown-pic"
-                  src={Avatar}
-                  alt=""
-                />
-                <div className="navbar-right-dropdown-inner">
-                  <div className="navbar-right-dropdown-inner-text">
-                    View profile
+              <Tippy
+                visible
+                interactive
+                render={(attrs) => (
+                  <div className="navbar-menu-items" tabIndex="-1" {...attrs}>
+                    <Popper>
+                      <div className="navbar-right-dropdown-inner">
+                        <div className="navbar-right-dropdown-inner-text">
+                          View profile
+                        </div>
+                        <div className="navbar-right-dropdown-inner-text">
+                          Get coins
+                        </div>
+                        <div className="navbar-right-dropdown-inner-text">
+                          Settings
+                        </div>
+                        <div className="navbar-right-dropdown-inner-text">
+                          English
+                        </div>
+                        <div className="navbar-right-dropdown-inner-text">
+                          Feedback and help
+                        </div>
+                        <div className="navbar-right-dropdown-inner-text">
+                          Keyboard shortcuts
+                        </div>
+                        <hr className="hr" />
+                        <div
+                          className="navbar-right-dropdown-inner-text"
+                          onClick={handleLogout}
+                        >
+                          Log out
+                        </div>
+                      </div>
+                    </Popper>
                   </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    Get coins
-                  </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    Settings
-                  </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    English
-                  </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    Feedback and help
-                  </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    Keyboard shortcuts
-                  </div>
-                  <hr className="hr" />
-                  <div
-                    className="navbar-right-dropdown-inner-text"
-                    onClick={handleLogout}
-                  >
-                    Log out
-                  </div>
+                )}
+              >
+                <div className="navbar-right-dropdown navbar-right-action">
+                  <img
+                    className="navbar-right-dropdown-pic"
+                    src={Avatar}
+                    alt=""
+                  />
                 </div>
-              </div>
+              </Tippy>
             </>
           ) : (
             <>
               <Button primary onClick={handleLogin}>
                 Log in
               </Button>
-              <div className="navbar-right-dropdown navbar-right-action">
-                <IoEllipsisVertical className="navbar-right-dropdown-icon" />
-                <div className="navbar-right-dropdown-inner">
-                  <div className="navbar-right-dropdown-inner-text">
-                    English
+
+              <Tippy
+                visible
+                interactive
+                render={(attrs) => (
+                  <div className="navbar-menu-items" tabIndex="-1" {...attrs}>
+                    <Popper>
+                      <li className="navbar-right-dropdown-inner-text">
+                        English
+                      </li>
+                      <li className="navbar-right-dropdown-inner-text">
+                        Feedback and help
+                      </li>
+                      <li className="navbar-right-dropdown-inner-text">
+                        Keyboard shortcuts
+                      </li>
+                    </Popper>
                   </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    Feedback and help
-                  </div>
-                  <div className="navbar-right-dropdown-inner-text">
-                    Keyboard shortcuts
-                  </div>
+                )}
+              >
+                <div className="navbar-right-dropdown navbar-right-action">
+                  <IoEllipsisVertical className="navbar-right-dropdown-icon" />
                 </div>
-              </div>
+              </Tippy>
             </>
           )}
         </div>
