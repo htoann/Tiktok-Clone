@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
+// import styles from "~/static/sass/components/button.module.scss";
+import "~/static/sass/components/button.scss";
 
 function Button({
   to,
@@ -40,20 +42,20 @@ function Button({
     Comp = "a";
   }
 
-  let classes = classNames("btn-wrapper", {
+  let classes = classNames("btn_wrapper", {
     [className]: className,
-    "btn-primary": primary,
-    "btn-outline": outline,
-    "btn-text": text,
-    "btn-large": large,
+    btn_primary: primary,
+    btn_outline: outline,
+    btn_text: text,
+    btn_large: large,
     disabled,
   });
 
   return (
     <Comp className={classes} {...props}>
-      {leftIcon && <span className="btn-icon">{leftIcon}</span>}
-      <span className="btn-title">{children}</span>
-      {rightIcon && <span className="btn-icon">{rightIcon}</span>}
+      {leftIcon && <span className="btn_icon">{leftIcon}</span>}
+      <span className="btn_title">{children}</span>
+      {rightIcon && <span className="btn_icon">{rightIcon}</span>}
     </Comp>
   );
 }

@@ -4,15 +4,26 @@ import {
   FaRegPaperPlane,
   FaRegCommentAlt,
   FaPlus,
+  FaAutoprefixer,
+  FaQuestion,
+  FaRegKeyboard,
 } from "react-icons/fa";
 import Logo from "~/assets/images/logo.svg";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react/headless";
-import Popper from "~/components/Popper";
+import PopperWrapper from "~/components/Popper/PopperWrapper";
 import AccountItem from "~/components/AccountItem";
 import Avatar from "~/assets/images/Avatar.jpeg";
 import Button from "~/components/Button";
 import { IoEllipsisVertical } from "react-icons/io5";
+import Menu from "~/components/Popper/Menu";
+import styles from "~/static/sass/layout/navbar.module.scss";
+
+const MENU_ITEMS = [
+  { title: "English", icon: <FaAutoprefixer /> },
+  { title: "Feedback and help", icon: <FaQuestion />, to: "/feedback" },
+  { title: "Keyboard shortcuts", icon: <FaRegKeyboard /> },
+];
 
 function Navbar() {
   const [searchResult, setSearchResult] = useState([]);
@@ -33,98 +44,122 @@ function Navbar() {
   };
 
   return (
-    <header className="navbar">
-      <div className="navbar-inner">
-        <Link to="/" className="logo">
+    <header className={styles.navbar}>
+      <div className={styles.navbar_wrapper}>
+        <Link to="/" className={styles.logo}>
           <img src={Logo} alt="Tiktok" />
         </Link>
         <Tippy
           visible={searchResult.length > 0}
           interactive
           render={(attrs) => (
-            <div className="search-results" tabIndex="-1" {...attrs}>
-              <Popper>
-                <div className="account-title">Account</div>
+            <div className={styles.search_results} tabIndex="-1" {...attrs}>
+              <PopperWrapper>
+                <div className={styles.account_title}>Account</div>
                 <AccountItem />
                 <AccountItem />
                 <AccountItem />
-              </Popper>
+              </PopperWrapper>
             </div>
           )}
         >
-          <form className="navbar-search">
+          <form className={styles.navbar_search}>
             <input
-              className="navbar-search-input"
+              className={styles.navbar_search_input}
               type="text"
               placeholder="Search accounts and videos"
             />
-            <span className="navbar-search-line"></span>
-            <button className="navbar-search-icon">
+            <span className={styles.navbar_search_line}></span>
+            <button className={styles.navbar_search_icon}>
               <FaSearch />
             </button>
           </form>
         </Tippy>
 
-        <div className="navbar-right">
+        <div className={styles.navbar_right}>
           <Button text leftIcon={<FaPlus />}>
             Upload
           </Button>
           {user ? (
             <>
-              <div className="navbar-right-menu navbar-right-message navbar-right-action">
+              <div
+                className={`${styles.navbar_right_menu} ${styles.navbar_right_message}  ${styles.navbar_right_action}`}
+              >
                 <FaRegPaperPlane />
-                <div className="narvbar-right-hover-content">
-                  <div className="navbar-right-hover-arrow"></div>
-                  <div className="navbar-right-hover-inner">Messages</div>
+                <div className={styles.narvbar_right_hover_content}>
+                  <div className={styles.navbar_right_hover_arrow}></div>
+                  <div className={styles.navbar_right_hover_inner}>
+                    Messages
+                  </div>
                 </div>
               </div>
-              <div className="navbar-right-menu navbar-right-mail navbar-right-action">
+
+              <div
+                className={`${styles.navbar_right_menu} ${styles.navbar_right_mail}  ${styles.navbar_right_action}`}
+              >
                 <FaRegCommentAlt />
-                <div className="narvbar-right-hover-content">
-                  <div className="navbar-right-hover-arrow"></div>
-                  <div className="navbar-right-hover-inner">Inbox</div>
+                <div className={styles.narvbar_right_hover_content}>
+                  <div className={styles.navbar_right_hover_arrow}></div>
+                  <div className={styles.navbar_right_hover_inner}>Inbox</div>
                 </div>
               </div>
               <Tippy
-                visible
                 interactive
                 render={(attrs) => (
-                  <div className="navbar-menu-items" tabIndex="-1" {...attrs}>
-                    <Popper>
-                      <div className="navbar-right-dropdown-inner">
-                        <div className="navbar-right-dropdown-inner-text">
+                  <div
+                    className={styles.navbar_menu_items}
+                    tabIndex="-1"
+                    {...attrs}
+                  >
+                    <PopperWrapper>
+                      <div className={styles.navbar_right_dropdown_inner}>
+                        <div
+                          className={styles.navbar_right_dropdown_inner_text}
+                        >
                           View profile
                         </div>
-                        <div className="navbar-right-dropdown-inner-text">
+                        <div
+                          className={styles.navbar_right_dropdown_inner_text}
+                        >
                           Get coins
                         </div>
-                        <div className="navbar-right-dropdown-inner-text">
+                        <div
+                          className={styles.navbar_right_dropdown_inner_text}
+                        >
                           Settings
                         </div>
-                        <div className="navbar-right-dropdown-inner-text">
+                        <div
+                          className={styles.navbar_right_dropdown_inner_text}
+                        >
                           English
                         </div>
-                        <div className="navbar-right-dropdown-inner-text">
+                        <div
+                          className={styles.navbar_right_dropdown_inner_text}
+                        >
                           Feedback and help
                         </div>
-                        <div className="navbar-right-dropdown-inner-text">
+                        <div
+                          className={styles.navbar_right_dropdown_inner_text}
+                        >
                           Keyboard shortcuts
                         </div>
-                        <hr className="hr" />
+                        <hr className={styles.hr} />
                         <div
-                          className="navbar-right-dropdown-inner-text"
+                          className={styles.navbar_right_dropdown_inner_text}
                           onClick={handleLogout}
                         >
                           Log out
                         </div>
                       </div>
-                    </Popper>
+                    </PopperWrapper>
                   </div>
                 )}
               >
-                <div className="navbar-right-dropdown navbar-right-action">
+                <div
+                  className={`${styles.navbar_right_dropdown} ${styles.navbar_right_action}`}
+                >
                   <img
-                    className="navbar-right-dropdown-pic"
+                    className={styles.navbar_right_dropdown_pic}
                     src={Avatar}
                     alt=""
                   />
@@ -137,29 +172,37 @@ function Navbar() {
                 Log in
               </Button>
 
-              <Tippy
-                visible
+              {/* <Tippy
                 interactive
                 render={(attrs) => (
-                  <div className="navbar-menu-items" tabIndex="-1" {...attrs}>
-                    <Popper>
-                      <li className="navbar-right-dropdown-inner-text">
+                  <div className="navbar_menu_items" tabIndex="-1" {...attrs}>
+                    <PopperWrapper>
+                      <li className="navbar_right_dropdown_inner_text">
                         English
                       </li>
-                      <li className="navbar-right-dropdown-inner-text">
+                      <li className="navbar_right_dropdown_inner_text">
                         Feedback and help
                       </li>
-                      <li className="navbar-right-dropdown-inner-text">
+                      <li className="navbar_right_dropdown_inner_text">
                         Keyboard shortcuts
                       </li>
-                    </Popper>
+                    </PopperWrapper>
                   </div>
                 )}
               >
-                <div className="navbar-right-dropdown navbar-right-action">
-                  <IoEllipsisVertical className="navbar-right-dropdown-icon" />
+                <div className="navbar_right_dropdown navbar_right_action">
+                  <IoEllipsisVertical className="navbar_right_dropdown_icon" />
                 </div>
-              </Tippy>
+              </Tippy> */}
+              <Menu items={MENU_ITEMS} className={styles.navbar_menu_items}>
+                <div
+                  className={`${styles.navbar_right_dropdown} ${styles.navbar_right_action}`}
+                >
+                  <IoEllipsisVertical
+                    className={styles.navbar_right_dropdown_icon}
+                  />
+                </div>
+              </Menu>
             </>
           )}
         </div>

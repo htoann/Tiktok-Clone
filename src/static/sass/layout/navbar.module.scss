@@ -10,7 +10,7 @@
   z-index: 10;
   background: var(--white);
 
-  .navbar-inner {
+  .navbar_wrapper {
     height: 100%;
     width: var(--default-layout-width);
     display: flex;
@@ -19,11 +19,11 @@
     padding-left: 20px;
     padding-right: 20px;
 
-    .navbar-logo {
+    .navbar_logo {
       padding: 0 10px;
     }
 
-    .navbar-search {
+    .navbar_search {
       align-items: center;
       padding: 0 16px;
       background: var(--grayx2);
@@ -31,13 +31,13 @@
       position: relative;
       margin: 8px 20px;
       display: flex;
-      caret-color: var(--red);
+      caret-color: var(__red);
 
       &:focus-within {
         border: 1.5px solid rgba(22, 24, 35, 0.2);
       }
 
-      .navbar-search-input {
+      .navbar_search_input {
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
@@ -46,7 +46,7 @@
         padding: 12px 8px;
       }
 
-      .navbar-search-icon {
+      .navbar_search_icon {
         padding: 11px 16px 11px 12px;
         margin: -12px -16px;
         cursor: pointer;
@@ -62,7 +62,7 @@
         }
       }
 
-      .navbar-search-line {
+      .navbar_search_line {
         width: 1px;
         height: 28px;
         margin: -3px 0 -3px 0;
@@ -70,34 +70,33 @@
       }
     }
 
-    .navbar-right {
+    .navbar_right {
       margin: auto 0;
       font-size: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      .navbar-right-action {
+      .navbar_right_action {
         cursor: pointer;
 
         &:not(:first-child) {
           margin-left: 28px;
-          // margin-left: 20px;
         }
       }
 
-      .navbar-right-menu {
+      .navbar_right_menu {
         &:hover {
-          .narvbar-right-hover-content {
+          .narvbar_right_hover_content {
             display: block;
           }
         }
       }
 
-      .narvbar-right-hover-content {
+      .narvbar_right_hover_content {
         display: none;
 
-        .navbar-right-hover-arrow {
+        .navbar_right_hover_arrow {
           display: block;
           position: absolute;
           width: 36px;
@@ -107,7 +106,7 @@
           margin-left: -8px;
         }
 
-        .navbar-right-hover-inner {
+        .navbar_right_hover_inner {
           margin-top: 13px;
           margin-left: -30px;
           position: absolute;
@@ -122,36 +121,34 @@
         }
       }
 
-      .navbar-right-dropdown {
+      .navbar_right_dropdown {
         &:hover {
-          .navbar-right-dropdown-inner {
+          .navbar_right_dropdown_inner {
             display: block;
           }
         }
 
-        .navbar-right-dropdown-icon {
+        .navbar_right_dropdown_icon {
           padding: 0 4px;
           font-size: 28px;
           display: flex;
         }
 
-        .navbar-right-dropdown-pic {
+        .navbar_right_dropdown_pic {
           width: 32px;
           height: 32px;
           border-radius: 50%;
         }
       }
 
-      .navbar-menu-items {
-        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
-        font-weight: 700;
+      .navbar_menu_items {
         font-size: 16px;
         line-height: 22px;
         padding: 8px 0px;
         width: 224px;
         list-style: none;
 
-        .navbar-right-dropdown-inner-text {
+        .navbar_right_dropdown_inner_text {
           font-size: 16px;
           font-weight: 500;
           padding: 8px 20px;
@@ -162,17 +159,34 @@
           }
         }
 
-        .navbar-right-dropdown-inner-text:last-child {
+        .navbar_right_dropdown_inner_text:last-child {
           margin-bottom: 8px;
         }
-
-        .hr {
-          margin-bottom: 0;
-        }
       }
+
+      // .navbar_right_dropdown_inner_text {
+      //   font-size: 16px;
+      //   font-weight: 500;
+      //   padding: 8px 20px;
+      //   cursor: pointer;
+
+      //   &:hover {
+      //     background-color: var(--grayx2);
+      //   }
+      // }
+
+      // .navbar_right_dropdown_inner_text:last-child {
+      //   margin-bottom: 8px;
+      // }
     }
 
-    .search-results {
+    .hr {
+      color: grayx3;
+      opacity: 0.1;
+      padding: 0 10px !important;
+    }
+
+    .search_results {
       width: 365px;
     }
   }

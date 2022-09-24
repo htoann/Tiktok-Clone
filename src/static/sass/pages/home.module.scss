@@ -5,11 +5,11 @@
   padding: 24px 0;
   position: relative;
 
-  .main-container {
+  .main_container {
     // display: flex;
     // flex-direction: column;
 
-    .recommend-list-item-container {
+    .recommend_list_item_container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -17,26 +17,26 @@
       position: relative;
       max-width: 692px;
 
-      .avatar-author {
+      .avatar_author {
         width: 56px;
         height: 56px;
         border-radius: 50%;
       }
 
-      .content-container {
+      .content_container {
         margin-left: 12px;
 
         // flex: 1 1 624px;
 
-        .text-info-container {
+        .text_info_container {
           display: flex;
 
-          .text-info {
+          .text_info {
             inline-size: 500px;
             overflow: hidden;
 
-            .author-container {
-              .username-author {
+            .author_container {
+              .username_author {
                 font-weight: 700;
                 font-size: 18px;
                 line-height: 25px;
@@ -44,7 +44,7 @@
                 margin-right: 4px;
               }
 
-              .name-author {
+              .name_author {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 20px;
@@ -56,20 +56,20 @@
           }
         }
 
-        .video-wrapper {
+        .video_wrapper {
           display: flex;
           flex-direction: row;
           align-items: flex-end;
           margin-top: 10px;
 
-          .video-card {
+          .video_card {
             video {
               border-radius: 10px;
               width: 350px;
             }
           }
 
-          .action-items {
+          .action_items {
             border: none;
             background: none;
             outline: none;
@@ -81,7 +81,7 @@
             flex-direction: column;
             margin-left: 20px;
 
-            .action-button {
+            .action_button {
               display: flex;
               flex-direction: column;
             }
@@ -113,4 +113,11 @@
       }
     }
   }
+}
+
+.hr {
+  color: grayx3;
+  opacity: 0.1;
+  margin-bottom: 15px;
+  padding: 0 10px !important;
 }

@@ -14,7 +14,14 @@
     }
   }
 
-  .sidebar-scrollbar {
+  .hr {
+    color: grayx3;
+    opacity: 0.1;
+    margin-bottom: 15px;
+    padding: 0 10px !important;
+  }
+
+  .sidebar_scrollbar {
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
@@ -28,8 +35,8 @@
     z-index: 9;
     max-width: 348px;
 
-    .sidebar-tabs {
-      .sidebar-tab {
+    .sidebar_tabs {
+      .sidebar_tab {
         display: flex;
         text-decoration: none;
         padding: 10px 10px;
@@ -40,11 +47,11 @@
           background-color: var(--gray);
         }
 
-        .sidebar-icon {
+        .sidebar_icon {
           font-size: 24px;
         }
 
-        .sidebar-title {
+        .sidebar_title {
           font-weight: 700;
           line-height: 25px;
           font-size: 18px;
@@ -52,25 +59,25 @@
         }
       }
 
-      .sidebar-active {
+      .sidebar_active {
         color: var(--red);
       }
     }
 
-    .sidebar-login {
+    .sidebar_login {
       position: relative;
       padding: 8px 8px 42px 8px;
       margin: 0;
 
-      .login-tip {
+      .login_tip {
         color: rgba(22, 24, 35, 0.5);
         font-size: 16px;
         line-height: 22px;
       }
     }
 
-    .sidebar-list {
-      .sidebar-seeAll {
+    .sidebar_list {
+      .sidebar_seeAll {
         color: rgb(254, 44, 85);
         font-weight: 500;
         font-size: 14px;
@@ -80,10 +87,15 @@
         margin-bottom: 15px;
         padding-left: 10px;
       }
+
+      .account_title {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--text-gray);
+        font-weight: 600;
+        padding: 0 10px;
+      }
     }
   }
-}
-
-.hr {
-  margin-top: 10px;
 }

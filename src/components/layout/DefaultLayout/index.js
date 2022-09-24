@@ -1,14 +1,15 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import styles from "~/static/sass/layout/DefaultLayout.module.scss";
 
 function DefaultLayout({ children }) {
   return (
-    <div className="defaultLayout">
+    <div className={styles.default_layout}>
       <Navbar />
-      <div className="container">
-        <Sidebar className="sidebar" />
-        <div className="content">{children}</div>
+      <div className={styles.container}>
+        <Sidebar className={styles.sidebar} />
+        <div className={styles.content}>{children}</div>
       </div>
     </div>
   );

@@ -1,16 +1,2 @@
 @import "base/base";
-@import "abstracts/_variable";
-
-@import "pages/following";
-@import "pages/home";
-@import "pages/profile";
-@import "pages/upload";
-@import "pages/notfound";
-
-@import "layout/navbar";
-@import "layout/sidebar";
-@import "layout/defaultLayout";
-
-@import "popper";
-@import "accountItem";
-@import "button";
+@import "abstracts/variable";
