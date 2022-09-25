@@ -1,0 +1,25 @@
+.menu_items {
+  position: fixed;
+  top: 50px;
+  right: -10px;
+
+  .menu_item {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 0%;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--grayx2);
+    }
+  }
+
+  .menu_item:last-child {
+    margin-bottom: 8px;
+  }
+}

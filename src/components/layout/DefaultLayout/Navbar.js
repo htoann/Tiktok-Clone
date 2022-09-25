@@ -19,10 +19,19 @@ import { IoEllipsisVertical } from "react-icons/io5";
 import Menu from "~/components/Popper/Menu";
 import styles from "~/static/sass/layout/navbar.module.scss";
 
-const MENU_ITEMS = [
+const MENU_ITEMS_1 = [
   { title: "English", icon: <FaAutoprefixer /> },
   { title: "Feedback and help", icon: <FaQuestion />, to: "/feedback" },
   { title: "Keyboard shortcuts", icon: <FaRegKeyboard /> },
+];
+
+const MENU_ITEMS_2 = [
+  { title: "View profile" },
+  { title: "Get coins" },
+  { title: "Settings" },
+  { title: "English" },
+  { title: "Feedback and help" },
+  { title: "Keyboard shortcuts" },
 ];
 
 function Navbar() {
@@ -165,6 +174,17 @@ function Navbar() {
                   />
                 </div>
               </Tippy>
+              {/* <Menu items={MENU_ITEMS_2} className={styles.navbar_menu_items}>
+                <div
+                  className={`${styles.navbar_right_dropdown} ${styles.navbar_right_action}`}
+                >
+                  <img
+                    className={styles.navbar_right_dropdown_pic}
+                    src={Avatar}
+                    alt=""
+                  />
+                </div>
+              </Menu> */}
             </>
           ) : (
             <>
@@ -194,7 +214,7 @@ function Navbar() {
                   <IoEllipsisVertical className="navbar_right_dropdown_icon" />
                 </div>
               </Tippy> */}
-              <Menu items={MENU_ITEMS} className={styles.navbar_menu_items}>
+              <Menu items={MENU_ITEMS_1} className={styles.navbar_menu_items}>
                 <div
                   className={`${styles.navbar_right_dropdown} ${styles.navbar_right_action}`}
                 >
