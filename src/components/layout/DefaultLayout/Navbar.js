@@ -16,7 +16,7 @@ import AccountItem from "~/components/AccountItem";
 import Avatar from "~/assets/images/Avatar.jpeg";
 import Button from "~/components/Button";
 import { IoEllipsisVertical } from "react-icons/io5";
-import Menu from "~/components/Popper/Menu";
+import Menu from "~/components/Popper/Menu/Menu";
 import styles from "~/static/sass/layout/navbar.module.scss";
 
 const MENU_ITEMS_1 = [

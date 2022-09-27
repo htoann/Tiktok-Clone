@@ -5,7 +5,7 @@
 
   .menu_item {
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 24px;
     border-radius: 0%;
     font-weight: 500;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -13,6 +13,7 @@
       "Helvetica Neue", sans-serif;
 
     white-space: nowrap;
+    line-height: 2rem;
 
     &:hover {
       background-color: var(--grayx2);
@@ -21,5 +22,30 @@
 
   .menu_item:last-child {
     margin-bottom: 8px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  margin-top: -8px;
+
+  .back_btn {
+    margin-left: 22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .header_title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
