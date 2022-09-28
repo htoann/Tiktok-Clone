@@ -20,13 +20,23 @@ import Menu from "~/components/Popper/Menu/Menu";
 import styles from "~/static/sass/layout/navbar.module.scss";
 
 const MENU_ITEMS_1 = [
-  { title: "English", icon: <FaAutoprefixer /> },
+  {
+    title: "English",
+    icon: <FaAutoprefixer />,
+    children: {
+      title: "Language",
+      data: [
+        { code: "en", title: "English" },
+        { code: "vi", title: "Tiếng Việt" },
+      ],
+    },
+  },
   { title: "Feedback and help", icon: <FaQuestion />, to: "/feedback" },
   { title: "Keyboard shortcuts", icon: <FaRegKeyboard /> },
 ];
 
 const MENU_ITEMS_2 = [
-  { title: "View profile" },
+  { title: "View profile", to: "/profile" },
   { title: "Get coins" },
   { title: "Settings" },
   { title: "English" },

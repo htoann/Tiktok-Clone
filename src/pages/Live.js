@@ -1,7 +1,7 @@
 import React from "react";
 
 function Live() {
-  return <h1>Live</h1>;
+  return <h2>Live</h2>;
 }
 
 export default Live;

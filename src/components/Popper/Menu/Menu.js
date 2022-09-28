@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Tippy from "@tippyjs/react/headless";
 import PopperWrapper from "~/components/Popper/PopperWrapper";
 import MenuItem from "./MenuItem.js";
@@ -6,13 +6,25 @@ import styles from "~/static/sass/components/menu.module.scss";
 import Header from "./Header.js";
 
 function Menu({ children, items = [] }) {
-  const renderItems = () => {
-    return items.map((item, index) => <MenuItem key={index} data={item} />);
+  const [history, setHistory] = useState([{ data: items }]);
+  const current = history[history.length - 1];
+
+  const handleChildren = (item) => {
+    const isParent = item.children;
+    if (isParent) {
+      setHistory((prev) => [...prev, item.children]);
+    }
   };
 
-  // const items2 = [English, Francais, Suomi, Philippines];
+  const onBack = () => {
+    setHistory((prev) => prev.slice(0, prev.length - 1));
+  };
 
-  const onBack = () => {};
+  const renderItems = () => {
+    return current.data.map((item, index) => (
+      <MenuItem key={index} data={item} onClick={() => handleChildren(item)} />
+    ));
+  };
 
   return (
     <Tippy
@@ -22,7 +34,7 @@ function Menu({ children, items = [] }) {
       render={(attrs) => (
         <div className={styles.menu_items} tabIndex="-1" {...attrs}>
           <PopperWrapper>
-            <Header title="Language" onBack={onBack} />
+            {history.length > 1 && <Header title="Language" onBack={onBack} />}
             {renderItems()}
           </PopperWrapper>
         </div>
