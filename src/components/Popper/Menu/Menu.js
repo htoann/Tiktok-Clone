@@ -5,7 +5,7 @@ import MenuItem from "./MenuItem.js";
 import styles from "~/static/sass/components/menu.module.scss";
 import Header from "./Header.js";
 
-function Menu({ children, items = [] }) {
+function Menu({ children, items = [], onChange = () => {} }) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -13,7 +13,7 @@ function Menu({ children, items = [] }) {
     const isParent = item.children;
     if (isParent) {
       setHistory((prev) => [...prev, item.children]);
-    }
+    } else onChange(item);
   };
 
   const onBack = () => {
@@ -28,7 +28,6 @@ function Menu({ children, items = [] }) {
 
   return (
     <Tippy
-      visible
       interactive
       delay={[0, 700]}
       render={(attrs) => (

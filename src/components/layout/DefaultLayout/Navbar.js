@@ -26,8 +26,8 @@ const MENU_ITEMS_1 = [
     children: {
       title: "Language",
       data: [
-        { code: "en", title: "English" },
-        { code: "vi", title: "Tiếng Việt" },
+        { type: "language", code: "en", title: "English" },
+        { type: "language", code: "vi", title: "Tiếng Việt" },
       ],
     },
   },
@@ -60,6 +60,10 @@ function Navbar() {
 
   const handleLogin = () => {
     setUser([]);
+  };
+
+  const handleMenuChange = (menuItem) => {
+    console.log(menuItem);
   };
 
   return (
@@ -224,7 +228,11 @@ function Navbar() {
                   <IoEllipsisVertical className="navbar_right_dropdown_icon" />
                 </div>
               </Tippy> */}
-              <Menu items={MENU_ITEMS_1} className={styles.navbar_menu_items}>
+              <Menu
+                items={MENU_ITEMS_1}
+                className={styles.navbar_menu_items}
+                onChange={handleMenuChange}
+              >
                 <div
                   className={`${styles.navbar_right_dropdown} ${styles.navbar_right_action}`}
                 >
