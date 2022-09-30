@@ -42,6 +42,7 @@ const MENU_ITEMS_1 = [
   },
   { title: "Feedback and help", icon: <FaQuestion />, to: "/feedback" },
   { title: "Keyboard shortcuts", icon: <FaRegKeyboard /> },
+  { title: "Dark Theme", icon: <FaAffiliatetheme />, type: "darktheme" },
 ];
 
 const MENU_ITEMS_2 = [
@@ -50,7 +51,6 @@ const MENU_ITEMS_2 = [
   { title: "Settings", icon: <FaRegSun /> },
   ...MENU_ITEMS_1,
   // { title: <hr /> },
-  { title: "Dark Theme", icon: <FaAffiliatetheme />, type: "darktheme" },
   { title: "Log out", icon: <FaSignOutAlt />, type: "logout" },
 ];
 
@@ -66,9 +66,23 @@ function Navbar() {
     setUser([]);
   };
 
+  const handleDarkTheme = () => {
+    let element = document.body;
+    element.classList.toggle("dark_mode");
+  };
+
   const handleMenuChange = (menuItem) => {
-    if (menuItem.type === "logout") {
-      handleLogout();
+    switch (menuItem.type) {
+      case "logout":
+        handleLogout();
+        break;
+
+      case "darktheme":
+        handleDarkTheme();
+        break;
+
+      default:
+        break;
     }
   };
 
