@@ -3,7 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { BsPeople } from "react-icons/bs";
 import { BsCameraVideo } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import AccountItem from "~/components/AccountItem";
+import ListAccount from "~/components/ListAccount";
 import Button from "~/components/Button";
 import styles from "~/static/sass/layout/sidebar.module.scss";
 
@@ -72,33 +72,10 @@ function Sidebar() {
           </>
         )}
 
-        <div className={styles.sidebar_list}>
-          <p className={styles.account_title}>Suggested accounts</p>
-          <AccountItem />
-          <AccountItem />
-          <AccountItem />
-          <AccountItem />
-          <AccountItem />
-          <div>
-            <p className={styles.sidebar_seeAll}>See All</p>
-          </div>
-        </div>
+        <ListAccount title="Suggested accounts" seeMore="See all" />
         <hr className={styles.hr} />
-        <div className={styles.sidebar_list}>
-          <p className={styles.account_title}>Following accounts</p>
-          <AccountItem />
-          <AccountItem />
-          <AccountItem />
-          <AccountItem />
-          <AccountItem />
-          <div>
-            <p className={styles.sidebar_seeAll}>See more</p>
-          </div>
-        </div>
+        <ListAccount title="Following accounts" seeMore="See more" />
         <hr className={styles.hr} />
-        <div className={styles.sidebar_list}>
-          <p className={styles.account_title}>Discover</p>
-        </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ function Upload() {
     <div>
       <Navbar />
       <div className="content">
+        <br /> <br />
         <h1>Upload</h1>
       </div>
     </div>
