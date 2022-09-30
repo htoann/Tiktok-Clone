@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import styles from "~/static/sass/layout/DefaultLayout.module.scss";
+import styles from "~/static/sass/layout/defaultLayout.module.scss";
 
 function DefaultLayout({ children }) {
   return (
