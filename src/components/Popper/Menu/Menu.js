@@ -4,6 +4,7 @@ import PopperWrapper from "~/components/Popper/PopperWrapper";
 import MenuItem from "./MenuItem.js";
 import styles from "~/static/sass/components/menu.module.scss";
 import Header from "./Header.js";
+import "tippy.js/animations/scale.css";
 
 function Menu({ children, items = [], onChange = () => {} }) {
   const [history, setHistory] = useState([{ data: items }]);
@@ -29,7 +30,8 @@ function Menu({ children, items = [], onChange = () => {} }) {
   return (
     <Tippy
       interactive
-      delay={[0, 700]}
+      delay={[0, 500]}
+      onHide={() => setHistory((prev) => prev.slice(0, 1))}
       render={(attrs) => (
         <div className={styles.menu_items} tabIndex="-1" {...attrs}>
           <PopperWrapper>

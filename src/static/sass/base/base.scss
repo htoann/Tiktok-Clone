@@ -5,6 +5,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  // Dark mode
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
 }
 
 html {
@@ -48,11 +52,24 @@ a[href] {
   visibility: hidden;
 }
 
-// .account_title {
-//   margin-bottom: 8px;
-//   font-size: 14px;
-//   line-height: 20px;
-//   color: var(--text-gray);
-//   font-weight: 600;
-//   padding: 0 10px;
-// }
+// Custom tippy tooltips
+
+body {
+  .tippy-box {
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: var(--grayx4);
+    color: var(--white);
+    padding: 2px 0;
+  }
+
+  .tippy-arrow {
+    color: var(--grayx4);
+  }
+
+  .tippy-box[data-placement^="bottom"] > .tippy-arrow:before {
+    top: -8px;
+  }
+}

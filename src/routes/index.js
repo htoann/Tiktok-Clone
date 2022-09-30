@@ -4,7 +4,7 @@ import DefaultLayout from "~/components/layout/DefaultLayout";
 import Following from "~/pages/Following";
 import Home from "~/pages/Home";
 import Live from "~/pages/Live";
-import NotFound from "~/pages/notfound";
+import NotFound from "~/pages/NotFound";
 import Profile from "~/pages/Profile";
 import Upload from "~/pages/Upload";
 
