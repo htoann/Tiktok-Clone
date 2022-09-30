@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaSearch,
   FaRegPaperPlane,
   FaRegCommentAlt,
   FaPlus,
-  FaAutoprefixer,
-  FaQuestion,
-  FaRegKeyboard,
-  FaRegUser,
-  FaBitcoin,
-  FaRegSun,
-  FaSignOutAlt,
-  FaAffiliatetheme,
 } from "react-icons/fa";
 import { IoEllipsisVertical } from "react-icons/io5";
 import Logo from "~/assets/images/logo.svg";
@@ -27,32 +19,8 @@ import Avatar from "~/assets/images/Avatar.jpeg";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu/Menu";
 import styles from "~/static/sass/layout/navbar.module.scss";
-
-const MENU_ITEMS_1 = [
-  {
-    title: "English",
-    icon: <FaAutoprefixer />,
-    children: {
-      title: "Language",
-      data: [
-        { type: "language", code: "en", title: "English" },
-        { type: "language", code: "vi", title: "Tiếng Việt" },
-      ],
-    },
-  },
-  { title: "Feedback and help", icon: <FaQuestion />, to: "/feedback" },
-  { title: "Keyboard shortcuts", icon: <FaRegKeyboard /> },
-  { title: "Dark Theme", icon: <FaAffiliatetheme />, type: "darktheme" },
-];
-
-const MENU_ITEMS_2 = [
-  { title: "View profile", to: "/profile", icon: <FaRegUser /> },
-  { title: "Get coins", icon: <FaBitcoin /> },
-  { title: "Settings", icon: <FaRegSun /> },
-  ...MENU_ITEMS_1,
-  // { title: <hr /> },
-  { title: "Log out", icon: <FaSignOutAlt />, type: "logout" },
-];
+import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
+import { handleDarkTheme } from "~/utils/handleDarkTheme";
 
 function Navbar() {
   const [searchResult, setSearchResult] = useState([]);
@@ -66,10 +34,15 @@ function Navbar() {
     setUser([]);
   };
 
-  const handleDarkTheme = () => {
+  useEffect(() => {
     let element = document.body;
-    element.classList.toggle("dark_mode");
-  };
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  });
 
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
@@ -102,7 +75,6 @@ function Navbar() {
                 <div className={styles.search_title}>Account</div>
                 <AccountItem />
                 <AccountItem />
-                <AccountItem />
               </PopperWrapper>
             </div>
           )}
@@ -121,7 +93,7 @@ function Navbar() {
         </HeadlessTippy>
 
         <div className={styles.navbar_right}>
-          <Button text leftIcon={<FaPlus />}>
+          <Button text leftIcon={<FaPlus />} to="/upload">
             Upload
           </Button>
           {user ? (

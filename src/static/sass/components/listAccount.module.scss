@@ -1,0 +1,21 @@
+.sidebar_list {
+  .sidebar_seeAll {
+    color: rgb(254, 44, 85);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+  }
+
+  .account_title {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-gray);
+    font-weight: 600;
+    padding: 0 10px;
+  }
+}
