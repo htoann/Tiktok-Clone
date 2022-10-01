@@ -37,7 +37,7 @@ export const MENU_ITEMS_2 = [
   { title: "Get coins", icon: <FaBitcoin /> },
   { title: "Settings", icon: <FaRegSun /> },
   ...MENU_ITEMS_1,
-  { title: "Log out", icon: <FaSignOutAlt />, type: "logout" },
+  { title: "Log out", icon: <FaSignOutAlt />, type: "logout", separate: true },
 ];
 
 export const MENU_ITEMS_SHARE = [

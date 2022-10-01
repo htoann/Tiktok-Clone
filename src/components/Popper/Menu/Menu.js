@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import PopperWrapper from "~/components/Popper/Wrapper";
 import MenuItem from "./MenuItem.js";
 import Header from "./Header.js";
-import classNames from "classnames";
 import styles from "./Menu.module.scss";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/animations/scale.css";
+import classNames from "classnames";
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [], onChange = () => {}, left, right }) {
+function Menu({ children, items = [], onChange = () => {}, right }) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -35,12 +35,12 @@ function Menu({ children, items = [], onChange = () => {}, left, right }) {
   };
 
   const classes = cx(styles.menu_items, {
-    [styles.left]: left,
     [styles.right]: right,
   });
 
   return (
     <Tippy
+      visible
       interactive
       delay={[0, 500]}
       onHide={() => setHistory((prev) => prev.slice(0, 1))}
