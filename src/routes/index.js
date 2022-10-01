@@ -1,8 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import DefaultLayout from "~/components/layout/DefaultLayout";
+import DefaultLayout from "~/layout/DefaultLayout";
 import Following from "~/pages/Following";
-import Home from "~/pages/Home";
+import Home from "~/pages/Home/Home";
 import Live from "~/pages/Live";
 import NotFound from "~/pages/NotFound";
 import Profile from "~/pages/Profile";

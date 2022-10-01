@@ -87,10 +87,18 @@
       }
 
       .dropdown_icon {
+        height: 30px;
         border-radius: 50%;
         margin-left: 28px;
         cursor: pointer;
-        margin-top: 8px;
+        display: flex;
+      }
+
+      .dropdown_avatar {
+        border-radius: 50%;
+        margin-left: 28px;
+        cursor: pointer;
+        display: flex;
       }
     }
 

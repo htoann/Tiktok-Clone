@@ -3,8 +3,10 @@ import Siu from "~/assets/videos/Siu.mp4";
 import Avatar from "~/assets/images/Avatar.jpeg";
 import Verify from "~/assets/images/verify.svg";
 import { FaHeart, FaCommentDots, FaShare } from "react-icons/fa";
-import Button from "~/components/Button";
-import styles from "~/static/sass/pages/home.module.scss";
+import Button from "~/components/Button/Button";
+import styles from "./Home.module.scss";
+import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
+import Menu from "~/components/Popper/Menu/Menu";
 
 function Home() {
   return (
@@ -47,9 +49,11 @@ function Home() {
                   <strong className={styles.count}>502</strong>
                 </div>
                 <div className={styles.action_button}>
-                  <div className={styles.icon}>
-                    <FaShare />
-                  </div>
+                  <Menu items={MENU_ITEMS_SHARE} right>
+                    <div className={styles.icon}>
+                      <FaShare />
+                    </div>
+                  </Menu>
                   <strong className={styles.count}>7482</strong>
                 </div>
               </div>

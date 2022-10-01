@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import Tippy from "@tippyjs/react/headless";
-import PopperWrapper from "~/components/Popper/PopperWrapper";
+import PopperWrapper from "~/components/Popper/Wrapper";
 import MenuItem from "./MenuItem.js";
-import styles from "~/static/sass/components/menu.module.scss";
 import Header from "./Header.js";
+import classNames from "classnames";
+import styles from "./Menu.module.scss";
+import Tippy from "@tippyjs/react/headless";
 import "tippy.js/animations/scale.css";
 
-function Menu({ children, items = [], onChange = () => {} }) {
+const cx = classNames.bind(styles);
+
+function Menu({ children, items = [], onChange = () => {}, left, right }) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
-  const handleChildren = (item) => {
+  const handleToChildren = (item) => {
     const isParent = item.children;
     if (isParent) {
       setHistory((prev) => [...prev, item.children]);
@@ -23,9 +26,18 @@ function Menu({ children, items = [], onChange = () => {} }) {
 
   const renderItems = () => {
     return current.data.map((item, index) => (
-      <MenuItem key={index} data={item} onClick={() => handleChildren(item)} />
+      <MenuItem
+        key={index}
+        data={item}
+        onClick={() => handleToChildren(item)}
+      />
     ));
   };
+
+  const classes = cx(styles.menu_items, {
+    [styles.left]: left,
+    [styles.right]: right,
+  });
 
   return (
     <Tippy
@@ -33,7 +45,7 @@ function Menu({ children, items = [], onChange = () => {} }) {
       delay={[0, 500]}
       onHide={() => setHistory((prev) => prev.slice(0, 1))}
       render={(attrs) => (
-        <div className={styles.menu_items} tabIndex="-1" {...attrs}>
+        <div className={classes} tabIndex="-1" {...attrs}>
           <PopperWrapper>
             {history.length > 1 && <Header title="Language" onBack={onBack} />}
             {renderItems()}

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-// import styles from "~/static/sass/components/button.module.scss";
-import "~/static/sass/components/button.scss";
+import styles from "./Button.module.scss";
+
+const cx = classNames.bind(styles);
 
 function Button({
   to,
@@ -42,20 +43,20 @@ function Button({
     Comp = "a";
   }
 
-  let classes = classNames("btn_wrapper", {
+  const classes = cx(styles.btn_wrapper, {
     [className]: className,
-    btn_primary: primary,
-    btn_outline: outline,
-    btn_text: text,
-    btn_large: large,
-    disabled,
+    [styles.btn_primary]: primary,
+    [styles.btn_outline]: outline,
+    [styles.btn_text]: text,
+    [styles.btn_large]: large,
+    [styles.disabled]: disabled,
   });
 
   return (
     <Comp className={classes} {...props}>
-      {leftIcon && <span className="btn_icon">{leftIcon}</span>}
-      <span className="btn_title">{children}</span>
-      {rightIcon && <span className="btn_icon">{rightIcon}</span>}
+      {leftIcon && <span className={styles.btn_icon}>{leftIcon}</span>}
+      <span className={styles.btn_title}>{children}</span>
+      {rightIcon && <span className={styles.btn_icon}>{rightIcon}</span>}
     </Comp>
   );
 }

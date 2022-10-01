@@ -13,12 +13,12 @@ import HeadlessTippy from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
-import PopperWrapper from "~/components/Popper/PopperWrapper";
-import AccountItem from "~/components/AccountItem";
+import PopperWrapper from "~/components/Popper/Wrapper";
+import AccountItem from "~/components/AccountItem/AccountItem";
 import Avatar from "~/assets/images/Avatar.jpeg";
-import Button from "~/components/Button";
+import Button from "~/components/Button/Button";
 import Menu from "~/components/Popper/Menu/Menu";
-import styles from "~/static/sass/layout/navbar.module.scss";
+import styles from "./Navbar.module.scss";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
 import { handleDarkTheme } from "~/utils/handleDarkTheme";
 
@@ -112,7 +112,7 @@ function Navbar() {
 
               <Menu items={MENU_ITEMS_2} onChange={handleMenuChange}>
                 <img
-                  className={styles.dropdown_icon}
+                  className={styles.dropdown_avatar}
                   src={Avatar}
                   alt=""
                   width={32}

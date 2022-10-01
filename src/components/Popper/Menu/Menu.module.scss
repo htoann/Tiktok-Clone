@@ -24,6 +24,13 @@
   }
 }
 
+.right {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: -40px;
+  transform: translateY(12px);
+}
+
 .header {
   display: flex;
   align-items: center;

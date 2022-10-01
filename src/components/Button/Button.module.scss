@@ -5,10 +5,10 @@
 }
 
 .btn_wrapper {
+  line-height: 25px;
   border-radius: 4px;
   display: flex;
   align-items: center;
-  // justify-content: center;
   cursor: pointer;
   font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
   font-weight: 700;
@@ -44,17 +44,11 @@
   border-style: solid;
   color: var(--red);
   border-color: var(--red);
-  background-color: var(--white);
-  min-height: 28px;
-  line-height: 22px;
-  font-weight: 600;
-  display: flex;
   position: relative;
-  padding: 6px 8px;
   right: 0;
   position: absolute;
   top: 28px;
-  padding: 0 10px;
+  padding: 2px 10px;
 
   &:hover {
     background-color: rgba(254, 44, 85, 0.06);
@@ -62,27 +56,20 @@
 }
 
 .btn_large {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 4px;
   color: rgba(254, 44, 85, 1);
   border-color: rgba(254, 44, 85, 1);
-  background-color: rgba(255, 255, 255, 1);
-  min-width: 168px;
-  min-height: 48px;
   font-size: 18px;
-  line-height: 25px;
-  font-weight: 600;
-  font-family: SofiaPro, PingFangSC, sans-serif;
+  display: flex;
+  position: relative;
+  align-items: center;
   justify-content: center;
-  padding: 6px 8px;
+  padding: 10px 8px;
   width: 100%;
 }
 
 .btn_text {
   padding: 8px 16px;
   border: 1px solid rgba(22, 24, 35, 0.12);
-  font-weight: 550;
   font-size: 16px;
   color: var(--black);
 

@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "~/static/sass/components/listAccount.module.scss";
-import AccountItem from "./AccountItem";
+import styles from "./ListAccount.module.scss";
+import AccountItem from "../AccountItem/AccountItem";
 
 function ListAccount({ title, seeMore }) {
   return (

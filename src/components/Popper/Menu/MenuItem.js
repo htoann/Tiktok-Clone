@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "~/components/Button";
-import styles from "~/static/sass/components/menu.module.scss";
+import Button from "~/components/Button/Button";
+import styles from "./Menu.module.scss";
 
 function MenuItem({ data, onClick }) {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Verify from "~/assets/images/verify.svg";
 import Avatar from "~/assets/images/Avatar.jpeg";
-import styles from "~/static/sass/components/accountItem.module.scss";
+import styles from "./AccountItem.module.scss";
 
 function AccountItem() {
   return (
