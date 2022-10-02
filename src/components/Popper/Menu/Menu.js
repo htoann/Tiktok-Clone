@@ -40,7 +40,7 @@ function Menu({ children, items = [], onChange = () => {}, right }) {
 
   return (
     <Tippy
-      visible
+      // visible
       interactive
       delay={[0, 500]}
       onHide={() => setHistory((prev) => prev.slice(0, 1))}

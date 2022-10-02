@@ -2,6 +2,13 @@
   margin-top: 10px;
   min-width: 220px;
 
+  &.right {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: -60px;
+    transform: translateY(12px);
+  }
+
   .menu_item {
     width: 100%;
     padding: 10px 24px;
@@ -14,6 +21,10 @@
     white-space: nowrap;
     line-height: 2rem;
 
+    &.separate {
+      border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+
     &:hover {
       background-color: var(--grayx2);
     }
@@ -22,13 +33,6 @@
   .menu_item:last-child {
     margin-bottom: 8px;
   }
-}
-
-.right {
-  position: absolute;
-  bottom: calc(100% + 12px);
-  left: -40px;
-  transform: translateY(12px);
 }
 
 .header {
@@ -54,8 +58,4 @@
     left: 50%;
     transform: translateX(-50%);
   }
-}
-
-.separate {
-  border-top: 1px solid rgba(22, 24, 35, 0.12);
 }

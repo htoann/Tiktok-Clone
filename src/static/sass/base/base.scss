@@ -13,9 +13,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: ProximaNova;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -33,7 +31,6 @@ a[href] {
 }
 
 // Custom scrollbar
-/* width */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -47,7 +44,6 @@ a[href] {
 }
 
 // Custom tippy tooltips
-
 body {
   .tippy-box {
     border-radius: 8px;
@@ -68,6 +64,7 @@ body {
   }
 }
 
+// Dark Theme
 .dark {
   * {
     background: #0d1117 !important;
