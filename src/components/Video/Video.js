@@ -7,17 +7,18 @@ import Button from "~/components/Button";
 import styles from "./Video.module.scss";
 import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
 import Menu from "~/components/Popper/Menu/Menu";
+import Image from "../Image/Image";
 
 function Video() {
   return (
     <div className={styles.suggest_item}>
-      <img className={styles.avatar} src={Avatar} alt="" />
+      <Image className={styles.avatar} src={Avatar} alt="" />
       <div className={styles.content}>
         <div className={styles.info_containter}>
           <div className={styles.info}>
             <div className={styles.author}>
               <h3 className={styles.username}>cristiano_ronaldo</h3>
-              <img src={Verify} alt="" />
+              <Image src={Verify} alt="" />
               <h3 className={styles.name}>Cristiano Ronaldo</h3>
             </div>
             <span className={styles.video_desc}>

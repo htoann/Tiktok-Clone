@@ -21,6 +21,7 @@ import Menu from "~/components/Popper/Menu/Menu";
 import styles from "./Navbar.module.scss";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
 import { handleDarkTheme } from "~/utils/handleDarkTheme";
+import Image from "~/components/Image/Image";
 
 function Navbar() {
   const [searchResult, setSearchResult] = useState([]);
@@ -111,12 +112,10 @@ function Navbar() {
               </Tippy>
 
               <Menu items={MENU_ITEMS_2} onChange={handleMenuChange}>
-                <img
+                <Image
                   className={styles.dropdown_avatar}
                   src={Avatar}
-                  alt=""
-                  width={32}
-                  height={32}
+                  alt="Avatar"
                 />
               </Menu>
             </>
