@@ -5,7 +5,7 @@ import Following from "~/pages/Following";
 import Home from "~/pages/Home/Home";
 import Live from "~/pages/Live";
 import NotFound from "~/pages/NotFound";
-import Profile from "~/pages/Profile";
+import Profile from "~/pages/Profile/Profile";
 import Upload from "~/pages/Upload";
 
 export const publicRoutes = (
@@ -27,7 +27,7 @@ export const publicRoutes = (
       }
     />
     <Route
-      path="/profile"
+      path="/@:nickname"
       element={
         <DefaultLayout>
           <Profile />

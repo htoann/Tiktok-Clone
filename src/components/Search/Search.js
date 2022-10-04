@@ -70,7 +70,11 @@ function Search() {
             <PopperWrapper>
               <div className={styles.search_title}>Account</div>
               {searchResult.map((item) => (
-                <AccountItem user={item} key={item.id} />
+                <AccountItem
+                  user={item}
+                  key={item.id}
+                  onClick={handleHideResult}
+                />
               ))}
             </PopperWrapper>
           </div>
