@@ -8,7 +8,6 @@ function Home() {
       <div className={styles.main_container}>
         <Video />
         <Video />
-        <Video />
       </div>
     </div>
   );

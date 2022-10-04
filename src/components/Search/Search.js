@@ -6,6 +6,7 @@ import "tippy.js/dist/tippy.css";
 import { FaSearch, FaSpinner, FaTimesCircle } from "react-icons/fa";
 import styles from "./Search.module.scss";
 import axios from "axios";
+import { DebounceInput } from "react-debounce-input";
 
 function Search() {
   const [searchValue, setSearchValue] = useState("");
@@ -81,7 +82,8 @@ function Search() {
         )}
       >
         <form className={styles.navbar_search}>
-          <input
+          <DebounceInput
+            debounceTimeout={300}
             value={searchValue}
             className={styles.navbar_search_input}
             type="text"
@@ -89,7 +91,7 @@ function Search() {
             onChange={handleSearchValue}
             ref={searchInput}
             onFocus={handleShowResult}
-          />
+          ></DebounceInput>
           {searchValue && !isLoading && (
             <button className={styles.clear} onClick={handleClear}>
               <FaTimesCircle />
