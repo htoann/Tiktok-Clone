@@ -1,21 +1,25 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PopperWrapper from "~/components/Popper/Wrapper";
 import AccountItem from "~/components/AccountItem/AccountItem";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 import { FaSearch, FaSpinner, FaTimesCircle } from "react-icons/fa";
 import styles from "./Search.module.scss";
+import axios from "axios";
 
 function Search() {
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [showResult, setShowResult] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const searchInput = useRef(null);
 
-  setTimeout(() => {
-    setSearchResult([1, 2]);
-  }, 1000);
+  const handleSearchValue = (e) => {
+    if (e.target.value[0] !== " ") {
+      setSearchValue(e.target.value);
+    }
+  };
 
   const handleClear = () => {
     setSearchResult([]);
@@ -31,6 +35,30 @@ function Search() {
     setShowResult(true);
   };
 
+  useEffect(() => {
+    if (!searchValue.trim()) {
+      setSearchResult([]);
+      return;
+    }
+
+    const fetchResult = async () => {
+      setIsLoading(true);
+      try {
+        const res = await axios(
+          `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
+            searchValue
+          )}&type=less`
+        );
+        setSearchResult(res.data.data);
+        setIsLoading(false);
+      } catch (err) {
+        setIsLoading(false);
+        console.log(err);
+      }
+    };
+    fetchResult();
+  }, [searchValue]);
+
   return (
     <div>
       <Tippy
@@ -41,8 +69,9 @@ function Search() {
           <div className={styles.search_results} tabIndex="-1" {...attrs}>
             <PopperWrapper>
               <div className={styles.search_title}>Account</div>
-              <AccountItem />
-              <AccountItem />
+              {searchResult.map((item) => (
+                <AccountItem user={item} key={item.id} />
+              ))}
             </PopperWrapper>
           </div>
         )}
@@ -53,14 +82,16 @@ function Search() {
             className={styles.navbar_search_input}
             type="text"
             placeholder="Search accounts and videos"
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={handleSearchValue}
             ref={searchInput}
             onFocus={handleShowResult}
           />
-          {searchValue && (
-            <FaTimesCircle className={styles.clear} onClick={handleClear} />
+          {searchValue && !isLoading && (
+            <button className={styles.clear} onClick={handleClear}>
+              <FaTimesCircle />
+            </button>
           )}
-          {/* <FaSpinner className={styles.loading} /> */}
+          {isLoading && <FaSpinner className={styles.loading} />}
           <span className={styles.navbar_search_line}></span>
           <button className={styles.navbar_search_icon}>
             <FaSearch />

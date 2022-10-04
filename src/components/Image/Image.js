@@ -1,5 +1,5 @@
 import React, { useState, forwardRef } from "react";
-import Tiktok from "~/assets/images/Avatar.jpeg";
+import Tiktok from "~/assets/images/Tiktok.png";
 import styles from "./Image.module.scss";
 
 const Image = forwardRef(({ src, alt, width, height, ...props }, ref) => {
