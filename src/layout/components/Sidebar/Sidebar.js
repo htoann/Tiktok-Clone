@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { BsPeople } from "react-icons/bs";
 import { BsCameraVideo } from "react-icons/bs";
@@ -6,14 +6,31 @@ import { Link } from "react-router-dom";
 import ListAccount from "~/components/ListAccount/ListAccounts.js";
 import Button from "~/components/Button/Button";
 import styles from "./Sidebar.module.scss";
+import axios from "axios";
 
 function Sidebar() {
   const [isActive, setIsActive] = useState(1);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState([]);
+  const [suggestedList, setSuggestedList] = useState([]);
+  const [followingList, setFollowingList] = useState([]);
 
   const handleActive = (id) => {
     setIsActive(id);
   };
+
+  useEffect(() => {
+    const getSuggestedList = async () => {
+      try {
+        const res = await axios(
+          `https://tiktok.fullstack.edu.vn/api/users/suggested?page=1&per_page=8`
+        );
+        setSuggestedList(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getSuggestedList();
+  }, []);
 
   return (
     <div className={styles.sidebar}>
@@ -72,10 +89,16 @@ function Sidebar() {
           </>
         )}
 
-        <ListAccount title="Suggested accounts" seeMore="See all" />
-        <hr className={styles.hr} />
-        <ListAccount title="Following accounts" seeMore="See more" />
-        <hr className={styles.hr} />
+        <ListAccount
+          title="Suggested accounts"
+          seeMore="See all"
+          list={suggestedList}
+        />
+        <ListAccount
+          title="Following accounts"
+          seeMore="See more"
+          list={followingList}
+        />
       </div>
     </div>
   );

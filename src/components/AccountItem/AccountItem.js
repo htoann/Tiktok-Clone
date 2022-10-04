@@ -25,7 +25,9 @@ function AccountItem({ user, onClick }) {
                 <Image className={styles.verify_author} src={Verify} alt="" />
               )}
             </div>
-            <div className={styles.account_item_name}>{user.full_name}</div>
+            <div className={styles.account_item_name}>
+              {user.full_name || `${user.first_name} ${user.last_name}`}
+            </div>
           </div>
         </Link>
       )}
