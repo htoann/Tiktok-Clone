@@ -4,7 +4,6 @@ import MenuItem from "./MenuItem.js";
 import Header from "./Header.js";
 import styles from "./Menu.module.scss";
 import Tippy from "@tippyjs/react/headless";
-import "tippy.js/animations/scale.css";
 import classNames from "classnames";
 
 const cx = classNames.bind(styles);

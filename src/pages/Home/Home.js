@@ -7,9 +7,8 @@ function Home() {
     <div className={styles.home}>
       <div className={styles.main_container}>
         <Video />
-        <hr className={styles.hr} />
         <Video />
-        <hr className={styles.hr} />
+        <Video />
       </div>
     </div>
   );

@@ -1,30 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaSearch,
-  FaRegPaperPlane,
-  FaRegCommentAlt,
-  FaPlus,
-} from "react-icons/fa";
+import { FaRegPaperPlane, FaRegCommentAlt, FaPlus } from "react-icons/fa";
 import { IoEllipsisVertical } from "react-icons/io5";
 import Logo from "~/assets/images/logo.svg";
 
-import HeadlessTippy from "@tippyjs/react/headless";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
-import PopperWrapper from "~/components/Popper/Wrapper";
-import AccountItem from "~/components/AccountItem/AccountItem";
 import Avatar from "~/assets/images/Avatar.jpeg";
 import Button from "~/components/Button/Button";
 import Menu from "~/components/Popper/Menu/Menu";
-import styles from "./Navbar.module.scss";
-import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
-import { handleDarkTheme } from "~/utils/handleDarkTheme";
 import Image from "~/components/Image/Image";
+import Search from "~/components/Search";
+import styles from "./Navbar.module.scss";
+import { handleDarkTheme } from "~/utils/handleDarkTheme";
+import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
 
 function Navbar() {
-  const [searchResult, setSearchResult] = useState([]);
   const [user, setUser] = useState([]);
 
   const handleLogout = () => {
@@ -67,31 +59,7 @@ function Navbar() {
           <img src={Logo} alt="Tiktok" />
         </Link>
 
-        <HeadlessTippy
-          visible={searchResult.length > 0}
-          interactive
-          render={(attrs) => (
-            <div className={styles.search_results} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <div className={styles.search_title}>Account</div>
-                <AccountItem />
-                <AccountItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <form className={styles.navbar_search}>
-            <input
-              className={styles.navbar_search_input}
-              type="text"
-              placeholder="Search accounts and videos"
-            />
-            <span className={styles.navbar_search_line}></span>
-            <button className={styles.navbar_search_icon}>
-              <FaSearch />
-            </button>
-          </form>
-        </HeadlessTippy>
+        <Search />
 
         <div className={styles.navbar_right}>
           <Button text leftIcon={<FaPlus />} to="/upload">
