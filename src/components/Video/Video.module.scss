@@ -1,0 +1,113 @@
+.suggest_item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+  max-width: 692px;
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+
+  .content {
+    margin-left: 12px;
+
+    // flex: 1 1 624px;
+
+    .info_containter {
+      display: flex;
+
+      .info {
+        inline-size: 500px;
+        overflow: hidden;
+
+        .author {
+          .username {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 25px;
+            display: inline-block;
+            margin-right: 4px;
+          }
+
+          .name {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            display: inline-block;
+            line-height: 28px;
+            margin-left: 4px;
+          }
+        }
+
+        .video_desc {
+        }
+      }
+    }
+
+    .video_wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      margin-top: 10px;
+
+      .video_card {
+        video {
+          border-radius: 10px;
+          width: 350px;
+        }
+      }
+
+      .action_items {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        flex-direction: column;
+        margin-left: 20px;
+
+        .action_button {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          padding: 12px;
+          font-size: 0px;
+          transition: all ease-in-out 200ms;
+          background-color: var(--grayx2);
+          margin-top: 8px;
+          margin-bottom: 6px;
+          border-radius: 50%;
+          font-size: 30px;
+        }
+
+        .count {
+          color: var(--text-gray);
+          font-size: 12px;
+          line-height: 17px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.hr {
+  color: grayx3;
+  opacity: 0.1;
+  margin-bottom: 15px;
+  padding: 0 10px !important;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
-import styles from "~/static/sass/components/menu.module.scss";
+import styles from "./Menu.module.scss";
 
 function Header({ title, onBack }) {
   return (

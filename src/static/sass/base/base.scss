@@ -33,7 +33,6 @@ a[href] {
 }
 
 // Custom scrollbar
-/* width */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -47,7 +46,6 @@ a[href] {
 }
 
 // Custom tippy tooltips
-
 body {
   .tippy-box {
     border-radius: 8px;
@@ -68,6 +66,7 @@ body {
   }
 }
 
+// Dark Theme
 .dark {
   * {
     background: #0d1117 !important;

@@ -7,6 +7,11 @@ import {
   FaRegSun,
   FaSignOutAlt,
   FaAffiliatetheme,
+  FaCode,
+  FaRegPaperPlane,
+  FaFacebook,
+  FaInstagram,
+  FaLink,
 } from "react-icons/fa";
 import React from "react";
 
@@ -32,6 +37,13 @@ export const MENU_ITEMS_2 = [
   { title: "Get coins", icon: <FaBitcoin /> },
   { title: "Settings", icon: <FaRegSun /> },
   ...MENU_ITEMS_1,
-  { title: <hr /> },
-  { title: "Log out", icon: <FaSignOutAlt />, type: "logout" },
+  { title: "Log out", icon: <FaSignOutAlt />, type: "logout", separate: true },
+];
+
+export const MENU_ITEMS_SHARE = [
+  { title: "Embed", icon: <FaCode /> },
+  { title: "Send to friends", icon: <FaRegPaperPlane /> },
+  { title: "Share to Facebook", icon: <FaFacebook /> },
+  { title: "Share to Instagram", icon: <FaInstagram /> },
+  { title: "Copy link", icon: <FaLink /> },
 ];
