@@ -1,0 +1,112 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding-top: 32px;
+  margin: 0 auto;
+  padding: 32px 24px;
+
+  .profile {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      position: relative;
+      flex: 0 0 auto;
+      margin-bottom: 20px;
+      padding-right: 92px;
+      max-width: 624px;
+
+      .info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .avatar {
+          width: 116px;
+          height: 116px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        .title_container {
+          flex: 1;
+          margin-left: 20px;
+
+          .user_title {
+            font-size: 32px;
+            line-height: 38px;
+            padding-bottom: 4px;
+            text-overflow: ellipsis;
+            text-align: left;
+
+            .verify {
+              margin-left: 8px;
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          .user_fullname {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            text-overflow: ellipsis;
+            height: 25px;
+            overflow: hidden;
+            max-width: 450px;
+            white-space: nowrap;
+            display: flex;
+            align-items: flex-end;
+          }
+
+          .button_container {
+            max-width: 100px;
+
+            .button_follow {
+              color: rgba(255, 255, 255, 1);
+              background-color: rgba(254, 44, 85, 1);
+              line-height: 25px;
+              font-weight: 600;
+              display: flex;
+              padding: 6px 8px;
+              min-width: 208px;
+            }
+          }
+        }
+      }
+      .count_info {
+        display: flex;
+        margin-top: 50px;
+        color: rgba(18, 18, 18, 0.75);
+
+        .number_container {
+          color: rgba(22, 24, 35, 1);
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 25px;
+          display: flex;
+
+          span {
+            color: rgba(22, 24, 35, 0.75);
+            font-weight: 400;
+            margin-left: 6px;
+          }
+
+          & + .number_container {
+            margin-left: 20px;
+          }
+        }
+      }
+
+      .bio {
+        color: rgba(22, 24, 35, 1);
+        font-weight: 400;
+        font-size: 16px;
+        white-space: pre-line;
+        margin-top: 10px;
+      }
+    }
+  }
+}

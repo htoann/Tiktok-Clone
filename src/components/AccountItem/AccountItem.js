@@ -10,7 +10,7 @@ function AccountItem({ user, onClick }) {
       {user && (
         <Link
           to={`/@${user.nickname}`}
-          // state={{ user }}
+          state={{ user }}
           className={styles.account_item}
         >
           <Image
