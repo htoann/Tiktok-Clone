@@ -30,6 +30,7 @@ function Search() {
 
   const handleHideResult = () => {
     setShowResult(false);
+    setSearchValue("");
   };
 
   const handleShowResult = () => {

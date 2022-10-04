@@ -10,7 +10,7 @@ function Profile() {
   const location = useLocation();
 
   useEffect(() => {
-    setUser(location.state?.user);
+    setUser(location?.state?.user);
   }, [location]);
 
   return (
@@ -57,7 +57,9 @@ function Profile() {
                 <span>Likes</span>
               </div>
             </h2>
-            <h2 className={styles.bio}>{user.bio}</h2>
+            <h2 className={styles.bio}>
+              {user.bio ? user.bio : "No bio yet."}
+            </h2>
           </div>
           <div className={styles.content}></div>
         </div>
