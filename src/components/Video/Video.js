@@ -6,22 +6,30 @@ import styles from "./Video.module.scss";
 import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
 import Menu from "~/components/Popper/Menu/Menu";
 import Image from "../Image/Image";
+import { Link } from "react-router-dom";
 
 function Video({ data }) {
   return (
     <div>
       <div className={styles.suggest_item}>
-        <Image className={styles.avatar} src={data.user.avatar} alt="" />
+        <Link to={`/@${data.user.nickname}`} state={{ user: data.user }}>
+          <Image className={styles.avatar} src={data.user.avatar} alt="" />
+        </Link>
         <div className={styles.content}>
           <div className={styles.info_containter}>
             <div className={styles.info}>
               <div className={styles.author_container}>
                 <div className={styles.author}>
-                  <h3 className={styles.username}>{data.user.nickname}</h3>
-                  {data.user.tick && <Image src={Verify} alt="" />}
-                  <h3 className={styles.name}>
-                    {data.user.first_name} {data.user.last_name}
-                  </h3>
+                  <Link
+                    to={`/@${data.user.nickname}`}
+                    state={{ user: data.user }}
+                  >
+                    <h3 className={styles.username}>{data.user.nickname}</h3>
+                    {data.user.tick && <Image src={Verify} alt="" />}
+                    <h3 className={styles.name}>
+                      {data.user.first_name} {data.user.last_name}
+                    </h3>
+                  </Link>
                 </div>
               </div>
               <span className={styles.video_desc}>{data.description}</span>
@@ -31,7 +39,7 @@ function Video({ data }) {
                   `Nhạc nền - ${data.user.first_name} ${data.user.last_name}`}
               </h4>
             </div>
-            {!data.user.is_follow ? (
+            {data.user.is_follow ? (
               <Button outline className={styles.followed}>
                 Following
               </Button>
