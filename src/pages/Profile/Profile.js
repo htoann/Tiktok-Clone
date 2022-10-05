@@ -27,7 +27,7 @@ function Profile() {
               />
               <div className={styles.title_container}>
                 <h2 className={styles.user_title}>
-                  {user.last_name}
+                  {user.nickname}
                   {user.tick && (
                     <Image src={Verify} className={styles.verify} />
                   )}

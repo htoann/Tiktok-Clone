@@ -5,7 +5,7 @@ import styles from "./DefaultLayout.module.scss";
 
 function DefaultLayout({ children }) {
   return (
-    <div className={styles.default_layout}>
+    <div className={styles.wrapper}>
       <Navbar />
       <div className={styles.container}>
         <Sidebar className={styles.sidebar} />
