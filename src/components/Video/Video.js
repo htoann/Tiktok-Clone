@@ -9,44 +9,41 @@ import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
 import Menu from "~/components/Popper/Menu/Menu";
 import Image from "../Image/Image";
 
-function Video() {
+function Video({ data }) {
   return (
     <div>
       <div className={styles.suggest_item}>
-        <Image className={styles.avatar} src={Avatar} alt="" />
+        <Image className={styles.avatar} src={data.user.avatar} alt="" />
         <div className={styles.content}>
           <div className={styles.info_containter}>
             <div className={styles.info}>
               <div className={styles.author}>
-                <h3 className={styles.username}>cristiano_ronaldo</h3>
-                <Image src={Verify} alt="" />
-                <h3 className={styles.name}>Cristiano Ronaldo</h3>
+                <h3 className={styles.username}>{data.nickname}</h3>
+                {data.user.tick && <Image src={Verify} alt="" />}
+                <h3 className={styles.name}>
+                  {data.user.first_name} {data.user.last_name}
+                </h3>
               </div>
-              <span className={styles.video_desc}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Ratione, incidunt non distinctio nemo saepe nulla architecto
-                quam id nihil corporis et amet? Corporis dolorum sed alias
-                expedita iste
-              </span>
+              <span className={styles.video_desc}>{data.description}</span>
             </div>
             <Button outline>Follow</Button>
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <video controls src={Siu} loop muted></video>
+              <video controls src={data.file_url} loop muted></video>
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
                 <div className={styles.icon}>
                   <FaHeart />
                 </div>
-                <strong className={styles.count}>484.3K</strong>
+                <strong className={styles.count}>{data.likes_count}</strong>
               </div>
               <div className={styles.action_button}>
                 <div className={styles.icon}>
                   <FaCommentDots />
                 </div>
-                <strong className={styles.count}>502</strong>
+                <strong className={styles.count}>{data.comments_count}</strong>
               </div>
               <div className={styles.action_button}>
                 <Menu items={MENU_ITEMS_SHARE} right>
@@ -54,7 +51,7 @@ function Video() {
                     <FaShare />
                   </div>
                 </Menu>
-                <strong className={styles.count}>7482</strong>
+                <strong className={styles.count}>{data.shares_count}</strong>
               </div>
             </div>
           </div>
