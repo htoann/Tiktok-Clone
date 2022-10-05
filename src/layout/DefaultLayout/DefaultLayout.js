@@ -8,7 +8,7 @@ function DefaultLayout({ children }) {
     <div className={styles.wrapper}>
       <Navbar />
       <div className={styles.container}>
-        <Sidebar className={styles.sidebar} />
+        <Sidebar />
         <div className={styles.content}>{children}</div>
       </div>
     </div>
