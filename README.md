@@ -2,7 +2,7 @@
 
 Make Your Day - TikTok
 
-## Live demo:
+## Live demo
 
 Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
