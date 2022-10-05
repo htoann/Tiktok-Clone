@@ -10,7 +10,7 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 F8
 
-## Main technology used:
+## Main technology and libraries used:
 
 - ReactJS
 - Tippy
