@@ -8,7 +8,7 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 ## API
 
-F8
+F8 - https://tiktok.fullstack.edu.vn/api/
 
 When I wrote this code, only god and I knew how it worked.
 Now, only god knows it!
