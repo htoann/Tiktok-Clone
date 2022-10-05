@@ -5,8 +5,8 @@ import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 import { FaSearch, FaSpinner, FaTimesCircle } from "react-icons/fa";
 import styles from "./Search.module.scss";
-import axios from "axios";
 import { DebounceInput } from "react-debounce-input";
+import * as searchService from "~/services/searchService";
 
 function Search() {
   const [searchValue, setSearchValue] = useState("");
@@ -43,22 +43,16 @@ function Search() {
       return;
     }
 
-    const fetchResult = async () => {
+    const fetchApi = async () => {
       setIsLoading(true);
-      try {
-        const res = await axios(
-          `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-            searchValue
-          )}&type=less`
-        );
-        setSearchResult(res.data.data);
-        setIsLoading(false);
-      } catch (err) {
-        setIsLoading(false);
-        console.log(err);
-      }
+
+      const result = await searchService.search(searchValue);
+      setSearchResult(result);
+
+      setIsLoading(false);
     };
-    fetchResult();
+
+    fetchApi();
   }, [searchValue]);
 
   return (
@@ -90,7 +84,7 @@ function Search() {
             type="text"
             placeholder="Search accounts and videos"
             onChange={handleSearchValue}
-            ref={searchInput}
+            inputRef={searchInput}
             onFocus={handleShowResult}
           ></DebounceInput>
           {searchValue && !isLoading && (
