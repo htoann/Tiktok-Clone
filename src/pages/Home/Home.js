@@ -18,14 +18,12 @@ function Home() {
   console.log(listVideo);
 
   return (
-    <div className={styles.home}>
-      <div className={styles.main_container}>
-        {listVideo.map((video) => (
-          <div key={video.id}>
-            <Video data={video} />
-          </div>
-        ))}
-      </div>
+    <div className={styles.main_container}>
+      {listVideo.map((video) => (
+        <div key={video.id}>
+          <Video data={video} />
+        </div>
+      ))}
     </div>
   );
 }
