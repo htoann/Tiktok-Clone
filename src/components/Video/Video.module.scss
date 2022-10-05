@@ -32,21 +32,24 @@
           .author {
             display: block;
 
-            .username {
-              font-weight: 700;
-              font-size: 18px;
-              line-height: 25px;
-              display: inline-block;
-              margin-right: 4px;
-            }
+            a {
+              color: unset;
 
-            .name {
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 20px;
-              display: inline-block;
-              line-height: 28px;
-              // margin-left: 4px;
+              .username {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 25px;
+                display: inline-block;
+                margin-right: 4px;
+              }
+
+              .name {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                display: inline-block;
+                line-height: 28px;
+              }
             }
           }
         }
@@ -144,4 +147,12 @@
   opacity: 0.1;
   margin-bottom: 15px;
   padding: 0 10px !important;
+}
+
+.username,
+.video_music {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 }

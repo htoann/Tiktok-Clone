@@ -1,4 +1,4 @@
-.default_layout {
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,17 +7,15 @@
     margin-top: 60px;
     display: flex;
     width: 100vw;
-    max-width: 1150px;
+    max-width: var(--default-layout-width);
     justify-content: space-between;
     align-self: center;
     flex: 1 1 auto;
-    height: 100vh;
     gap: 80px;
 
     .content {
       width: 100%;
-      margin-right: 16px;
-      margin-left: 16px;
+      margin: 0 16px;
     }
   }
 }

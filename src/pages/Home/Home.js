@@ -15,8 +15,6 @@ function Home() {
     fetchApi();
   }, []);
 
-  console.log(listVideo);
-
   return (
     <div className={styles.main_container}>
       {listVideo.map((video) => (

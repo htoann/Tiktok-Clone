@@ -2,7 +2,7 @@ import { request } from "~/utils/axiosInstance";
 
 export const listVideo = async (type = "for-you", page = 1) => {
   try {
-    const res = await request.get("videos?type=for-you&page=1", {
+    const res = await request.get("videos", {
       params: {
         type,
         page,
