@@ -6,7 +6,7 @@ import "tippy.js/dist/tippy.css";
 import { FaSearch, FaSpinner, FaTimesCircle } from "react-icons/fa";
 import styles from "./Search.module.scss";
 import { DebounceInput } from "react-debounce-input";
-import * as searchService from "~/services/searchService";
+import { searchService } from "~/services/searchService";
 
 function Search() {
   const [searchValue, setSearchValue] = useState("");

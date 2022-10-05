@@ -1,4 +1,4 @@
-import * as request from "~/utils/axiosInstance";
+import { request } from "~/utils/axiosInstance";
 
 export const search = async (q, type = "less") => {
   try {
@@ -13,3 +13,5 @@ export const search = async (q, type = "less") => {
     console.log(e);
   }
 };
+
+export * as searchService from "~/services/searchService";

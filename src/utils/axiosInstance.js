@@ -6,8 +6,10 @@ export const instance = axios.create({
   headers: { "X-Custom-Header": "foobar" },
 });
 
-export const get = async (url, options = {}) => {
+export const axiosGet = async (url, options = {}) => {
   const response = await instance.get(url, options);
 
   return response.data;
 };
+
+export * as request from "~/utils/axiosInstance";

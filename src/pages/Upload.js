@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "~/layout/components/Navbar/Navbar";
+import Navbar from "~/layout/Navbar/Navbar";
 
 function Upload() {
   return (

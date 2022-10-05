@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
 import styles from "./DefaultLayout.module.scss";
 
 function DefaultLayout({ children }) {
