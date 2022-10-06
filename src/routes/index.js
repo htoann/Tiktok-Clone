@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import DefaultLayout from "~/layout/DefaultLayout";
+import Defaultlayouts from "~/layouts/Defaultlayout";
 import Following from "~/pages/Following";
 import Home from "~/pages/Home/Home";
 import Live from "~/pages/Live";
@@ -13,33 +13,33 @@ export const publicRoutes = (
     <Route
       path="/"
       element={
-        <DefaultLayout>
+        <Defaultlayouts>
           <Home />
-        </DefaultLayout>
+        </Defaultlayouts>
       }
     />
     <Route
       path="/following"
       element={
-        <DefaultLayout>
+        <Defaultlayouts>
           <Following />
-        </DefaultLayout>
+        </Defaultlayouts>
       }
     />
     <Route
       path="/@:nickname"
       element={
-        <DefaultLayout>
+        <Defaultlayouts>
           <Profile />
-        </DefaultLayout>
+        </Defaultlayouts>
       }
     />
     <Route
       path="/live"
       element={
-        <DefaultLayout>
+        <Defaultlayouts>
           <Live />
-        </DefaultLayout>
+        </Defaultlayouts>
       }
     />
     <Route path="/upload" element={<Upload />} />
