@@ -13,19 +13,27 @@ function Sidebar() {
   const [user, setUser] = useState([]);
   const [suggestedList, setSuggestedList] = useState([]);
   const [followingList, setFollowingList] = useState([]);
+  // const [perpage, setPerPage] = useState(5);
+  const [page, setPage] = useState(1);
 
   const handleActive = (id) => {
     setIsActive(id);
   };
 
+  const handleSeeMore = () => {
+    page != 10 && setPage((prev) => prev + 1);
+  };
+
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await getUsersService.suggestedList();
-      setSuggestedList(result);
+      const result = await getUsersService.suggestedList(page);
+      setSuggestedList(result.data);
     };
 
     fetchApi();
-  }, []);
+  }, [page]);
+
+  console.log("page: " + page);
 
   return (
     <div className={styles.sidebar}>
@@ -86,14 +94,10 @@ function Sidebar() {
 
         <ListAccount
           title="Suggested accounts"
-          seeMore="See all"
           list={suggestedList}
+          onClick={handleSeeMore}
         />
-        <ListAccount
-          title="Following accounts"
-          seeMore="See more"
-          list={followingList}
-        />
+        <ListAccount title="Following accounts" list={followingList} />
       </div>
     </div>
   );
