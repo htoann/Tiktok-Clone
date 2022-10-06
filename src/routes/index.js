@@ -6,40 +6,40 @@ import Live from "~/pages/Live";
 import NotFound from "~/pages/NotFound";
 import Profile from "~/pages/Profile/Profile";
 import Upload from "~/pages/Upload";
-import Defaultlayout from "~/layouts/Defaultlayout";
+import DefaultLayout from "~/layouts/DefaultLayout";
 
 export const publicRoutes = (
   <>
     <Route
       path="/"
       element={
-        <Defaultlayout>
+        <DefaultLayout>
           <Home />
-        </Defaultlayout>
+        </DefaultLayout>
       }
     />
     <Route
       path="/following"
       element={
-        <Defaultlayout>
+        <DefaultLayout>
           <Following />
-        </Defaultlayout>
+        </DefaultLayout>
       }
     />
     <Route
       path="/@:nickname"
       element={
-        <Defaultlayout>
+        <DefaultLayout>
           <Profile />
-        </Defaultlayout>
+        </DefaultLayout>
       }
     />
     <Route
       path="/live"
       element={
-        <Defaultlayout>
+        <DefaultLayout>
           <Live />
-        </Defaultlayout>
+        </DefaultLayout>
       }
     />
     <Route path="/upload" element={<Upload />} />
