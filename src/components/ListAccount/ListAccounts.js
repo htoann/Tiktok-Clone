@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ListAccount.module.scss";
 import AccountItem from "../AccountItem/AccountItem";
 
-function ListAccount({ title, list, onClick }) {
+function ListAccount({ title, list, onClick, perpage }) {
   return (
     <>
       <div className={styles.sidebar_list}>
@@ -10,7 +10,7 @@ function ListAccount({ title, list, onClick }) {
         {list && list.map((user) => <AccountItem user={user} key={user.id} />)}
         <div>
           <p className={styles.sidebar_seeAll} onClick={onClick}>
-            See more
+            {perpage === 20 ? "See less" : "See more"}
           </p>
         </div>
       </div>

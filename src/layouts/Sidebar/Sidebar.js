@@ -13,27 +13,33 @@ function Sidebar() {
   const [user, setUser] = useState([]);
   const [suggestedList, setSuggestedList] = useState([]);
   const [followingList, setFollowingList] = useState([]);
-  // const [perpage, setPerPage] = useState(5);
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
+  const [perpage, setPerpage] = useState(5);
 
   const handleActive = (id) => {
     setIsActive(id);
   };
 
   const handleSeeMore = () => {
-    page != 10 && setPage((prev) => prev + 1);
+    // if (page != 10) {
+    //   setPage((prev) => prev + 1);
+    // } else setPage(1);
+
+    if (perpage != 20) {
+      setPerpage((prev) => prev + 5);
+    } else {
+      setPerpage(5);
+    }
   };
 
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await getUsersService.suggestedList(page);
+      const result = await getUsersService.suggestedList(1, perpage);
       setSuggestedList(result.data);
     };
 
     fetchApi();
-  }, [page]);
-
-  console.log("page: " + page);
+  }, [perpage]);
 
   return (
     <div className={styles.sidebar}>
@@ -96,8 +102,11 @@ function Sidebar() {
           title="Suggested accounts"
           list={suggestedList}
           onClick={handleSeeMore}
+          perpage={perpage}
         />
         <ListAccount title="Following accounts" list={followingList} />
+        <p>Contact me</p>
+        <a href="https://www.facebook.com/htoann/">Trần Hữu Toàn</a>
       </div>
     </div>
   );
