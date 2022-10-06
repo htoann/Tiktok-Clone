@@ -9,8 +9,8 @@ export const listVideo = async (type = "for-you", page = 1) => {
       },
     });
     return res.data;
-  } catch (e) {
-    console.log(e);
+  } catch (err) {
+    console.log(err);
   }
 };
 
