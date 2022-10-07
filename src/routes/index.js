@@ -7,11 +7,12 @@ import NotFound from "~/pages/NotFound";
 import Profile from "~/pages/Profile/Profile";
 import Upload from "~/pages/Upload";
 import DefaultLayout from "~/layouts/DefaultLayout";
+import { routes } from "~/config/routes";
 
 export const publicRoutes = (
   <>
     <Route
-      path="/"
+      path={routes.home}
       element={
         <DefaultLayout>
           <Home />
@@ -19,7 +20,7 @@ export const publicRoutes = (
       }
     />
     <Route
-      path="/following"
+      path={routes.following}
       element={
         <DefaultLayout>
           <Following />
@@ -27,7 +28,7 @@ export const publicRoutes = (
       }
     />
     <Route
-      path="/@:nickname"
+      path={routes.profile}
       element={
         <DefaultLayout>
           <Profile />
@@ -35,14 +36,14 @@ export const publicRoutes = (
       }
     />
     <Route
-      path="/live"
+      path={routes.live}
       element={
         <DefaultLayout>
           <Live />
         </DefaultLayout>
       }
     />
-    <Route path="/upload" element={<Upload />} />
+    <Route path={routes.upload} element={<Upload />} />
     <Route path="*" element={<NotFound />} />
   </>
 );

@@ -33,7 +33,7 @@ export const MENU_ITEMS_1 = [
 ];
 
 export const MENU_ITEMS_2 = [
-  { title: "View profile", to: "/profile", icon: <FaRegUser /> },
+  { title: "View profile", icon: <FaRegUser /> },
   { title: "Get coins", icon: <FaBitcoin /> },
   { title: "Settings", icon: <FaRegSun /> },
   ...MENU_ITEMS_1,

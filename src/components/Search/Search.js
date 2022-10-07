@@ -5,19 +5,21 @@ import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 import { FaSearch, FaSpinner, FaTimesCircle } from "react-icons/fa";
 import styles from "./Search.module.scss";
-import { DebounceInput } from "react-debounce-input";
 import { searchService } from "~/services/searchService";
+import { useDebounce } from "use-debounce";
 
 function Search() {
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [showResult, setShowResult] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [debounceSearchValue] = useDebounce(searchValue, 500);
 
   const searchInput = useRef(null);
 
   const handleSearchValue = (e) => {
-    if (e.target.value[0] !== " ") {
+    const searchValue = e.target.value;
+    if (searchValue[0] !== " ") {
       setSearchValue(e.target.value);
     }
   };
@@ -38,7 +40,7 @@ function Search() {
   };
 
   useEffect(() => {
-    if (!searchValue.trim()) {
+    if (!debounceSearchValue.trim()) {
       setSearchResult([]);
       return;
     }
@@ -46,14 +48,14 @@ function Search() {
     const fetchApi = async () => {
       setIsLoading(true);
 
-      const result = await searchService.search(searchValue);
+      const result = await searchService.search(debounceSearchValue);
       setSearchResult(result);
 
       setIsLoading(false);
     };
 
     fetchApi();
-  }, [searchValue]);
+  }, [debounceSearchValue]);
 
   return (
     <div>
@@ -77,16 +79,15 @@ function Search() {
         )}
       >
         <form className={styles.navbar_search}>
-          <DebounceInput
-            debounceTimeout={300}
+          <input
             value={searchValue}
             className={styles.navbar_search_input}
             type="text"
             placeholder="Search accounts and videos"
             onChange={handleSearchValue}
-            inputRef={searchInput}
+            ref={searchInput}
             onFocus={handleShowResult}
-          ></DebounceInput>
+          ></input>
           {searchValue && !isLoading && (
             <button className={styles.clear} onClick={handleClear}>
               <FaTimesCircle />

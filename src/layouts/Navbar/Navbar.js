@@ -15,6 +15,7 @@ import Search from "~/components/Search";
 import styles from "./Navbar.module.scss";
 import { handleDarkTheme } from "~/utils/handleDarkTheme";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
+import { routes } from "~/config/routes";
 
 function Navbar() {
   const [user, setUser] = useState([]);
@@ -50,19 +51,21 @@ function Navbar() {
       default:
         break;
     }
+
+    // Handle to profile
   };
 
   return (
     <header className={styles.navbar}>
       <div className={styles.navbar_wrapper}>
-        <Link to="/" className={styles.logo}>
+        <Link to={routes.home} className={styles.logo}>
           <img src={Logo} alt="Tiktok" />
         </Link>
 
         <Search />
 
         <div className={styles.navbar_right}>
-          <Button text leftIcon={<FaPlus />} to="/upload">
+          <Button text leftIcon={<FaPlus />} to={routes.upload}>
             Upload
           </Button>
           {user ? (
