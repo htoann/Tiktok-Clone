@@ -53,6 +53,7 @@ function Menu({
         <div className={classes} tabIndex="-1" {...attrs}>
           <PopperWrapper>
             {history.length > 1 && <Header title="Language" onBack={onBack} />}
+
             {renderItems()}
           </PopperWrapper>
         </div>
