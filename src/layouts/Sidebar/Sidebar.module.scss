@@ -12,6 +12,10 @@
     padding-left: 10px;
   }
 
+  &::-webkit-scrollbar-thumb {
+    visibility: hidden;
+  }
+
   &:hover {
     ::-webkit-scrollbar-thumb {
       background: rgba(22, 24, 35, 0.06);
@@ -39,6 +43,7 @@
     position: fixed;
     z-index: 9;
     max-width: 348px;
+    padding-bottom: 15px;
 
     .sidebar_tabs {
       .sidebar_tab {
