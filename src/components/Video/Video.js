@@ -49,7 +49,7 @@ function Video({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <video controls src={data.file_url} loop muted></video>
+              <video controls src={data.file_url} loop muted autoPlay></video>
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
