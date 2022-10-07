@@ -7,6 +7,7 @@ import ListAccount from "~/components/ListAccount/ListAccounts.js";
 import Button from "~/components/Button/Button";
 import styles from "./Sidebar.module.scss";
 import { getUsersService } from "~/services/getUsersService";
+import { routes } from "~/config/routes";
 
 function Sidebar() {
   const [isActive, setIsActive] = useState(1);
@@ -46,7 +47,7 @@ function Sidebar() {
       <div className={styles.sidebar_scrollbar}>
         <div className={styles.sidebar_tabs}>
           <Link
-            to="/"
+            to={routes.home}
             className={
               isActive === 1
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -58,7 +59,7 @@ function Sidebar() {
             <h2 className={styles.sidebar_title}>For you</h2>
           </Link>
           <Link
-            to="/following"
+            to={routes.following}
             className={
               isActive === 2
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -70,7 +71,7 @@ function Sidebar() {
             <h2 className={styles.sidebar_title}>Following</h2>
           </Link>
           <Link
-            to="/live"
+            to={routes.live}
             className={
               isActive === 3
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`

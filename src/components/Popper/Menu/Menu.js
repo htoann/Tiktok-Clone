@@ -8,7 +8,13 @@ import classNames from "classnames";
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [], onChange = () => {}, right }) {
+function Menu({
+  children,
+  items = [],
+  onChange = () => {},
+  hideOnClick = "false",
+  right,
+}) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -39,14 +45,15 @@ function Menu({ children, items = [], onChange = () => {}, right }) {
 
   return (
     <Tippy
-      // visible
       interactive
       delay={[0, 500]}
       onHide={() => setHistory((prev) => prev.slice(0, 1))}
+      hideOnClick={hideOnClick}
       render={(attrs) => (
         <div className={classes} tabIndex="-1" {...attrs}>
           <PopperWrapper>
             {history.length > 1 && <Header title="Language" onBack={onBack} />}
+
             {renderItems()}
           </PopperWrapper>
         </div>
