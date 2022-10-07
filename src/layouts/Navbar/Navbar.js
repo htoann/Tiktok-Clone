@@ -67,7 +67,7 @@ function Navbar() {
           </Button>
           {user ? (
             <>
-              <Tippy content="Upload Video" placement="bottom" theme="gradient">
+              <Tippy content="Messages" placement="bottom" theme="gradient">
                 <div className={styles.menu_action}>
                   <FaRegPaperPlane />
                 </div>
