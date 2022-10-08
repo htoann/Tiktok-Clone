@@ -1,8 +1,8 @@
-import { instance } from "~/utils/axiosInstance";
+import { request } from "~/utils/axiosInstance";
 
 export const suggestedList = async (page = 1, perpage = 5) => {
   try {
-    const res = await instance("users/suggested", {
+    const res = await request.get("users/suggested", {
       params: {
         page,
         per_page: perpage,

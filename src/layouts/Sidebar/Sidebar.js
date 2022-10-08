@@ -22,10 +22,6 @@ function Sidebar() {
   };
 
   const handleSeeMore = () => {
-    // if (page != 10) {
-    //   setPage((prev) => prev + 1);
-    // } else setPage(1);
-
     if (perpage != 20) {
       setPerpage((prev) => prev + 5);
     } else {
@@ -36,7 +32,7 @@ function Sidebar() {
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getUsersService.suggestedList(1, perpage);
-      setSuggestedList(result.data);
+      setSuggestedList(result);
     };
 
     fetchApi();
