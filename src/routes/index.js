@@ -6,13 +6,13 @@ import Live from "~/pages/Live";
 import NotFound from "~/pages/NotFound";
 import Profile from "~/pages/Profile/Profile";
 import Upload from "~/pages/Upload";
-import DefaultLayout from "~/layouts/DefaultLayout";
-import { routes } from "~/config/routes";
+import { config } from "~/config";
+import DefaultLayout from "~/layouts";
 
 export const publicRoutes = (
   <>
     <Route
-      path={routes.home}
+      path={config.routes.home}
       element={
         <DefaultLayout>
           <Home />
@@ -20,7 +20,7 @@ export const publicRoutes = (
       }
     />
     <Route
-      path={routes.following}
+      path={config.routes.following}
       element={
         <DefaultLayout>
           <Following />
@@ -28,7 +28,7 @@ export const publicRoutes = (
       }
     />
     <Route
-      path={routes.profile}
+      path={config.routes.profile}
       element={
         <DefaultLayout>
           <Profile />
@@ -36,14 +36,14 @@ export const publicRoutes = (
       }
     />
     <Route
-      path={routes.live}
+      path={config.routes.live}
       element={
         <DefaultLayout>
           <Live />
         </DefaultLayout>
       }
     />
-    <Route path={routes.upload} element={<Upload />} />
+    <Route path={config.routes.upload} element={<Upload />} />
     <Route path="*" element={<NotFound />} />
   </>
 );

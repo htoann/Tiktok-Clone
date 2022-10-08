@@ -7,7 +7,7 @@ import ListAccount from "~/components/ListAccount/ListAccounts.js";
 import Button from "~/components/Button/Button";
 import styles from "./Sidebar.module.scss";
 import { getUsersService } from "~/services/getUsersService";
-import { routes } from "~/config/routes";
+import { config } from "~/config";
 
 function Sidebar() {
   const [isActive, setIsActive] = useState(1);
@@ -22,10 +22,6 @@ function Sidebar() {
   };
 
   const handleSeeMore = () => {
-    // if (page != 10) {
-    //   setPage((prev) => prev + 1);
-    // } else setPage(1);
-
     if (perpage != 20) {
       setPerpage((prev) => prev + 5);
     } else {
@@ -36,7 +32,7 @@ function Sidebar() {
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getUsersService.suggestedList(1, perpage);
-      setSuggestedList(result.data);
+      setSuggestedList(result);
     };
 
     fetchApi();
@@ -47,7 +43,7 @@ function Sidebar() {
       <div className={styles.sidebar_scrollbar}>
         <div className={styles.sidebar_tabs}>
           <Link
-            to={routes.home}
+            to={config.routes.home}
             className={
               isActive === 1
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -59,7 +55,7 @@ function Sidebar() {
             <h2 className={styles.sidebar_title}>For you</h2>
           </Link>
           <Link
-            to={routes.following}
+            to={config.routes.following}
             className={
               isActive === 2
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -71,7 +67,7 @@ function Sidebar() {
             <h2 className={styles.sidebar_title}>Following</h2>
           </Link>
           <Link
-            to={routes.live}
+            to={config.routes.live}
             className={
               isActive === 3
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
