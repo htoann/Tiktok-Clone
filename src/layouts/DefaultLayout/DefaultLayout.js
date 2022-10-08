@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import styles from "./DefaultLayout.module.scss";
+import PropTypes from "prop-types";
 
 function DefaultLayout({ children }) {
   return (
@@ -14,5 +15,9 @@ function DefaultLayout({ children }) {
     </div>
   );
 }
+
+DefaultLayout.prototype = {
+  children: PropTypes.node.isRequired,
+};
 
 export default DefaultLayout;

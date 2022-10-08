@@ -7,6 +7,7 @@ import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
 import Menu from "~/components/Popper/Menu/Menu";
 import Image from "../Image/Image";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Video({ data }) {
   return (
@@ -87,5 +88,9 @@ function Video({ data }) {
     </div>
   );
 }
+
+Video.prototype = {
+  data: PropTypes.object.isRequired,
+};
 
 export default Video;
