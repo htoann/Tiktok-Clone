@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ListAccount.module.scss";
 import AccountItem from "../AccountItem/AccountItem";
+import PropTypes from "prop-types";
 
 function ListAccount({ title, list, onClick, perpage }) {
   return (
@@ -14,10 +15,16 @@ function ListAccount({ title, list, onClick, perpage }) {
           </p>
         </div>
       </div>
-
       <hr className={styles.hr} />
     </>
   );
 }
+
+ListAccount.prototype = {
+  title: PropTypes.string,
+  list: PropTypes.array,
+  onClick: PropTypes.func,
+  perpage: PropTypes.number,
+};
 
 export default ListAccount;

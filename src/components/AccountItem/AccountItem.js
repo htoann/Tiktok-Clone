@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import Verify from "~/assets/images/verify.svg";
 import styles from "./AccountItem.module.scss";
@@ -34,5 +35,10 @@ function AccountItem({ user, onClick }) {
     </div>
   );
 }
+
+AccountItem.propTypes = {
+  user: PropTypes.object.isRequired,
+  onClick: PropTypes.func,
+};
 
 export default AccountItem;

@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import Tiktok from "~/assets/images/Tiktok.png";
 import styles from "./Image.module.scss";
+import PropTypes from "prop-types";
 
 const Image = forwardRef(({ src, alt, width, height, ...props }, ref) => {
   return (
@@ -17,5 +18,13 @@ const Image = forwardRef(({ src, alt, width, height, ...props }, ref) => {
     />
   );
 });
+
+Image.prototype = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  ref: PropTypes.string,
+};
 
 export default Image;

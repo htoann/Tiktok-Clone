@@ -14,7 +14,6 @@ function Sidebar() {
   const [user, setUser] = useState([]);
   const [suggestedList, setSuggestedList] = useState([]);
   const [followingList, setFollowingList] = useState([]);
-  // const [page, setPage] = useState(1);
   const [perpage, setPerpage] = useState(5);
 
   const handleActive = (id) => {

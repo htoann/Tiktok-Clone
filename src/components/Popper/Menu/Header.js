@@ -1,6 +1,7 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import styles from "./Menu.module.scss";
+import PropTypes from "prop-types";
 
 function Header({ title, onBack }) {
   return (
@@ -12,5 +13,10 @@ function Header({ title, onBack }) {
     </header>
   );
 }
+
+Header.prototype = {
+  title: PropTypes.string.isRequired,
+  onBack: PropTypes.func.isRequired,
+};
 
 export default Header;
