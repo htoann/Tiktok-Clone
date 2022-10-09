@@ -51,7 +51,7 @@ function ContentVideo({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <Video src={data.file_url} loop muted autoPlay />
+              <Video src={data.file_url} loop />
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
