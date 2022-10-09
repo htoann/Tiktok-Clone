@@ -2,14 +2,15 @@ import React from "react";
 import Verify from "~/assets/images/verify.svg";
 import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
 import Button from "~/components/Button";
-import styles from "./Video.module.scss";
+import styles from "./ContentVideo.module.scss";
 import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
 import Menu from "~/components/Popper/Menu/Menu";
 import Image from "../Image/Image";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Video from "~/components/ContentVideo/Video/";
 
-function Video({ data }) {
+function ContentVideo({ data }) {
   return (
     <div>
       <div className={styles.suggest_item}>
@@ -50,7 +51,7 @@ function Video({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <video controls src={data.file_url} loop muted autoPlay></video>
+              <Video src={data.file_url} loop muted autoPlay />
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
@@ -72,11 +73,13 @@ function Video({ data }) {
                 <strong className={styles.count}>{data.comments_count}</strong>
               </div>
               <div className={styles.action_button}>
-                <Menu items={MENU_ITEMS_SHARE} right>
-                  <div className={styles.icon}>
-                    <FaShare />
-                  </div>
-                </Menu>
+                <div>
+                  <Menu items={MENU_ITEMS_SHARE} right>
+                    <div className={styles.icon}>
+                      <FaShare />
+                    </div>
+                  </Menu>
+                </div>
                 <strong className={styles.count}>{data.shares_count}</strong>
               </div>
             </div>
@@ -89,8 +92,8 @@ function Video({ data }) {
   );
 }
 
-Video.prototype = {
+ContentVideo.prototype = {
   data: PropTypes.object.isRequired,
 };
 
-export default Video;
+export default ContentVideo;
