@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from "react";
 
 function Video({ src, loop = false, muted = false, autoPlay = false }) {
+<<<<<<< HEAD
   // Automatically Play and Pause video as it enters and leaves the viewport/screen
+=======
+  // play() failed because the user didn't interact with the document first
+
+>>>>>>> 720fd1513965c45e661f17ae7b9c584c7c4466ee
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +26,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
       });
     };
 
-    const playPromise = videoRef.current.play();
+    let playPromise = videoRef.current.play();
     if (playPromise !== undefined) {
       playPromise.then((_) => {
         const observer = new IntersectionObserver(handlePlay, options);
