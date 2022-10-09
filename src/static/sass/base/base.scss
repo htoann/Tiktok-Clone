@@ -83,3 +83,8 @@ body {
   }
   background: #0d1117 !important;
 }
+
+// Custom controls video
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}

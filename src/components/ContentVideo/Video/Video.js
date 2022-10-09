@@ -13,7 +13,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
     const handlePlay = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          0;
+          videoRef.current.play();
         } else {
           videoRef.current.currentTime = 0;
           videoRef.current.pause();
@@ -21,7 +21,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
       });
     };
 
-    let playPromise = videoRef.current.play();
+    const playPromise = videoRef.current.play();
     if (playPromise !== undefined) {
       playPromise.then((_) => {
         const observer = new IntersectionObserver(handlePlay, options);
@@ -30,7 +30,18 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
     }
   });
 
-  return <video controls src={src} loop={loop} muted={muted} ref={videoRef} />;
+  return (
+    <video
+      controls
+      src={src}
+      loop={loop}
+      muted={muted}
+      autoPlay={autoPlay}
+      ref={videoRef}
+      disablePictureInPicture
+      controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
+    />
+  );
 }
 
 export default Video;
