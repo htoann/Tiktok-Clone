@@ -25,9 +25,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.4.0",
-    "react-in-viewport": "^1.0.0-alpha.28",
     "react-router-dom": "^6.3.0",
-    "react-waypoint": "^10.3.0",
     "use-debounce": "^8.0.4"
   },
   "devDependencies": {

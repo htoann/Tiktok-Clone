@@ -15,18 +15,24 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
         if (entry.isIntersecting) {
           videoRef.current.play();
         } else {
-          videoRef.current.currentTime = 0;
-          videoRef.current.pause();
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.pause();
+          }
         }
       });
     };
 
     let playPromise = videoRef.current.play();
     if (playPromise !== undefined) {
-      playPromise.then((_) => {
-        const observer = new IntersectionObserver(handlePlay, options);
-        observer.observe(videoRef.current);
-      });
+      playPromise
+        .then((_) => {
+          const observer = new IntersectionObserver(handlePlay, options);
+          observer.observe(videoRef.current);
+        })
+        .catch((err) => {
+          return;
+        });
     }
   });
 

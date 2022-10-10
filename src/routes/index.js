@@ -1,13 +1,15 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import Following from "~/pages/Following";
-import Home from "~/pages/Home/Home";
+import Home from "~/pages/Home";
 import Live from "~/pages/Live";
 import NotFound from "~/pages/NotFound";
-import Profile from "~/pages/Profile/Profile";
+import Profile from "~/pages/Profile";
 import Upload from "~/pages/Upload";
 import { config } from "~/config";
 import DefaultLayout from "~/layouts";
+import Messages from "~/pages/Messages";
+import HeaderOnly from "~/layouts/HeaderOnly";
 
 export const publicRoutes = (
   <>
@@ -43,7 +45,22 @@ export const publicRoutes = (
         </DefaultLayout>
       }
     />
-    <Route path={config.routes.upload} element={<Upload />} />
+    <Route
+      path={config.routes.messages}
+      element={
+        <HeaderOnly>
+          <Messages />
+        </HeaderOnly>
+      }
+    />
+    <Route
+      path={config.routes.upload}
+      element={
+        <HeaderOnly>
+          <Upload />
+        </HeaderOnly>
+      }
+    />
     <Route path="*" element={<NotFound />} />
   </>
 );

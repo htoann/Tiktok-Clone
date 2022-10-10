@@ -102,7 +102,9 @@ function Sidebar() {
         />
         <ListAccount title="Following accounts" list={followingList} />
         <p>Contact me</p>
-        <a href="https://www.facebook.com/htoann/">Trần Hữu Toàn</a>
+        <a className={styles.facebook} href="https://www.facebook.com/htoann/">
+          Trần Hữu Toàn
+        </a>
       </div>
     </div>
   );
