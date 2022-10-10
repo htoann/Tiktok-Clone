@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
-import Video from "~/components/Video/Video";
 import { getVideosService } from "~/services/getVideosService";
+import ContentVideo from "../../components/ContentVideo/ContentVideo";
 
 function Home() {
   const [listVideo, setListVideo] = useState([]);
@@ -19,7 +19,7 @@ function Home() {
     <div className={styles.main_container}>
       {listVideo.map((video) => (
         <div key={video.id}>
-          <Video data={video} />
+          <ContentVideo data={video} />
         </div>
       ))}
     </div>

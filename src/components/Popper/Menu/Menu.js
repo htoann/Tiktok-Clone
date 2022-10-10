@@ -40,26 +40,31 @@ function Menu({
     ));
   };
 
+  // Reset to first page
+  const handleResetMenu = () => {
+    setHistory((prev) => prev.slice(0, 1));
+  };
+
   const classes = cx(styles.menu_items, {
     [styles.right]: right,
   });
+
+  const handleResult = (attrs) => (
+    <div className={classes} tabIndex="-1" {...attrs}>
+      <PopperWrapper>
+        {history.length > 1 && <Header title={current.title} onBack={onBack} />}
+        {renderItems()}
+      </PopperWrapper>
+    </div>
+  );
 
   return (
     <Tippy
       interactive
       delay={[0, 500]}
-      onHide={() => setHistory((prev) => prev.slice(0, 1))}
+      onHide={handleResetMenu}
       hideOnClick={hideOnClick}
-      render={(attrs) => (
-        <div className={classes} tabIndex="-1" {...attrs}>
-          <PopperWrapper>
-            {history.length > 1 && (
-              <Header title={current.title} onBack={onBack} />
-            )}
-            {renderItems()}
-          </PopperWrapper>
-        </div>
-      )}
+      render={handleResult}
     >
       {children}
     </Tippy>

@@ -31,6 +31,7 @@
     background: transparent;
     width: 300px;
     padding: 12px 8px;
+    padding-right: 40px;
 
     &:not(:placeholder-shown) ~ .navbar_search_icon {
       color: rgba(22, 24, 35, 0.75);
