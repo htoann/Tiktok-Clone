@@ -25,10 +25,14 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
 
     let playPromise = videoRef.current.play();
     if (playPromise !== undefined) {
-      playPromise.then((_) => {
-        const observer = new IntersectionObserver(handlePlay, options);
-        observer.observe(videoRef.current);
-      });
+      playPromise
+        .then((_) => {
+          const observer = new IntersectionObserver(handlePlay, options);
+          observer.observe(videoRef.current);
+        })
+        .catch((err) => {
+          return;
+        });
     }
   });
 
