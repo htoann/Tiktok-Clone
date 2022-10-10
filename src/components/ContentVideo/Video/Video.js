@@ -15,8 +15,10 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
         if (entry.isIntersecting) {
           videoRef.current.play();
         } else {
-          videoRef.current.currentTime = 0;
-          videoRef.current.pause();
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.pause();
+          }
         }
       });
     };

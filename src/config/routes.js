@@ -5,4 +5,5 @@ export const routes = {
   live: "/live",
   upload: "/upload",
   search: "/search",
+  messages: "/messages",
 };

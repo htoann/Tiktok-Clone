@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import styles from "./DefaultLayout.module.scss";
 import PropTypes from "prop-types";
