@@ -1,8 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function Video({ src, loop = false, muted = false, autoPlay = false }) {
   // Automatically Play and Pause video as it enters and leaves the viewport/screen
   const videoRef = useRef(null);
+  const [showControls, setShowControls] = useState(false);
+
+  const handleShowControls = () => {
+    setShowControls(true);
+  };
 
   useEffect(() => {
     const options = {
@@ -38,7 +43,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
 
   return (
     <video
-      controls
+      controls={showControls}
       src={src}
       loop={loop}
       muted={muted}
@@ -46,6 +51,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
       ref={videoRef}
       disablePictureInPicture
       controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
+      onMouseEnter={handleShowControls}
     />
   );
 }
