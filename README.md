@@ -4,8 +4,6 @@ Make Your Day - TikTok
 
 ## Live demo
 
-Preview website: [https://tiktok-7zl0trsl9-huutoan02.vercel.app](https://tiktok-7zl0trsl9-huutoan02.vercel.app)
-
 Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 ## API
