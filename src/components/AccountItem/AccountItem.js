@@ -9,11 +9,7 @@ function AccountItem({ user, onClick }) {
   return (
     <div onClick={onClick}>
       {user && (
-        <Link
-          to={`/@${user.nickname}`}
-          state={{ user }}
-          className={styles.account_item}
-        >
+        <Link to={`/@${user.nickname}`} className={styles.account_item}>
           <Image
             className={styles.account_item_avatar}
             src={user.avatar}
