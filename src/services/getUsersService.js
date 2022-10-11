@@ -14,4 +14,13 @@ export const suggestedList = async (page = 1, perpage = 5) => {
   }
 };
 
+export const user = async (pathname) => {
+  try {
+    const res = await request.get(`users${pathname}`);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export * as getUsersService from "~/services/getUsersService";

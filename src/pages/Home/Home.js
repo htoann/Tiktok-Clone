@@ -2,26 +2,55 @@ import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 import { getVideosService } from "~/services/getVideosService";
 import ContentVideo from "../../components/ContentVideo/ContentVideo";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from "./Loader";
 
 function Home() {
   const [listVideo, setListVideo] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(2);
 
   useEffect(() => {
-    const fetchApi = async () => {
+    const getListVideo = async () => {
       const result = await getVideosService.listVideo();
       setListVideo(result);
     };
 
-    fetchApi();
+    getListVideo();
   }, []);
+
+  const fetchListVideo = async () => {
+    const result = await getVideosService.listVideo("for-you", page);
+    return result;
+  };
+
+  const fetchData = async () => {
+    const listVideoNext = await fetchListVideo();
+
+    setTimeout(() => {
+      setListVideo([...listVideo, ...listVideoNext]);
+      if (listVideoNext.length === 0) {
+        setHasMore(false);
+      }
+      setPage((prev) => prev + 1);
+    }, 1000);
+  };
 
   return (
     <div className={styles.main_container}>
-      {listVideo.map((video) => (
-        <div key={video.id}>
-          <ContentVideo data={video} />
-        </div>
-      ))}
+      <InfiniteScroll
+        dataLength={listVideo.length}
+        next={fetchData}
+        hasMore={hasMore}
+        loader={<Loader />}
+        endMessage={<h4>End</h4>}
+      >
+        {listVideo.map((video) => (
+          <div key={video.id}>
+            <ContentVideo data={video} />
+          </div>
+        ))}
+      </InfiniteScroll>
     </div>
   );
 }
