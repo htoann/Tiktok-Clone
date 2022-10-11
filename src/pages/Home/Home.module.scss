@@ -6,3 +6,24 @@
   padding: 24px 0;
   position: relative;
 }
+
+.wrapper {
+  display: block;
+  margin: 6px auto;
+  width: 50px;
+
+  .spinner {
+    animation: spinner 1.2s linear infinite;
+    font-size: 30px;
+    color: brown;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

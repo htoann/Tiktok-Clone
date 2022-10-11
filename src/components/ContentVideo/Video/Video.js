@@ -31,7 +31,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false }) {
           observer.observe(videoRef.current);
         })
         .catch((err) => {
-          return;
+          console.log(err);
         });
     }
   });
