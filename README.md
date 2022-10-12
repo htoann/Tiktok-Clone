@@ -8,16 +8,17 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 ## Features
 
+- Infinite loading
+- User profile
+- Search accounts and videos
+- ...
 <!-- - Auth (Google, Facebook) -->
 <!-- - Upload video with thumbnail -->
-- Infinite loading
 <!-- - Follow user -->
 <!-- - Following tab -->
 <!-- - Like a video -->
 <!-- - Comment on a video -->
 <!-- - Share video on Facebook, Twitter, Reddit,... -->
-- User profile
-- Search accounts and videos
 
 ## API
 
