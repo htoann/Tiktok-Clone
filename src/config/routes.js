@@ -6,4 +6,6 @@ export const routes = {
   upload: "/upload",
   search: "/search",
   messages: "/messages",
+  login: "/login",
+  register: "/register",
 };
