@@ -3,7 +3,7 @@ import Verify from "~/assets/images/verify.svg";
 import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
 import Button from "~/components/Button";
 import styles from "./ContentVideo.module.scss";
-import { MENU_ITEMS_SHARE } from "~/utils/dataMenu";
+import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
 import Menu from "~/components/Popper/Menu/Menu";
 import Image from "../Image/Image";
 import { Link } from "react-router-dom";
