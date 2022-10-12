@@ -6,6 +6,19 @@ Make Your Day - TikTok
 
 Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
+## Features
+
+<!-- - Auth (Google, Facebook) -->
+<!-- - Upload video with thumbnail -->
+- Infinite loading
+<!-- - Follow user -->
+<!-- - Following tab -->
+<!-- - Like a video -->
+<!-- - Comment on a video -->
+<!-- - Share video on Facebook, Twitter, Reddit,... -->
+- User profile
+- Search accounts and videos
+
 ## API
 
 F8 - Click here [https://tiktok.fullstack.edu.vn/api/](https://gist.github.com/htoann/c1cde5d3af2e3f7fda46b5d87f91cbb5)
