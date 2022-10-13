@@ -10,9 +10,6 @@ function Profile() {
   const [user, setUser] = useState({});
   const location = useLocation();
 
-  console.log(location);
-  console.log(user);
-
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getUsersService.user(location.pathname);
