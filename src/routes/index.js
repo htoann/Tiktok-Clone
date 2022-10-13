@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 import Following from "~/pages/Following";
 import Home from "~/pages/Home";
 import Live from "~/pages/Live";
@@ -13,8 +13,19 @@ import HeaderOnly from "~/layouts/HeaderOnly";
 import Login from "~/pages/Login/Login";
 import Register from "~/pages/Register/Register";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 export const publicRoutes = (
   <>
+    <Route
+      exact
+      path={config.routes.home}
+      element={
+        <DefaultLayout>
+          <Home />
+        </DefaultLayout>
+      }
+    />
     <Route
       path={config.routes.following}
       element={
@@ -57,14 +68,7 @@ export const publicRoutes = (
     />
     <Route path={config.routes.login} element={<Login />} />
     <Route path={config.routes.register} element={<Register />} />
-    <Route
-      path={config.routes.home}
-      element={
-        <DefaultLayout>
-          <Home />
-        </DefaultLayout>
-      }
-    />
+
     <Route path="*" element={<NotFound />} />
   </>
 );
