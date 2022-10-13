@@ -5,7 +5,6 @@ import Image from "./../../components/Image/Image";
 import Verify from "~/assets/images/verify.svg";
 import Button from "~/components/Button";
 import { getUsersService } from "~/services/getUsersService";
-import { config } from "~/config";
 
 function Profile() {
   const [user, setUser] = useState({});
