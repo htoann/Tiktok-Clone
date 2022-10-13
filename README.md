@@ -6,6 +6,11 @@ Make Your Day - TikTok
 
 Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
+## Main technology used
+
+- Redux Toolkit
+- Vite
+
 ## Features
 
 - Infinite loading
