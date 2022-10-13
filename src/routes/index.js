@@ -10,6 +10,8 @@ import { config } from "~/config";
 import DefaultLayout from "~/layouts";
 import Messages from "~/pages/Messages";
 import HeaderOnly from "~/layouts/HeaderOnly";
+import Login from "~/pages/Login/Login";
+import Register from "~/pages/Register/Register";
 
 export const publicRoutes = (
   <>
@@ -61,6 +63,8 @@ export const publicRoutes = (
         </HeaderOnly>
       }
     />
+    <Route path={config.routes.login} element={<Login />} />
+    <Route path={config.routes.register} element={<Register />} />
     <Route path="*" element={<NotFound />} />
   </>
 );

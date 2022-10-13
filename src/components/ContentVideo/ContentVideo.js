@@ -9,27 +9,28 @@ import Image from "../Image/Image";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Video from "~/components/ContentVideo/Video/";
+import { config } from "~/config";
 
 function ContentVideo({ data }) {
+  const user = data.user;
+  const profileLink = config.routes.profileLink(user.nickname);
+
   return (
     <div>
       <div className={styles.suggest_item}>
-        <Link to={`/@${data.user.nickname}`} state={{ user: data.user }}>
-          <Image className={styles.avatar} src={data.user.avatar} alt="" />
+        <Link to={profileLink}>
+          <Image className={styles.avatar} src={user.avatar} alt="" />
         </Link>
         <div className={styles.content}>
           <div className={styles.info_containter}>
             <div className={styles.info}>
               <div className={styles.author_container}>
                 <div className={styles.author}>
-                  <Link
-                    to={`/@${data.user.nickname}`}
-                    state={{ user: data.user }}
-                  >
-                    <h3 className={styles.username}>{data.user.nickname}</h3>
-                    {data.user.tick && <Image src={Verify} alt="" />}
+                  <Link to={profileLink}>
+                    <h3 className={styles.username}>{user.nickname}</h3>
+                    {user.tick && <Image src={Verify} alt="" />}
                     <h3 className={styles.name}>
-                      {data.user.first_name} {data.user.last_name}
+                      {user.first_name} {user.last_name}
                     </h3>
                   </Link>
                 </div>
@@ -38,10 +39,10 @@ function ContentVideo({ data }) {
               <h4 className={styles.video_music}>
                 <FaMusic className={styles.icon_music} />
                 {data.music ||
-                  `Nhạc nền - ${data.user.first_name} ${data.user.last_name}`}
+                  `Nhạc nền - ${user.first_name} ${user.last_name}`}
               </h4>
             </div>
-            {data.user.is_follow ? (
+            {user.is_follow ? (
               <Button outline className={styles.followed}>
                 Following
               </Button>
@@ -57,7 +58,7 @@ function ContentVideo({ data }) {
               <div className={styles.action_button}>
                 <div
                   className={
-                    data.user.is_liked
+                    user.is_liked
                       ? `${styles.icon} ${styles.liked}`
                       : `${styles.icon}`
                   }
