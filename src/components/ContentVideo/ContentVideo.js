@@ -14,6 +14,7 @@ import { config } from "~/config";
 function ContentVideo({ data }) {
   const user = data.user;
   const profileLink = config.routes.profileLink(user.nickname);
+  const time = data.meta.playtime_seconds;
 
   return (
     <div>
@@ -60,7 +61,7 @@ function ContentVideo({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <Video src={data.file_url} loop muted autoPlay />
+              <Video time={time} src={data.file_url} loop muted autoPlay />
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>

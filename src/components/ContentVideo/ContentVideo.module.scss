@@ -85,7 +85,7 @@
       .follow_button {
         right: 0;
         position: absolute;
-        top: 28px;
+        top: 8px;
       }
     }
 
@@ -161,5 +161,19 @@
   cursor: pointer;
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.video_short {
+  &::-webkit-media-controls-timeline {
+    display: none;
+  }
+
+  &::-webkit-media-controls-current-time-display {
+    display: none;
+  }
+
+  &::-webkit-media-controls-time-remaining-display {
+    display: none;
   }
 }
