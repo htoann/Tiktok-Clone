@@ -27,13 +27,11 @@ function Home() {
   const fetchData = async () => {
     const listVideoNext = await fetchListVideo();
 
-    setTimeout(() => {
-      setListVideo([...listVideo, ...listVideoNext]);
-      if (listVideoNext.length === 0) {
-        setHasMore(false);
-      }
-      setPage((prev) => prev + 1);
-    }, 1000);
+    setListVideo([...listVideo, ...listVideoNext]);
+    if (listVideoNext.length === 0) {
+      setHasMore(false);
+    }
+    setPage((prev) => prev + 1);
   };
 
   return (
