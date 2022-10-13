@@ -10,9 +10,6 @@ function Profile() {
   const [user, setUser] = useState({});
   const location = useLocation();
 
-  console.log(location);
-  console.log(user);
-
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getUsersService.user(location.pathname);
@@ -33,7 +30,7 @@ function Profile() {
 
   return (
     <div className={styles.wrapper}>
-      {user && (
+      {/* {user && (
         <>
           <div className={styles.header}>
             <div className={styles.info}>
@@ -106,7 +103,7 @@ function Profile() {
             </div>
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 }
