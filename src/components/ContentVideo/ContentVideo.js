@@ -43,11 +43,19 @@ function ContentVideo({ data }) {
               </h4>
             </div>
             {user.is_follow ? (
-              <Button outline className={styles.followed}>
+              <Button
+                outline
+                className={`${styles.follow_button} ${styles.followed}`}
+              >
                 Following
               </Button>
             ) : (
-              <Button outline>Follow</Button>
+              <Button
+                outline
+                className={`${styles.follow_button} ${styles.follow}`}
+              >
+                Follow
+              </Button>
             )}
           </div>
           <div className={styles.video_wrapper}>

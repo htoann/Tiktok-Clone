@@ -81,6 +81,12 @@
         border-color: rgba(22, 24, 35, 0.12);
         background-color: rgb(255, 255, 255);
       }
+
+      .follow_button {
+        right: 0;
+        position: absolute;
+        top: 28px;
+      }
     }
 
     .video_wrapper {
