@@ -15,15 +15,6 @@ import Register from "~/pages/Register/Register";
 
 export const publicRoutes = (
   <>
-    {console.log(config.routes.login)}
-    <Route
-      path={config.routes.home}
-      element={
-        <DefaultLayout>
-          <Home />
-        </DefaultLayout>
-      }
-    />
     <Route
       path={config.routes.following}
       element={
@@ -66,6 +57,14 @@ export const publicRoutes = (
     />
     <Route path={config.routes.login} element={<Login />} />
     <Route path={config.routes.register} element={<Register />} />
+    <Route
+      path={config.routes.home}
+      element={
+        <DefaultLayout>
+          <Home />
+        </DefaultLayout>
+      }
+    />
     <Route path="*" element={<NotFound />} />
   </>
 );
