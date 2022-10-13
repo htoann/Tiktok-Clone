@@ -10,8 +10,9 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 - Infinite loading
 - User profile
-- Search accounts and videos
+- Search accounts
 - ...
+<!-- Search videos -->
 <!-- - Auth (Google, Facebook) -->
 <!-- - Upload video with thumbnail -->
 <!-- - Follow user -->
