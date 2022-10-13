@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Profile.module.scss";
 import Image from "./../../components/Image/Image";
 import Verify from "~/assets/images/verify.svg";
 import Button from "~/components/Button";
 import { getUsersService } from "~/services/getUsersService";
+import { config } from "~/config";
 
 function Profile() {
   const [user, setUser] = useState({});
@@ -18,6 +19,15 @@ function Profile() {
 
     fetchApi();
   }, [location.pathname]);
+
+  const handleVideoPlay = (e) => {
+    e.target.play();
+  };
+
+  const handleVideoPause = (e) => {
+    e.target.pause();
+    e.target.currentTime = 0;
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -71,10 +81,17 @@ function Profile() {
           <div className={styles.list_video}>
             {user?.videos?.map((video) => (
               <div className={styles.video_container} key={video.id}>
-                <video src={video.file_url} width="400" height="300"></video>
-                <div className={styles.video_desc}>
-                  <a href="">{video.description}</a>
-                </div>
+                <Link to="#">
+                  <video
+                    src={video.file_url}
+                    muted
+                    onMouseEnter={handleVideoPlay}
+                    onMouseLeave={handleVideoPause}
+                  />
+                  <div className={styles.video_desc}>
+                    <p href="">{video.description}</p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
