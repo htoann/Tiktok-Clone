@@ -14,7 +14,7 @@ import Image from "~/components/Image/Image";
 import Search from "~/components/Search";
 import styles from "./Navbar.module.scss";
 import { handleDarkTheme } from "~/utils/handleDarkTheme";
-import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/utils/dataMenu";
+import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/data/dataMenu";
 import { config } from "~/config";
 
 function Navbar() {

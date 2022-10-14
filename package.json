@@ -16,6 +16,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
     "@tippyjs/react": "^4.2.6",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
@@ -24,8 +25,10 @@
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-hook-form": "^7.37.0",
     "react-icons": "^4.4.0",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.3.0",
     "use-debounce": "^8.0.4"
   },

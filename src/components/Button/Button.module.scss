@@ -44,11 +44,7 @@
   border-style: solid;
   color: var(--red);
   border-color: var(--red);
-  position: relative;
-  right: 0;
-  position: absolute;
-  top: 28px;
-  padding: 2px 16px;
+  padding: 0 16px;
 
   &:hover {
     background-color: rgba(254, 44, 85, 0.06);
@@ -68,7 +64,7 @@
 }
 
 .btn_text {
-  padding: 8px 16px;
+  padding: 6px 14px;
   border: 1px solid rgba(22, 24, 35, 0.12);
   font-size: 16px;
   color: var(--black);

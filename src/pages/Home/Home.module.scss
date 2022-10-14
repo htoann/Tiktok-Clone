@@ -1,10 +1,10 @@
 .main_container {
-  margin-right: 16px;
-  margin-left: 16px;
-  width: 692px;
-  max-width: 692px;
-  padding: 24px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 0;
   position: relative;
+  max-width: 692px;
 }
 
 .wrapper {

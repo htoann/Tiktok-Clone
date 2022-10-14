@@ -9,4 +9,9 @@ export const get = async (url, options = {}) => {
   return response.data;
 };
 
+export const post = async (url, options = {}) => {
+  const response = await axiosInstance.post(url, options);
+  return response.data;
+};
+
 export * as request from "~/utils/axiosInstance";

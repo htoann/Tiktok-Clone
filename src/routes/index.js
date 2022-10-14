@@ -10,17 +10,11 @@ import { config } from "~/config";
 import DefaultLayout from "~/layouts";
 import Messages from "~/pages/Messages";
 import HeaderOnly from "~/layouts/HeaderOnly";
+import Login from "~/pages/Login/Login";
+import Register from "~/pages/Register/Register";
 
 export const publicRoutes = (
   <>
-    <Route
-      path={config.routes.home}
-      element={
-        <DefaultLayout>
-          <Home />
-        </DefaultLayout>
-      }
-    />
     <Route
       path={config.routes.following}
       element={
@@ -59,6 +53,16 @@ export const publicRoutes = (
         <HeaderOnly>
           <Upload />
         </HeaderOnly>
+      }
+    />
+    <Route path={config.routes.login} element={<Login />} />
+    <Route path={config.routes.register} element={<Register />} />
+    <Route
+      path={config.routes.home}
+      element={
+        <DefaultLayout>
+          <Home />
+        </DefaultLayout>
       }
     />
     <Route path="*" element={<NotFound />} />

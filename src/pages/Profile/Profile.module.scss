@@ -1,112 +1,191 @@
 .wrapper {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  padding-top: 32px;
-  margin: 0 auto;
-  padding: 32px 24px;
+  padding: 24px 0;
 
-  .profile {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
+  .header {
+    position: relative;
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    max-width: 624px;
+    padding-right: 92px;
 
-    .header {
-      position: relative;
-      flex: 0 0 auto;
-      margin-bottom: 20px;
-      padding-right: 92px;
-      max-width: 624px;
+    .info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-      .info {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .avatar {
-          width: 116px;
-          height: 116px;
-          border-radius: 50%;
-          cursor: pointer;
-          object-fit: cover;
-        }
-
-        .title_container {
-          flex: 1;
-          margin-left: 20px;
-
-          .user_title {
-            font-size: 32px;
-            line-height: 38px;
-            padding-bottom: 4px;
-            text-overflow: ellipsis;
-            text-align: left;
-
-            .verify {
-              margin-left: 8px;
-              width: 20px;
-              height: 20px;
-            }
-          }
-
-          .user_fullname {
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 25px;
-            text-overflow: ellipsis;
-            height: 25px;
-            overflow: hidden;
-            max-width: 450px;
-            white-space: nowrap;
-            display: flex;
-            align-items: flex-end;
-          }
-
-          .button_container {
-            max-width: 100px;
-
-            .button_follow {
-              color: rgba(255, 255, 255, 1);
-              background-color: rgba(254, 44, 85, 1);
-              line-height: 25px;
-              font-weight: 600;
-              display: flex;
-              padding: 6px 8px;
-              min-width: 208px;
-            }
-          }
-        }
+      .avatar {
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        cursor: pointer;
+        object-fit: cover;
       }
-      .count_info {
-        display: flex;
-        margin-top: 50px;
-        color: rgba(18, 18, 18, 0.75);
 
-        .number_container {
-          color: rgba(22, 24, 35, 1);
+      .title_container {
+        flex: 1;
+        margin-left: 20px;
+
+        .user_title {
+          font-size: 32px;
+          line-height: 38px;
+          padding-bottom: 4px;
+          text-overflow: ellipsis;
+          text-align: left;
+
+          .verify {
+            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .user_fullname {
           font-weight: 600;
           font-size: 18px;
           line-height: 25px;
+          text-overflow: ellipsis;
+          height: 25px;
+          overflow: hidden;
+          max-width: 450px;
+          white-space: nowrap;
           display: flex;
+          align-items: flex-end;
+        }
 
-          span {
-            color: rgba(22, 24, 35, 0.75);
-            font-weight: 400;
-            margin-left: 6px;
-          }
+        .button_container {
+          max-width: 208px;
+          margin: 16px 0px 0px;
 
-          & + .number_container {
-            margin-left: 20px;
+          .button_follow {
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(254, 44, 85, 1);
+            line-height: 25px;
+            font-weight: 600;
+            padding: 4px 8px;
           }
         }
       }
+    }
+    .count_info {
+      display: flex;
+      margin-top: 50px;
+      color: rgba(18, 18, 18, 0.75);
 
-      .bio {
+      .number_container {
         color: rgba(22, 24, 35, 1);
-        font-weight: 400;
-        font-size: 16px;
-        white-space: pre-line;
-        margin-top: 10px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        display: flex;
+
+        span {
+          color: rgba(22, 24, 35, 0.75);
+          font-weight: 400;
+          margin-left: 6px;
+        }
+
+        & + .number_container {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .bio {
+      color: rgba(22, 24, 35, 1);
+      font-weight: 400;
+      font-size: 16px;
+      white-space: pre-line;
+      margin-top: 10px;
+    }
+  }
+
+  .list_video_wrapper {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    min-height: 490px;
+    align-items: flex-start;
+    min-width: 520px;
+
+    .title_wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      -webkit-box-align: stretch;
+      align-items: stretch;
+      justify-content: stretch;
+      height: 44px;
+      width: 460px;
+      margin-bottom: 8px;
+
+      .title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        position: relative;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex: 1 1 0%;
+        height: 44px;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(22, 24, 35);
+      }
+
+      &:after {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        content: "";
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.5);
+        background: rgb(22, 24, 35);
+
+        width: 50%;
+        height: 4px;
+        background: rgb(22, 24, 35);
+        transition: transform 0.3s ease 0s;
+      }
+    }
+
+    .list_video_container {
+      width: 100%;
+
+      .list_video {
+        display: grid;
+        gap: 24px 16px;
+        grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
+
+        .video_container {
+          video {
+            border-radius: 4px;
+            width: 196px;
+            height: 260px;
+            object-fit: cover;
+
+            position: relative;
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+          }
+
+          .video_desc {
+            font-weight: 400;
+            padding: 2px 4px 0px;
+            height: 28px;
+            overflow: hidden;
+          }
+        }
       }
     }
   }

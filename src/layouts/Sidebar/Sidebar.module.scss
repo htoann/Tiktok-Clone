@@ -12,14 +12,15 @@
     padding-left: 10px;
   }
 
-  &::-webkit-scrollbar-thumb {
-    visibility: hidden;
+  ::-webkit-scrollbar-thumb {
+    visibility: hidden !important;
+    transition: all 2s;
   }
 
   &:hover {
     ::-webkit-scrollbar-thumb {
       background: rgba(22, 24, 35, 0.06);
-      visibility: visible;
+      visibility: visible !important;
     }
   }
 
@@ -28,6 +29,7 @@
     opacity: 0.1;
     margin: 15px 0;
     padding: 0 10px !important;
+    margin-left: 10px;
   }
 
   .sidebar_scrollbar {

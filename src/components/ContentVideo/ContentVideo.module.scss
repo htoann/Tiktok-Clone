@@ -81,6 +81,12 @@
         border-color: rgba(22, 24, 35, 0.12);
         background-color: rgb(255, 255, 255);
       }
+
+      .follow_button {
+        right: 0;
+        position: absolute;
+        top: 8px;
+      }
     }
 
     .video_wrapper {
@@ -155,5 +161,19 @@
   cursor: pointer;
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.video_short {
+  &::-webkit-media-controls-timeline {
+    display: none;
+  }
+
+  &::-webkit-media-controls-current-time-display {
+    display: none;
+  }
+
+  &::-webkit-media-controls-time-remaining-display {
+    display: none;
   }
 }
