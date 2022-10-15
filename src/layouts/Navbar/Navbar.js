@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaRegPaperPlane, FaRegCommentAlt, FaPlus } from "react-icons/fa";
+import {
+  FaRegPaperPlane,
+  FaRegCommentAlt,
+  FaPlus,
+  FaRegMoon,
+} from "react-icons/fa";
 import { IoEllipsisVertical } from "react-icons/io5";
 import Logo from "~/assets/images/logo.svg";
 
@@ -13,12 +18,13 @@ import Menu from "~/components/Popper/Menu/Menu";
 import Image from "~/components/Image/Image";
 import Search from "~/components/Search";
 import styles from "./Navbar.module.scss";
-import { handleDarkTheme } from "~/utils/handleDarkTheme";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/data/dataMenu";
 import { config } from "~/config";
+import { BsSun } from "react-icons/bs";
 
 function Navbar() {
   const [user, setUser] = useState([]);
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   const handleLogout = () => {
     setUser("");
@@ -29,12 +35,13 @@ function Navbar() {
   };
 
   useEffect(() => {
-    let element = document.body;
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme === "dark") {
+    const element = document.body;
+    if (theme === "dark") {
       element.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       element.classList.remove("dark");
+      localStorage.removeItem("theme", "dark");
     }
   });
 
@@ -44,15 +51,9 @@ function Navbar() {
         handleLogout();
         break;
 
-      case "darktheme":
-        handleDarkTheme();
-        break;
-
       default:
         break;
     }
-
-    // Handle to profile
   };
 
   return (
@@ -68,6 +69,19 @@ function Navbar() {
           <Button text leftIcon={<FaPlus />} to={config.routes.upload}>
             Upload
           </Button>
+
+          {theme === "dark" ? (
+            <BsSun
+              className={styles.menu_action}
+              onClick={() => setTheme("default")}
+            />
+          ) : (
+            <FaRegMoon
+              className={styles.menu_action}
+              onClick={() => setTheme("dark")}
+            />
+          )}
+
           {user ? (
             <>
               <Link to={config.routes.messages}>

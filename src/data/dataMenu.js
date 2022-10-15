@@ -58,7 +58,6 @@ export const MENU_ITEMS_1 = [
   },
   { title: "Feedback and help", icon: <FaQuestion /> },
   { title: "Keyboard shortcuts", icon: <FaRegKeyboard /> },
-  { title: "Dark Theme", icon: <FaAffiliatetheme />, type: "darktheme" },
 ];
 
 export const MENU_ITEMS_2 = [
