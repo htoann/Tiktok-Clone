@@ -83,7 +83,7 @@ function ContentVideo({ data }) {
                 <strong className={styles.count}>{data.comments_count}</strong>
               </div>
               <div className={styles.action_button}>
-                <div>
+                <div className={styles.menu_share}>
                   <Menu items={MENU_ITEMS_SHARE} right>
                     <div className={styles.icon}>
                       <FaShare />
