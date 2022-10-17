@@ -116,6 +116,10 @@
         .action_button {
           display: flex;
           flex-direction: column;
+
+          .menu_share {
+            z-index: 1;
+          }
         }
 
         .icon {

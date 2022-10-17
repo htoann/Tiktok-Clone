@@ -84,6 +84,7 @@ function Profile() {
                   <video
                     src={video.file_url}
                     muted
+                    loop
                     onMouseEnter={handleVideoPlay}
                     onMouseLeave={handleVideoPause}
                   />
