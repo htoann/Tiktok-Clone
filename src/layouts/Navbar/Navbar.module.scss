@@ -30,30 +30,38 @@
       align-items: center;
       justify-content: center;
 
+      .upload_icon + div {
+        margin-left: 12px;
+      }
+
       .menu_action {
         font-size: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 28px;
         cursor: pointer;
+        padding: 12px;
+      }
+
+      .menu_action + button {
+        margin-left: 12px;
       }
 
       .dropdown_icon {
         height: 30px;
         border-radius: 50%;
-        margin-left: 28px;
         cursor: pointer;
         display: flex;
+        margin-left: 12px;
       }
 
       .dropdown_avatar {
         border-radius: 50%;
-        margin-left: 28px;
         cursor: pointer;
         display: flex;
         width: 32px;
         height: 32px;
+        margin-left: 12px;
       }
     }
 

@@ -67,20 +67,29 @@ function Navbar() {
         <Search />
 
         <div className={styles.navbar_right}>
-          <Button text leftIcon={<FaPlus />} to={config.routes.upload}>
+          <Button
+            className={styles.upload_icon}
+            text
+            leftIcon={<FaPlus />}
+            to={config.routes.upload}
+          >
             Upload
           </Button>
 
           {theme === "dark" ? (
-            <BsSun
+            <div
               className={styles.menu_action}
               onClick={() => setTheme("default")}
-            />
+            >
+              <BsSun />
+            </div>
           ) : (
-            <FaRegMoon
+            <div
               className={styles.menu_action}
               onClick={() => setTheme("dark")}
-            />
+            >
+              <FaRegMoon />
+            </div>
           )}
 
           {user ? (

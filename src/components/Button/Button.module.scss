@@ -22,6 +22,10 @@
     margin-left: 8px;
   }
 
+  // & + div {
+  //   margin-left: 12px;
+  // }
+
   &.disabled {
     pointer-events: none;
   }
@@ -31,7 +35,6 @@
   color: var(--white);
   background-color: var(--red);
   border: none;
-  margin-left: 28px;
 
   &:hover {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
