@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { IoEllipsisVertical } from "react-icons/io5";
 import Logo from "~/assets/images/logo.svg";
+import LogoDark from "~/assets/images/logo_dark.svg";
 
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -60,7 +61,7 @@ function Navbar() {
     <header className={styles.navbar}>
       <div className={styles.navbar_wrapper}>
         <Link to={config.routes.home} className={styles.logo}>
-          <img src={Logo} alt="Tiktok" />
+          <img src={theme === "dark" ? LogoDark : Logo} alt="Tiktok" />
         </Link>
 
         <Search />
