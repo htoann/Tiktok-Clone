@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Verify from "~/assets/images/verify.svg";
 import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
 import Button from "~/components/Button";
@@ -10,11 +10,18 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Video from "~/components/ContentVideo/Video/";
 import { config } from "~/config";
+import handleFollowFunc from "~/utils/handleFollow";
 
 function ContentVideo({ data }) {
-  const user = data.user;
+  const [user, setUser] = useState(data.user);
   const profileLink = config.routes.profileLink(user.nickname);
-  const time = data.meta.playtime_seconds;
+  const videoTime = data.meta.playtime_seconds;
+  const fullName = `${user.first_name} ${user.last_name}`;
+
+  const handleFollow = async () => {
+    const isFollowed = await handleFollowFunc(user);
+    setUser((user) => ({ ...user, is_followed: isFollowed }));
+  };
 
   return (
     <div>
@@ -39,29 +46,22 @@ function ContentVideo({ data }) {
               <span className={styles.video_desc}>{data.description}</span>
               <h4 className={styles.video_music}>
                 <FaMusic className={styles.icon_music} />
-                {data.music ||
-                  `Nhạc nền - ${user.first_name} ${user.last_name}`}
+                {data.music || `Nhạc nền - ${fullName}`}
               </h4>
             </div>
-            {user.is_follow ? (
-              <Button
-                outline
-                className={`${styles.follow_button} ${styles.followed}`}
-              >
-                Following
-              </Button>
-            ) : (
-              <Button
-                outline
-                className={`${styles.follow_button} ${styles.follow}`}
-              >
-                Follow
-              </Button>
-            )}
+            <div className={styles.follow_button} onClick={handleFollow}>
+              {user.is_followed ? (
+                <Button outline className={styles.followed}>
+                  Following
+                </Button>
+              ) : (
+                <Button outline>Follow</Button>
+              )}
+            </div>
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <Video time={time} src={data.file_url} loop muted autoPlay />
+              <Video time={videoTime} src={data.file_url} loop muted autoPlay />
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>

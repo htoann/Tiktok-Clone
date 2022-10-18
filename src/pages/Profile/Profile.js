@@ -5,6 +5,9 @@ import Image from "./../../components/Image/Image";
 import Verify from "~/assets/images/verify.svg";
 import Button from "~/components/Button";
 import { getUsersService } from "~/services/getUsersService";
+import handleFollowFunc from "~/utils/handleFollow";
+import { BiUserCheck } from "react-icons/bi";
+import Tippy from "@tippyjs/react";
 
 function Profile() {
   const [user, setUser] = useState({});
@@ -28,6 +31,11 @@ function Profile() {
     e.target.currentTime = 0;
   };
 
+  const handleFollow = async () => {
+    const isFollowed = await handleFollowFunc(user);
+    setUser((user) => ({ ...user, is_followed: isFollowed }));
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -49,9 +57,27 @@ function Profile() {
             </h4>
 
             <div className={styles.button_container}>
-              <Button outline large className={styles.button_follow}>
-                Follow
-              </Button>
+              {user.is_followed ? (
+                <div className={styles.followed_container}>
+                  <Button outline large>
+                    Messenges
+                  </Button>
+                  <Tippy content="Unfollow" placement="bottom">
+                    <div className={styles.unfollow} onClick={handleFollow}>
+                      <BiUserCheck />
+                    </div>
+                  </Tippy>
+                </div>
+              ) : (
+                <Button
+                  outline
+                  large
+                  className={styles.button_follow}
+                  onClick={handleFollow}
+                >
+                  Follow
+                </Button>
+              )}
             </div>
           </div>
         </div>

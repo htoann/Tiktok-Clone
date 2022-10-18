@@ -60,6 +60,7 @@ function Menu({
 
   return (
     <Tippy
+      // visible
       interactive
       delay={[0, 500]}
       onHide={handleResetMenu}
