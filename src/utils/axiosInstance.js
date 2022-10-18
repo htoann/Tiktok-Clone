@@ -9,9 +9,18 @@ export const get = async (url, options = {}) => {
   return response.data;
 };
 
-export const post = async (url, options = {}) => {
-  const response = await axiosInstance.post(url, options);
+export const post = async (url, data) => {
+  const response = await axiosInstance.post(url, data, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
   return response.data;
 };
 
 export * as request from "~/utils/axiosInstance";
+
+// axiosInstance.interceptors.request.use(function (config) {
+//   config.headers.token = "Bearer " + localStorage.getItem("token");
+//   return config;
+// });
