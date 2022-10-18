@@ -4,10 +4,9 @@
   flex-direction: row;
   align-items: center;
   position: relative;
-  border-radius: 4px;
-  transition: background 200ms ease-in-out 0s;
   cursor: pointer;
   padding-right: 120px;
+  border-radius: 4px;
 
   &:hover {
     background: var(--gray);
