@@ -6,6 +6,7 @@ import {
   FaPlus,
   FaRegMoon,
 } from "react-icons/fa";
+import { BsSun } from "react-icons/bs";
 import { IoEllipsisVertical } from "react-icons/io5";
 import Logo from "~/assets/images/logo.svg";
 import LogoDark from "~/assets/images/logo_dark.svg";
@@ -14,21 +15,22 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
 import Avatar from "~/assets/images/Avatar.jpeg";
-import Button from "~/components/Button/Button";
-import Menu from "~/components/Popper/Menu/Menu";
-import Image from "~/components/Image/Image";
+import Button from "~/components/Button";
+import Menu from "~/components/Popper/Menu";
+import Image from "~/components/Image";
 import Search from "~/components/Search";
 import styles from "./Navbar.module.scss";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/data/dataMenu";
 import { config } from "~/config";
-import { BsSun } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "~/features/user/userSlice";
+import { userLogout } from "~/features/user/userAction";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
+  const navigate = useNavigate();
 
   useEffect(() => {
     const element = document.body;
@@ -44,9 +46,10 @@ function Navbar() {
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
       case "logout":
-        dispatch(logout());
+        dispatch(userLogout());
         break;
-
+      case "toProfile":
+        navigate(config.routes.profileLink(user.nickname));
       default:
         break;
     }
