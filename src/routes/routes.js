@@ -11,7 +11,7 @@ import NotFound from "~/pages/NotFound";
 import Profile from "~/pages/Profile";
 import Upload from "~/pages/Upload";
 import Messages from "~/pages/Messages";
-import Login from "~/pages/Login/Login";
+import Login from "~/pages/Login";
 import Register from "~/pages/Register/Register";
 
 // Public routes
