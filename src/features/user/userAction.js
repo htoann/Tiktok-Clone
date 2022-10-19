@@ -21,3 +21,7 @@ export const userLogin = createAsyncThunk(
     }
   }
 );
+
+export const userLogout = createAsyncThunk(config.authApi.logout, () => {
+  localStorage.removeItem("user");
+});
