@@ -1,12 +1,12 @@
 import React from "react";
+import "./Login.scss";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import "./Login.scss";
 import { config } from "~/config";
-import Error from "~/components/Error";
 import { userLogin } from "~/features/user/userAction";
+import Error from "~/components/Error";
 
 function Login() {
   const { loading, user, error } = useSelector((state) => state.user);

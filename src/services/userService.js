@@ -1,8 +1,9 @@
+import { config } from "~/config";
 import { request } from "~/utils/axiosInstance";
 
 export const register = async ({ email, password }) => {
   try {
-    await request.post("auth/register", {
+    await request.post(config.authApi.register, {
       email,
       password,
     });
@@ -12,14 +13,15 @@ export const register = async ({ email, password }) => {
 };
 
 export const login = async ({ email, password }) => {
-  return await request.post("auth/login", {
-    email,
-    password,
-  });
+  try {
+    const res = await request.post(config.authApi.login, {
+      email,
+      password,
+    });
+    return res;
+  } catch (err) {
+    console.log(err);
+  }
 };
-
-// export const logout = () => {
-//   localStorage.removeItem("user");
-// };
 
 export * as userService from "~/services/userService";
