@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
-import Tiktok from "~/assets/images/Tiktok.png";
+// import Avatar from "~/assets/images/Avatar.jpeg";
+import Tiktok from "~/assets/images/Tiktok2.png";
 import styles from "./Image.module.scss";
 import PropTypes from "prop-types";
 
