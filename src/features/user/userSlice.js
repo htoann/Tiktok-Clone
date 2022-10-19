@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import { userLogin } from "./userAction";
 
 // initialize TOKEN from local storage
-const token = localStorage.getItem("token")
-  ? localStorage.getItem("token")
-  : null;
+const userJson = localStorage.getItem("user");
+const user = JSON.parse(userJson)?.data || null;
+const token = JSON.parse(userJson)?.meta.token || null;
 
 const initialState = {
   loading: false,
-  userInfo: null,
-  token,
+  user: user,
+  token: token,
   error: null,
   success: false,
 };
@@ -17,7 +17,15 @@ const initialState = {
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem("user");
+      state.loading = false;
+      state.user = null;
+      state.token = null;
+      state.error = null;
+    },
+  },
   extraReducers: {
     [userLogin.pending]: (state) => {
       state.loading = true;
@@ -25,7 +33,7 @@ const userSlice = createSlice({
     },
     [userLogin.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.userInfo = payload;
+      state.user = payload;
       state.token = payload.token;
     },
     [userLogin.rejected]: (state, { payload }) => {
@@ -35,3 +43,4 @@ const userSlice = createSlice({
   },
 });
 export default userSlice.reducer;
+export const { logout } = userSlice.actions;

@@ -12,7 +12,9 @@ export const get = async (url, options = {}) => {
 export const post = async (url, data) => {
   const response = await axiosInstance.post(url, data, {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${
+        JSON.parse(localStorage.getItem("user"))?.meta.token
+      }`,
     },
   });
   return response.data;

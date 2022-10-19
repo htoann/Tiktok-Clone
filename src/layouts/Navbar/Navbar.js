@@ -22,18 +22,13 @@ import styles from "./Navbar.module.scss";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/data/dataMenu";
 import { config } from "~/config";
 import { BsSun } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "~/features/user/userSlice";
 
 function Navbar() {
-  const [user, setUser] = useState([]);
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
-
-  const handleLogout = () => {
-    setUser("");
-  };
-
-  const handleLogin = () => {
-    setUser([]);
-  };
 
   useEffect(() => {
     const element = document.body;
@@ -49,7 +44,7 @@ function Navbar() {
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
       case "logout":
-        handleLogout();
+        dispatch(logout());
         break;
 
       default:
@@ -118,9 +113,9 @@ function Navbar() {
             </>
           ) : (
             <>
-              <Button primary onClick={handleLogin}>
-                Log in
-              </Button>
+              <Link to={config.routes.login}>
+                <Button primary>Log in</Button>
+              </Link>
 
               <Menu items={MENU_ITEMS_1} onChange={handleMenuChange}>
                 <div>

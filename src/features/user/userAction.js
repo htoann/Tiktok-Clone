@@ -6,12 +6,12 @@ export const userLogin = createAsyncThunk(
   config.authApi.login,
   async ({ email, password }, { rejectWithValue }) => {
     try {
-      const data = await userService.login({
+      const user = await userService.login({
         email,
         password,
       });
-      localStorage.setItem("token", data.meta.token);
-      return data.data;
+      user && localStorage.setItem("user", JSON.stringify(user));
+      return user.data;
     } catch (error) {
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
