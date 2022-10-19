@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 import { getVideosService } from "~/services/getVideosService";
-import ContentVideo from "../../components/ContentVideo/ContentVideo";
+import ContentVideo from "../../components/ContentVideo";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Loader from "./Loader";
+import Loader from "~/components/Loader";
 
 function Home() {
   const [listVideo, setListVideo] = useState([]);
