@@ -1,23 +1,28 @@
 import axios from "axios";
+import authHeader from "~/services/authHeader";
 
 export const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
+  headers: authHeader(),
 });
 
 export const get = async (url, options = {}) => {
-  const response = await axiosInstance.get(url, options);
-  return response.data;
+  try {
+    const response = await axiosInstance.get(url, options);
+    return response.data;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-export const post = async (url, data) => {
-  const response = await axiosInstance.post(url, data, {
-    headers: {
-      Authorization: `Bearer ${
-        JSON.parse(localStorage.getItem("user"))?.meta.token
-      }`,
-    },
-  });
-  return response.data;
+export const post = async (url, data, options = {}) => {
+  try {
+    const response = await axiosInstance.post(url, data, options);
+    return response.data;
+  } catch (err) {
+    window.location.href = "/login";
+    console.log(err);
+  }
 };
 
 export * as request from "~/utils/axiosInstance";
