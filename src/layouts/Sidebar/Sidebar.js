@@ -1,41 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaHome } from "react-icons/fa";
 import { BsPeople, BsCameraVideo } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import ListAccount from "~/components/ListAccount";
 import Button from "~/components/Button";
 import styles from "./Sidebar.module.scss";
-import { getUsersService } from "~/services/getUsersService";
 import { config } from "~/config";
 import { useSelector } from "react-redux";
+import SuggestedList from "./SuggestedList";
+import FollowingList from "./FollowingList";
 
 function Sidebar() {
   const [isActive, setIsActive] = useState(1);
   const { user } = useSelector((state) => state.user);
-  const [suggestedList, setSuggestedList] = useState([]);
-  const [followingList, setFollowingList] = useState([]);
-  const [perpage, setPerpage] = useState(5);
 
   const handleActive = (id) => {
     setIsActive(id);
   };
-
-  const handleSeeMore = () => {
-    if (perpage != 20) {
-      setPerpage((prev) => prev + 5);
-    } else {
-      setPerpage(5);
-    }
-  };
-
-  useEffect(() => {
-    const fetchApi = async () => {
-      const result = await getUsersService.suggestedList(1, perpage);
-      setSuggestedList(result);
-    };
-
-    fetchApi();
-  }, [perpage]);
 
   return (
     <div className={styles.sidebar}>
@@ -96,13 +76,8 @@ function Sidebar() {
           </>
         )}
 
-        <ListAccount
-          title="Suggested accounts"
-          list={suggestedList}
-          onClick={handleSeeMore}
-          perpage={perpage}
-        />
-        <ListAccount title="Following accounts" list={followingList} />
+        <SuggestedList />
+        <FollowingList />
         <div className={styles.contact}>
           <p>Contact me</p>
           <a
