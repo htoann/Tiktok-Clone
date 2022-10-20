@@ -14,7 +14,6 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 ## Features
 
 - Infinite loading
-- User profile
 - Search accounts
 - Auth (Register, Login, Logout)
 - Follow user
