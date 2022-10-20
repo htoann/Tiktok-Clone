@@ -25,7 +25,7 @@ function Profile() {
     };
 
     fetchApi();
-  }, [location.pathname, user, loading]);
+  }, [location.pathname]);
 
   const handleVideoPlay = (e) => {
     e.target.play();
@@ -43,7 +43,7 @@ function Profile() {
 
   return (
     <div className={styles.wrapper}>
-      {!loading && user ? (
+      {!loading ? (
         <>
           <div className={styles.header}>
             <div className={styles.info}>
