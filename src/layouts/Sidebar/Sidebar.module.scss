@@ -7,11 +7,6 @@
   width: 348px;
   padding-left: 10px;
 
-  p,
-  a {
-    padding-left: 10px;
-  }
-
   ::-webkit-scrollbar-thumb {
     visibility: hidden !important;
     background: rgba(22, 24, 35, 0.06);
@@ -77,7 +72,7 @@
 
     .sidebar_login {
       position: relative;
-      padding: 8px 8px 42px 8px;
+      padding: 8px 8px 8px 8px;
       margin: 0;
 
       .login_tip {
@@ -86,12 +81,19 @@
         line-height: 22px;
         display: flex;
       }
+
+      .button_login {
+        margin-top: 20px;
+      }
     }
   }
 }
 
-.facebook {
-  color: red !important;
-  font-size: 18px;
-  font-weight: 600;
+.contact {
+  padding-left: 10px;
+  .facebook {
+    color: red !important;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }

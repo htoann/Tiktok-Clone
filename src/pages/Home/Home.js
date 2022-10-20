@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 import { getVideosService } from "~/services/getVideosService";
-import ContentVideo from "../../components/ContentVideo/ContentVideo";
+import ContentVideo from "../../components/ContentVideo";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Loader from "./Loader";
+import Loader from "~/components/Loader";
+import { useSelector } from "react-redux";
 
 function Home() {
+  const { user } = useSelector((state) => state.user);
   const [listVideo, setListVideo] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(2);
@@ -17,7 +19,7 @@ function Home() {
     };
 
     getListVideo();
-  }, []);
+  }, [user]);
 
   const fetchListVideo = async () => {
     const result = await getVideosService.listVideo("for-you", page);

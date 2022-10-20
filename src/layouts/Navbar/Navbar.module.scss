@@ -41,10 +41,10 @@
         justify-content: center;
         cursor: pointer;
         padding: 12px;
-      }
 
-      .menu_action + button {
-        margin-left: 12px;
+        & + a {
+          margin-left: 12px;
+        }
       }
 
       .dropdown_icon {
@@ -52,7 +52,7 @@
         border-radius: 50%;
         cursor: pointer;
         display: flex;
-        margin-left: 12px;
+        margin-left: 24px;
       }
 
       .dropdown_avatar {

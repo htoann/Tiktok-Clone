@@ -1,22 +1,26 @@
-import React, { useState } from "react";
-import Verify from "~/assets/images/verify.svg";
-import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
-import Button from "~/components/Button";
-import styles from "./ContentVideo.module.scss";
-import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
-import Menu from "~/components/Popper/Menu/Menu";
-import Image from "../Image/Image";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
+import styles from "./ContentVideo.module.scss";
+import Verify from "~/assets/images/verify.svg";
+import Button from "~/components/Button";
+import Menu from "~/components/Popper/Menu";
 import Video from "~/components/ContentVideo/Video/";
-import { config } from "~/config";
+import Image from "../Image";
+import PropTypes from "prop-types";
 import handleFollowFunc from "~/utils/handleFollow";
+import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
+import { config } from "~/config";
+import { getFullName } from "~/utils/common";
 
 function ContentVideo({ data }) {
   const [user, setUser] = useState(data.user);
   const profileLink = config.routes.profileLink(user.nickname);
   const videoTime = data.meta.playtime_seconds;
-  const fullName = `${user.first_name} ${user.last_name}`;
+
+  useEffect(() => {
+    setUser(data.user);
+  }, [data]);
 
   const handleFollow = async () => {
     const isFollowed = await handleFollowFunc(user);
@@ -37,16 +41,14 @@ function ContentVideo({ data }) {
                   <Link to={profileLink}>
                     <h3 className={styles.username}>{user.nickname}</h3>
                     {user.tick && <Image src={Verify} alt="" />}
-                    <h3 className={styles.name}>
-                      {user.first_name} {user.last_name}
-                    </h3>
+                    <h3 className={styles.name}>{getFullName(user)}</h3>
                   </Link>
                 </div>
               </div>
               <span className={styles.video_desc}>{data.description}</span>
               <h4 className={styles.video_music}>
                 <FaMusic className={styles.icon_music} />
-                {data.music || `Nhạc nền - ${fullName}`}
+                {data.music || `Nhạc nền - ${getFullName(user)}`}
               </h4>
             </div>
             <div className={styles.follow_button} onClick={handleFollow}>
@@ -67,7 +69,7 @@ function ContentVideo({ data }) {
               <div className={styles.action_button}>
                 <div
                   className={
-                    user.is_liked
+                    data.is_liked
                       ? `${styles.icon} ${styles.liked}`
                       : `${styles.icon}`
                   }
