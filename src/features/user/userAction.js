@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { userService } from "~/services/userService";
+import { userService } from "~/services/postUserService";
 import { config } from "~/config";
 
 export const userLogin = createAsyncThunk(
@@ -31,7 +31,6 @@ export const userRegister = createAsyncThunk(
         password,
         type,
       });
-
       user && localStorage.setItem("user", JSON.stringify(user));
       return user.data;
     } catch (error) {
