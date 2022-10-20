@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
 import styles from "./ContentVideo.module.scss";
@@ -17,6 +17,10 @@ function ContentVideo({ data }) {
   const [user, setUser] = useState(data.user);
   const profileLink = config.routes.profileLink(user.nickname);
   const videoTime = data.meta.playtime_seconds;
+
+  useEffect(() => {
+    setUser(data.user);
+  }, [data]);
 
   const handleFollow = async () => {
     const isFollowed = await handleFollowFunc(user);
