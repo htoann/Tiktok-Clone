@@ -20,4 +20,4 @@ export const unFollow = async (id) => {
   }
 };
 
-export * as followService from "~/services/followService";
+export * as followService from "~/services/postFollowService";

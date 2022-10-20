@@ -1,4 +1,4 @@
-import { followService } from "~/services/followService";
+import { followService } from "~/services/postFollowService";
 
 const handleFollowFunc = async (user) => {
   let newUser;

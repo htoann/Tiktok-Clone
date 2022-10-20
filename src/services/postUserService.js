@@ -22,4 +22,4 @@ export const logout = async () => {
   await request.post(config.authApi.logout);
 };
 
-export * as userService from "~/services/userService";
+export * as userService from "~/services/postUserService";
