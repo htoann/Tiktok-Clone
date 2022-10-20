@@ -13,7 +13,7 @@ function ListAccount({ title, list, onClick, perpage }) {
         ))}
         <div>
           <p className={styles.sidebar_seeAll} onClick={onClick}>
-            {perpage === 20 ? "See less" : "See more"}
+            {perpage === 20 || list.length < 5 ? "See less" : "See more"}
           </p>
         </div>
       </div>

@@ -14,6 +14,19 @@ export const suggestedList = async (page = 1, perpage = 5) => {
   }
 };
 
+export const followingList = async (page = 1) => {
+  try {
+    const res = await request.get("me/followings", {
+      params: {
+        page,
+      },
+    });
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const user = async (pathname) => {
   try {
     const res = await request.get(`users${pathname}`);
