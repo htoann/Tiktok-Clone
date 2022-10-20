@@ -1,9 +1,7 @@
 import axios from "axios";
-import authHeader from "~/services/authHeader";
 
 export const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
-  headers: authHeader(),
 });
 
 export const get = async (url, options = {}) => {
@@ -16,18 +14,17 @@ export const get = async (url, options = {}) => {
 };
 
 export const post = async (url, data, options = {}) => {
-  try {
-    const response = await axiosInstance.post(url, data, options);
-    return response.data;
-  } catch (err) {
-    window.location.href = "/login";
-    console.log(err);
-  }
+  const response = await axiosInstance.post(url, data, options);
+  return response.data;
 };
 
-export * as request from "~/utils/axiosInstance";
+axiosInstance.interceptors.request.use(function (config) {
+  const token =
+    "Bearer " + JSON.parse(localStorage.getItem("user"))?.meta.token;
+  if (token) {
+    config.headers.Authorization = token;
+  }
+  return config;
+});
 
-// axiosInstance.interceptors.request.use(function (config) {
-//   config.headers.token = "Bearer " + localStorage.getItem("token");
-//   return config;
-// });
+export * as request from "~/utils/axiosInstance";

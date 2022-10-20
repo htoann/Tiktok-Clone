@@ -43,7 +43,7 @@ function Profile() {
 
   return (
     <div className={styles.wrapper}>
-      {!loading ? (
+      {!loading && user ? (
         <>
           <div className={styles.header}>
             <div className={styles.info}>

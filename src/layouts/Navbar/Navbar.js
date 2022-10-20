@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaRegPaperPlane,
   FaRegCommentAlt,
@@ -31,6 +31,9 @@ function Navbar() {
   const dispatch = useDispatch();
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isLoginPage = location.pathname.includes("/login");
 
   useEffect(() => {
     const element = document.body;
@@ -116,9 +119,15 @@ function Navbar() {
             </>
           ) : (
             <>
-              <Link to={config.routes.login}>
-                <Button primary>Log in</Button>
-              </Link>
+              {isLoginPage ? (
+                <Link to={config.routes.register}>
+                  <Button primary>Register</Button>
+                </Link>
+              ) : (
+                <Link to={config.routes.login}>
+                  <Button primary>Log in</Button>
+                </Link>
+              )}
 
               <Menu items={MENU_ITEMS_1} onChange={handleMenuChange}>
                 <div>

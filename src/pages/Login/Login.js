@@ -13,12 +13,10 @@ function Login() {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const nickname =
-    user && (user.nickname || `${user.first_name} ${user.last_name}`);
 
   useEffect(() => {
     if (user) {
-      navigate(config.routes.profileLink(nickname));
+      navigate(config.routes.home);
     }
   }, [navigate, user]);
 
@@ -33,10 +31,10 @@ function Login() {
           <div className="title">LOGIN</div>
           <div className="input">
             <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Username"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
               {...register("email")}
               required
             />
@@ -60,9 +58,9 @@ function Login() {
             </button>
           </div>
 
-          <a href="#" className="pass-forgot">
+          {/* <a href="#" className="pass-forgot">
             Forgot your password?
-          </a>
+          </a> */}
         </div>
       </div>
     </form>
