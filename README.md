@@ -16,13 +16,19 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 - Infinite loading
 - User profile
 - Search accounts
-- Auth (Login)
+- Auth (Register, Login, Logout)
+- Follow user
+- Following accounts tab
+- Suggested accounts tab
+- View Profile, User
+- Interact with videos like Tiktok
+- Dảk Theme
+
+
 - ...
-<!-- Search videos -->
+<!-- - Search videos -->
 <!-- - Auth (Google, Facebook) -->
 <!-- - Upload video with thumbnail -->
-<!-- - Follow user -->
-<!-- - Following tab -->
 <!-- - Like a video -->
 <!-- - Comment on a video -->
 <!-- - Share video on Facebook, Twitter, Reddit,... -->
