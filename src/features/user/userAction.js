@@ -44,6 +44,7 @@ export const userRegister = createAsyncThunk(
   }
 );
 
-export const userLogout = createAsyncThunk(config.authApi.logout, () => {
+export const userLogout = createAsyncThunk(config.authApi.logout, async () => {
+  await userService.logout();
   localStorage.removeItem("user");
 });

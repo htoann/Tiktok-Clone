@@ -18,4 +18,8 @@ export const login = async ({ email, password }) => {
   return res;
 };
 
+export const logout = async () => {
+  await request.post(config.authApi.logout);
+};
+
 export * as userService from "~/services/userService";

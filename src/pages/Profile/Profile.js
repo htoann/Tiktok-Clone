@@ -10,8 +10,10 @@ import Loader from "~/components/Loader/Loader";
 import handleFollowFunc from "~/utils/handleFollow";
 import { getUsersService } from "~/services/getUsersService";
 import { getFullName } from "~/utils/common";
+import { useSelector } from "react-redux";
 
 function Profile() {
+  const { user: userRedux } = useSelector((state) => state.user);
   const [user, setUser] = useState({});
   const location = useLocation();
   const [loading, setLoading] = useState(true);
@@ -25,7 +27,7 @@ function Profile() {
     };
 
     fetchApi();
-  }, [location.pathname]);
+  }, [location.pathname, userRedux, user.is_followed]);
 
   const handleVideoPlay = (e) => {
     e.target.play();
