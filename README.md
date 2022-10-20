@@ -19,9 +19,9 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 - Follow user
 - Following accounts tab
 - Suggested accounts tab
-- View Profile, User
+- View profile, user
 - Interact with videos like Tiktok
-- Dảk Theme
+- Dảk theme
 
 
 - ...
