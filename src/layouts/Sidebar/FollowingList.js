@@ -24,7 +24,7 @@ function FollowingList() {
 
   return (
     <ListAccount
-      title="Suggested accounts"
+      title="Following accounts"
       list={followingList}
       onClick={handleSeeMore}
       page={page}
