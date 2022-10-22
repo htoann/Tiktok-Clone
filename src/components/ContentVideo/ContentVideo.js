@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHeart, FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
+import { FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
+import { IoHeart } from "react-icons/io5";
 import styles from "./ContentVideo.module.scss";
 import Verify from "~/assets/images/verify.svg";
 import Button from "~/components/Button";
@@ -13,19 +14,30 @@ import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
 import { config } from "~/config";
 import { getFullName } from "~/utils/common";
 import WrapperAuth from "../WrapperAuth";
+import handleLikeFunc from "~/utils/handleLike";
 
 function ContentVideo({ data }) {
-  const [user, setUser] = useState(data.user);
+  const [content, setContent] = useState(data);
+  const [user, setUser] = useState(content.user);
   const profileLink = config.routes.profileLink(user.nickname);
-  const videoTime = data.meta.playtime_seconds;
+  const videoTime = content.meta.playtime_seconds;
 
   useEffect(() => {
-    setUser(data.user);
-  }, [data]);
+    setUser(content.user);
+    setContent(content);
+  }, [content]);
 
   const handleFollow = async () => {
     const isFollowed = await handleFollowFunc(user);
     setUser((user) => ({ ...user, is_followed: isFollowed }));
+  };
+
+  const handleLike = async () => {
+    const newContent = await handleLikeFunc(content);
+    setContent((content) => ({
+      ...content,
+      ...newContent,
+    }));
   };
 
   return (
@@ -46,10 +58,10 @@ function ContentVideo({ data }) {
                   </Link>
                 </div>
               </div>
-              <span className={styles.video_desc}>{data.description}</span>
+              <span className={styles.video_desc}>{content.description}</span>
               <h4 className={styles.video_music}>
                 <FaMusic className={styles.icon_music} />
-                {data.music || `Nhạc nền - ${getFullName(user)}`}
+                {content.music || `Nhạc nền - ${getFullName(user)}`}
               </h4>
             </div>
             <WrapperAuth>
@@ -66,26 +78,37 @@ function ContentVideo({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <Video time={videoTime} src={data.file_url} loop muted autoPlay />
+              <Video
+                time={videoTime}
+                src={content.file_url}
+                loop
+                muted
+                autoPlay
+              />
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
-                <div
-                  className={
-                    data.is_liked
-                      ? `${styles.icon} ${styles.liked}`
-                      : `${styles.icon}`
-                  }
-                >
-                  <FaHeart />
-                </div>
-                <strong className={styles.count}>{data.likes_count}</strong>
+                <WrapperAuth>
+                  <div
+                    className={
+                      content.is_liked
+                        ? `${styles.icon} ${styles.liked}`
+                        : `${styles.icon}`
+                    }
+                    onClick={() => handleLike(content)}
+                  >
+                    <IoHeart />
+                  </div>
+                </WrapperAuth>
+                <strong className={styles.count}>{content.likes_count}</strong>
               </div>
               <div className={styles.action_button}>
                 <div className={styles.icon}>
                   <FaCommentDots />
                 </div>
-                <strong className={styles.count}>{data.comments_count}</strong>
+                <strong className={styles.count}>
+                  {content.comments_count}
+                </strong>
               </div>
               <div className={styles.action_button}>
                 <div className={styles.menu_share}>
@@ -95,7 +118,7 @@ function ContentVideo({ data }) {
                     </div>
                   </Menu>
                 </div>
-                <strong className={styles.count}>{data.shares_count}</strong>
+                <strong className={styles.count}>{content.shares_count}</strong>
               </div>
             </div>
           </div>
