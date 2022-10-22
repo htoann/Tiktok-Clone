@@ -12,6 +12,7 @@ import handleFollowFunc from "~/utils/handleFollow";
 import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
 import { config } from "~/config";
 import { getFullName } from "~/utils/common";
+import WrapperAuth from "../WrapperAuth";
 
 function ContentVideo({ data }) {
   const [user, setUser] = useState(data.user);
@@ -51,15 +52,17 @@ function ContentVideo({ data }) {
                 {data.music || `Nhạc nền - ${getFullName(user)}`}
               </h4>
             </div>
-            <div className={styles.follow_button} onClick={handleFollow}>
-              {user.is_followed ? (
-                <Button outline className={styles.followed}>
-                  Following
-                </Button>
-              ) : (
-                <Button outline>Follow</Button>
-              )}
-            </div>
+            <WrapperAuth>
+              <div className={styles.follow_button} onClick={handleFollow}>
+                {user.is_followed ? (
+                  <Button outline className={styles.followed}>
+                    Following
+                  </Button>
+                ) : (
+                  <Button outline>Follow</Button>
+                )}
+              </div>
+            </WrapperAuth>
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>

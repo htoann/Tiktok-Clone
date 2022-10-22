@@ -77,7 +77,9 @@ function Sidebar() {
         )}
 
         <SuggestedList />
-        <FollowingList />
+
+        {user && <FollowingList />}
+
         <div className={styles.contact}>
           <p>Contact me</p>
           <a

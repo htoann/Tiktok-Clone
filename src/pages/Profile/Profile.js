@@ -11,6 +11,7 @@ import handleFollowFunc from "~/utils/handleFollow";
 import { getUsersService } from "~/services/getUsersService";
 import { getFullName } from "~/utils/common";
 import { useSelector } from "react-redux";
+import WrapperAuth from "~/components/WrapperAuth";
 
 function Profile() {
   const { user: userRedux } = useSelector((state) => state.user);
@@ -65,29 +66,34 @@ function Profile() {
 
                 <h4 className={styles.user_fullname}>{getFullName(user)}</h4>
 
-                <div className={styles.button_container}>
-                  {user.is_followed ? (
-                    <div className={styles.followed_container}>
-                      <Button outline large>
-                        Messenges
+                <WrapperAuth>
+                  <div className={styles.button_container}>
+                    {user.is_followed ? (
+                      <div className={styles.followed_container}>
+                        <Button outline large>
+                          Messenges
+                        </Button>
+                        <Tippy content="Unfollow" placement="bottom">
+                          <div
+                            className={styles.unfollow}
+                            onClick={handleFollow}
+                          >
+                            <BiUserCheck />
+                          </div>
+                        </Tippy>
+                      </div>
+                    ) : (
+                      <Button
+                        outline
+                        large
+                        className={styles.button_follow}
+                        onClick={handleFollow}
+                      >
+                        Follow
                       </Button>
-                      <Tippy content="Unfollow" placement="bottom">
-                        <div className={styles.unfollow} onClick={handleFollow}>
-                          <BiUserCheck />
-                        </div>
-                      </Tippy>
-                    </div>
-                  ) : (
-                    <Button
-                      outline
-                      large
-                      className={styles.button_follow}
-                      onClick={handleFollow}
-                    >
-                      Follow
-                    </Button>
-                  )}
-                </div>
+                    )}
+                  </div>
+                </WrapperAuth>
               </div>
             </div>
             <h2 className={styles.count_info}>
