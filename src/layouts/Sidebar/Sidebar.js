@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import SuggestedList from "./SuggestedList";
 import FollowingList from "./FollowingList";
 import Tab from "./Tab";
+import WrapperAuth from "~/components/WrapperAuth";
 
 function Sidebar() {
   const { user } = useSelector((state) => state.user);
@@ -34,18 +35,20 @@ function Sidebar() {
           >
             For you
           </Tab>
-          <Tab
-            to={config.routes.following}
-            Icon={BsPeople}
-            className={
-              isActive === 2
-                ? `${styles.sidebar_tab} ${styles.sidebar_active}`
-                : styles.sidebar_tab
-            }
-            onClick={() => handleActive(2)}
-          >
-            Following
-          </Tab>
+          <WrapperAuth>
+            <Tab
+              to={config.routes.following}
+              Icon={BsPeople}
+              className={
+                isActive === 2
+                  ? `${styles.sidebar_tab} ${styles.sidebar_active}`
+                  : styles.sidebar_tab
+              }
+              onClick={() => handleActive(2)}
+            >
+              Following
+            </Tab>
+          </WrapperAuth>
           <Tab
             to={config.routes.live}
             Icon={BsCameraVideo}

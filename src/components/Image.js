@@ -1,13 +1,12 @@
 import React, { forwardRef } from "react";
 // import Avatar from "~/assets/images/Avatar.jpeg";
 import Tiktok from "~/assets/images/Tiktok2.png";
-import styles from "./Image.module.scss";
 import PropTypes from "prop-types";
 
 const Image = forwardRef(({ src, alt, width, height, ...props }, ref) => {
   return (
     <img
-      className={styles.wrapper}
+      className={{ overflow: hidden }}
       src={src}
       alt={alt}
       onError={({ currentTarget }) => {

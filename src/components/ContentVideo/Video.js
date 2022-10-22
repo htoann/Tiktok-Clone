@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "../ContentVideo.module.scss";
+import styles from "./ContentVideo.module.scss";
 
 function Video({
   src,
