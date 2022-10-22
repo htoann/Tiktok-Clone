@@ -95,13 +95,11 @@ function Navbar() {
 
           {user ? (
             <>
-              <Link to={config.routes.messages}>
-                <Tippy content="Messages" placement="bottom" theme="gradient">
-                  <div className={styles.menu_action}>
-                    <FaRegPaperPlane />
-                  </div>
-                </Tippy>
-              </Link>
+              <Tippy content="Messages" placement="bottom" theme="gradient">
+                <div className={styles.menu_action}>
+                  <FaRegPaperPlane />
+                </div>
+              </Tippy>
 
               <Tippy content="Inbox" placement="bottom">
                 <div className={styles.menu_action}>

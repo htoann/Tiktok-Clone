@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../ContentVideo.module.scss";
 
-function Video({ src, loop = false, muted = false, autoPlay = false, time }) {
+function Video({
+  src,
+  loop = false,
+  muted = false,
+  autoPlay = false,
+  time,
+  poster,
+}) {
   // Automatically Play and Pause video as it enters and leaves the viewport/screen
   const videoRef = useRef(null);
   const [showControls, setShowControls] = useState(false);
@@ -54,6 +61,7 @@ function Video({ src, loop = false, muted = false, autoPlay = false, time }) {
       disablePictureInPicture
       controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
       onMouseEnter={handleShowControls}
+      poster={poster}
     />
   );
 }
