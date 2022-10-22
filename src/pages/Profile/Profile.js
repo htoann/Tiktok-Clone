@@ -134,6 +134,7 @@ function Profile() {
                         loop
                         onMouseEnter={handleVideoPlay}
                         onMouseLeave={handleVideoPause}
+                        poster={video.thumb_url}
                       />
                       <div className={styles.video_desc}>
                         <p href="">{video.description}</p>

@@ -84,6 +84,7 @@ function ContentVideo({ data }) {
                 loop
                 muted
                 autoPlay
+                poster={content.thumb_url}
               />
             </div>
             <div className={styles.action_items}>
