@@ -16,7 +16,7 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 - Infinite loading
 - Search accounts
 - Auth (Register, Login, Logout)
-- Follow user
+- Follow, unfollow user
 - Following accounts tab
 - Suggested accounts tab
 - View profile, user
