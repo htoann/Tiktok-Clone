@@ -8,10 +8,11 @@ import { config } from "~/config";
 import { useSelector } from "react-redux";
 import SuggestedList from "./SuggestedList";
 import FollowingList from "./FollowingList";
+import Tab from "./Tab";
 
 function Sidebar() {
-  const [isActive, setIsActive] = useState(1);
   const { user } = useSelector((state) => state.user);
+  const [isActive, setIsActive] = useState(1);
 
   const handleActive = (id) => {
     setIsActive(id);
@@ -21,8 +22,9 @@ function Sidebar() {
     <div className={styles.sidebar}>
       <div className={styles.sidebar_scrollbar}>
         <div className={styles.sidebar_tabs}>
-          <Link
+          <Tab
             to={config.routes.home}
+            Icon={FaHome}
             className={
               isActive === 1
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -30,11 +32,11 @@ function Sidebar() {
             }
             onClick={() => handleActive(1)}
           >
-            <FaHome className={styles.sidebar_icon} />
-            <h2 className={styles.sidebar_title}>For you</h2>
-          </Link>
-          <Link
+            For you
+          </Tab>
+          <Tab
             to={config.routes.following}
+            Icon={BsPeople}
             className={
               isActive === 2
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -42,11 +44,11 @@ function Sidebar() {
             }
             onClick={() => handleActive(2)}
           >
-            <BsPeople className={styles.sidebar_icon} />
-            <h2 className={styles.sidebar_title}>Following</h2>
-          </Link>
-          <Link
+            Following
+          </Tab>
+          <Tab
             to={config.routes.live}
+            Icon={BsCameraVideo}
             className={
               isActive === 3
                 ? `${styles.sidebar_tab} ${styles.sidebar_active}`
@@ -54,9 +56,8 @@ function Sidebar() {
             }
             onClick={() => handleActive(3)}
           >
-            <BsCameraVideo className={styles.sidebar_icon} />
-            <h2 className={styles.sidebar_title}>Live</h2>
-          </Link>
+            Live
+          </Tab>
         </div>
         <hr className={styles.hr} />
 
