@@ -3,7 +3,7 @@ import { followService } from "~/services/postFollowService";
 const handleFollowFunc = async (user) => {
   let newUser;
   if (user && user.is_followed) {
-    newUser = await followService.unFollow(user.id);
+    newUser = await followService.unfollow(user.id);
   } else {
     newUser = await followService.follow(user.id);
   }
