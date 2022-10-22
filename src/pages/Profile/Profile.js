@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { BiUserCheck } from "react-icons/bi";
+import Verify from "~/assets/images/verify.svg";
 import Tippy from "@tippyjs/react";
 import Image from "./../../components/Image";
 import Button from "~/components/Button";
-import Verify from "~/assets/images/verify.svg";
-import Loader from "~/components/Loader/Loader";
+import Loader from "~/components/Loader";
+import WrapperAuth from "~/components/WrapperAuth";
 import handleFollowFunc from "~/utils/handleFollow";
 import { getUsersService } from "~/services/getUsersService";
 import { getFullName } from "~/utils/common";
 import { useSelector } from "react-redux";
-import WrapperAuth from "~/components/WrapperAuth";
+import { FaRegEdit } from "react-icons/fa";
 
 function Profile() {
   const { user: userRedux } = useSelector((state) => state.user);
@@ -63,37 +64,42 @@ function Profile() {
                     <Image src={Verify} className={styles.verify} />
                   )}
                 </h2>
-
-                <h4 className={styles.user_fullname}>{getFullName(user)}</h4>
-
-                <WrapperAuth>
-                  <div className={styles.button_container}>
-                    {user.is_followed ? (
-                      <div className={styles.followed_container}>
-                        <Button outline large>
-                          Messenges
+                {getFullName(user) !== " " && (
+                  <h4 className={styles.user_fullname}>{getFullName(user)}</h4>
+                )}
+                {userRedux?.id !== user?.id ? (
+                  <WrapperAuth>
+                    <div className={styles.button_container}>
+                      {user.is_followed ? (
+                        <div className={styles.followed_container}>
+                          <Button outline large>
+                            Messenges
+                          </Button>
+                          <Tippy content="Unfollow" placement="bottom">
+                            <div
+                              className={styles.unfollow}
+                              onClick={handleFollow}
+                            >
+                              <BiUserCheck />
+                            </div>
+                          </Tippy>
+                        </div>
+                      ) : (
+                        <Button
+                          large
+                          className={styles.button_follow}
+                          onClick={handleFollow}
+                        >
+                          Follow
                         </Button>
-                        <Tippy content="Unfollow" placement="bottom">
-                          <div
-                            className={styles.unfollow}
-                            onClick={handleFollow}
-                          >
-                            <BiUserCheck />
-                          </div>
-                        </Tippy>
-                      </div>
-                    ) : (
-                      <Button
-                        outline
-                        large
-                        className={styles.button_follow}
-                        onClick={handleFollow}
-                      >
-                        Follow
-                      </Button>
-                    )}
-                  </div>
-                </WrapperAuth>
+                      )}
+                    </div>
+                  </WrapperAuth>
+                ) : (
+                  <Button text leftIcon={<FaRegEdit />}>
+                    Edit profile
+                  </Button>
+                )}
               </div>
             </div>
             <h2 className={styles.count_info}>
@@ -110,9 +116,7 @@ function Profile() {
                 <span>Likes</span>
               </div>
             </h2>
-            <h2 className={styles.bio}>
-              {user.bio ? user.bio : "No bio yet."}
-            </h2>
+            <h2 className={styles.bio}>{user.bio || "No bio yet."}</h2>
           </div>
           <div className={styles.list_video_wrapper}>
             <div className={styles.title_wrapper}>
