@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const Image = forwardRef(({ src, alt, width, height, ...props }, ref) => {
   return (
     <img
-      className={{ overflow: hidden }}
+      style={{ overflow: "hidden" }}
       src={src}
       alt={alt}
       onError={({ currentTarget }) => {
