@@ -16,12 +16,12 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 - Infinite loading
 - Search accounts
 - Auth (Register, Login, Logout)
-- Follow, unfollow user
+- Follow user
 - Following accounts tab
 - Suggested accounts tab
 - View profile, user
 - Scroll, interact and watch videos like Tiktok
-- Like, unlike video
+- Like video
 - Dảk theme
 
 
