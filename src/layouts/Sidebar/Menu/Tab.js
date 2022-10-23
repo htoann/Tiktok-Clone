@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Sidebar.module.scss";
+import styles from "./Menu.module.scss";
 
 function Tab({ to, children, Icon, className, onClick }) {
   return (

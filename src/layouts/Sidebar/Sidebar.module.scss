@@ -41,35 +41,6 @@
     max-width: 348px;
     padding-bottom: 15px;
 
-    .sidebar_tabs {
-      .sidebar_tab {
-        display: flex;
-        text-decoration: none;
-        padding: 10px 10px;
-        border-radius: 5px;
-        color: var(--black);
-
-        &:hover {
-          background-color: var(--gray);
-        }
-
-        .sidebar_icon {
-          font-size: 24px;
-        }
-
-        .sidebar_title {
-          font-weight: 700;
-          line-height: 25px;
-          font-size: 18px;
-          margin-left: 10px;
-        }
-      }
-
-      .sidebar_active {
-        color: var(--red);
-      }
-    }
-
     .sidebar_login {
       position: relative;
       padding: 8px 8px 8px 8px;
