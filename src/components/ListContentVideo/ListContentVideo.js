@@ -14,7 +14,7 @@ function ListContentVideo({ type }) {
 
   useEffect(() => {
     const getListVideo = async () => {
-      const result = await getVideosService.listVideo();
+      const result = await getVideosService.listVideo(type);
       setListVideo(result);
     };
 
