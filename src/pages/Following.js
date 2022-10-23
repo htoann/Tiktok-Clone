@@ -1,7 +1,8 @@
 import React from "react";
+import ListContentVideo from "~/components/ListContentVideo";
 
 function Following() {
-  return <h1>Following</h1>;
+  return <ListContentVideo type="following" />;
 }
 
 export default Following;
