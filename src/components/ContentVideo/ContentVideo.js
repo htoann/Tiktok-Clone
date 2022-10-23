@@ -52,8 +52,10 @@ function ContentVideo({ data }) {
               <div className={styles.author_container}>
                 <div className={styles.author}>
                   <Link to={profileLink}>
-                    <h3 className={styles.username}>{user.nickname}</h3>
-                    {user.tick && <Image src={Verify} alt="" />}
+                    <h3 className={styles.username}>
+                      {user.nickname}
+                      {user.tick && <Image src={Verify} alt="" />}
+                    </h3>
                     <h3 className={styles.name}>{getFullName(user)}</h3>
                   </Link>
                 </div>
