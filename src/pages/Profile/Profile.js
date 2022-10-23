@@ -96,9 +96,11 @@ function Profile() {
                     </div>
                   </WrapperAuth>
                 ) : (
-                  <Button text leftIcon={<FaRegEdit />}>
-                    Edit profile
-                  </Button>
+                  <div className={styles.button_container}>
+                    <Button text leftIcon={<FaRegEdit />}>
+                      Edit profile
+                    </Button>
+                  </div>
                 )}
               </div>
             </div>
