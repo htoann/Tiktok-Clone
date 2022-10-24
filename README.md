@@ -17,11 +17,11 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 - Search accounts
 - Auth (Register, Login, Logout)
 - Follow user
+- Like video
 - Following accounts tab
 - Suggested accounts tab
 - View profile, user
 - Scroll, interact and watch videos like Tiktok
-- Like video
 - Dảk theme
 
 
