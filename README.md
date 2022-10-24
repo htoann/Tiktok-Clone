@@ -13,15 +13,15 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 ## Features
 
-- Infinite loading
-- Search accounts
 - Auth (Register, Login, Logout)
+- Search accounts
 - Follow user
 - Like video
 - Following accounts tab
 - Suggested accounts tab
-- View profile, user
-- Scroll, interact and watch videos like Tiktok
+- View profile, user page
+- Infinite loading
+- Interact and watch videos like Tiktok
 - Dảk theme
 
 
