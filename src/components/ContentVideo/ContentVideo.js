@@ -20,7 +20,6 @@ function ContentVideo({ data }) {
   const [content, setContent] = useState(data);
   const [user, setUser] = useState(content.user);
   const profileLink = config.routes.profileLink(user.nickname);
-  const videoTime = content.meta.playtime_seconds;
 
   useEffect(() => {
     setUser(content.user);
@@ -80,14 +79,17 @@ function ContentVideo({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
-              <Video
-                time={videoTime}
-                src={content.file_url}
-                loop
-                muted
-                autoPlay
-                poster={content.thumb_url}
-              />
+              <Link to={config.routes.videoLink(content.id)}>
+                <Video
+                  // time={videoTime}
+                  // src={content.file_url}
+                  // loop
+                  // muted
+                  // autoPlay
+                  // poster={content.thumb_url}
+                  data={content}
+                />
+              </Link>
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
