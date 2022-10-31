@@ -58,7 +58,9 @@ function ListComment() {
       </div>
       <div className={styles.bottom_comment_container}>
         <input type="text" placeholder="Add comment..." />
-        <Button primary>Post</Button>
+        <Button primary onClick={() => alert("Tính năng đang phát triển")}>
+          Post
+        </Button>
       </div>
     </div>
   );
