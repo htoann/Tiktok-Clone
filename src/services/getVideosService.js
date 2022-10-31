@@ -14,4 +14,13 @@ export const listVideo = async (type = "for-you", page = 1) => {
   }
 };
 
+export const video = async (id) => {
+  try {
+    const res = await request.get(`videos/${id}`);
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export * as getVideosService from "~/services/getVideosService";

@@ -13,6 +13,8 @@ import Upload from "~/pages/Upload";
 import Messages from "~/pages/Messages";
 import Login from "~/pages/Login";
 import Register from "~/pages/Register/Register";
+import VideoDetail from "~/pages/VideoDetail";
+import ListComment from "~/components/ListComment";
 
 // Public routes
 const publicRoutes = [
@@ -24,6 +26,8 @@ const publicRoutes = [
   { path: config.routes.upload, component: Upload, layout: HeaderOnly },
   { path: config.routes.login, component: Login, layout: HeaderOnly },
   { path: config.routes.register, component: Register, layout: HeaderOnly },
+  { path: config.routes.video, component: VideoDetail, layout: HeaderOnly },
+  { path: config.routes.comment, component: ListComment, layout: HeaderOnly },
   { path: "*", component: NotFound, layout: null },
 ];
 

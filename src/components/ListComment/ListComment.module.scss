@@ -1,0 +1,71 @@
+.content_container {
+  flex: 0 0 544px;
+  width: 544px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0px 0px;
+
+  .comment_list_container {
+    width: 100%;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    background-color: rgb(248, 248, 248);
+    border-top: 1px solid rgba(22, 24, 35, 0.2);
+    border-bottom: 1px solid rgba(22, 24, 35, 0.2);
+    overflow: hidden auto;
+    flex-grow: 1;
+
+    .comment_item_container {
+      .comment_content_container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        position: relative;
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          margin-right: 12px;
+        }
+
+        .comment_container {
+          flex: 1 1 auto;
+
+          .comment_text {
+            font-size: 16px;
+            line-height: 22px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 6px;
+          }
+        }
+      }
+
+      & + .comment_item_container {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .bottom_comment_container {
+    flex: 0 0 auto;
+    background-color: rgb(255, 255, 255);
+    margin: 0px 30px;
+    padding: 20px 0px;
+    display: flex;
+
+    input {
+      border-radius: 10px;
+      background-color: rgb(52 74 192 / 6%);
+      padding: 0 10px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    button {
+      margin-left: 25px;
+    }
+  }
+}

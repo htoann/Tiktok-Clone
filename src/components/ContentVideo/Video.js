@@ -2,16 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./ContentVideo.module.scss";
 
 function Video({
-  src,
-  loop = false,
-  muted = false,
-  autoPlay = false,
-  time,
-  poster,
+  // src,
+  // loop = false,
+  // muted = false,
+  // autoPlay = false,
+  // time,
+  // poster,
+  data,
 }) {
   // Automatically Play and Pause video as it enters and leaves the viewport/screen
   const videoRef = useRef(null);
   const [showControls, setShowControls] = useState(false);
+  const videoTime = data.meta?.playtime_seconds;
 
   const handleShowControls = () => {
     setShowControls(true);
@@ -51,17 +53,20 @@ function Video({
 
   return (
     <video
-      className={time < 30 ? styles.video_short : ""}
+      className={videoTime < 30 ? styles.video_short : ""}
       controls={showControls}
-      src={src}
-      loop={loop}
-      muted={muted}
-      autoPlay={autoPlay}
+      src={data.file_url}
+      // loop={loop}
+      // muted={muted}
+      // autoPlay={autoPlay}
+      loop
+      muted
+      autoPlay
       ref={videoRef}
       disablePictureInPicture
       controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
       onMouseEnter={handleShowControls}
-      poster={poster}
+      poster={data.thumb_url}
     />
   );
 }
