@@ -4,6 +4,7 @@ import { commentService } from "~/services/commentService";
 import Button from "../Button";
 import Image from "../Image";
 import Loader from "../Loader";
+import WrapperAuth from "../WrapperAuth";
 import styles from "./ListComment.module.scss";
 
 function ListComment() {
@@ -34,34 +35,39 @@ function ListComment() {
     <div className={styles.content_container}>
       <div className={styles.comment_list_container}>
         {!loading ? (
-          listComment.length > 0 ? (
-            listComment.length > 0 &&
-            listComment.map((comment) => (
-              <div className={styles.comment_item_container} key={comment.id}>
-                <div className={styles.comment_content_container}>
-                  <Image src={comment.user.avatar} />
-                  <div className={styles.comment_container}>
-                    <p> {comment.user.nickname}</p>
-                    <p className={styles.comment_text}>{comment.comment}</p>
-                    {/* <p>is_liked {comment.is_liked}</p> */}
-                    {/* <p>likes_count {comment.likes_count}</p> */}
+          listComment ? (
+            listComment.length > 0 ? (
+              listComment.map((comment) => (
+                <div className={styles.comment_item_container} key={comment.id}>
+                  <div className={styles.comment_content_container}>
+                    <Image src={comment.user.avatar} />
+                    <div className={styles.comment_container}>
+                      <p> {comment.user.nickname}</p>
+                      <p className={styles.comment_text}>{comment.comment}</p>
+                      {/* <p>is_liked {comment.is_liked}</p> */}
+                      {/* <p>likes_count {comment.likes_count}</p> */}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
+              ))
+            ) : (
+              <p>No comment</p>
+            )
           ) : (
-            <p>No comment</p>
+            <p>Please login to see and comment</p>
           )
         ) : (
           <Loader />
         )}
       </div>
-      <div className={styles.bottom_comment_container}>
-        <input type="text" placeholder="Add comment..." />
-        <Button primary onClick={() => alert("Tính năng đang phát triển")}>
-          Post
-        </Button>
-      </div>
+      <WrapperAuth>
+        <div className={styles.bottom_comment_container}>
+          <input type="text" placeholder="Add comment..." />
+          <Button primary onClick={() => alert("Tính năng đang phát triển")}>
+            Post
+          </Button>
+        </div>
+      </WrapperAuth>
     </div>
   );
 }
