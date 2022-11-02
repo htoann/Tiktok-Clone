@@ -1,6 +1,6 @@
 import { request } from "~/utils/axiosInstance";
 
-export const search = async (q, type = "less") => {
+export const getSearch = async (q, type = "less") => {
   try {
     const res = await request.get("users/search", {
       params: {
