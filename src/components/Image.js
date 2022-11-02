@@ -1,17 +1,17 @@
 import React, { forwardRef } from "react";
-// import Avatar from "~/assets/images/Avatar.jpeg";
-import Tiktok from "~/assets/images/Tiktok2.png";
+import Avatar from "~/assets/images/Avatar.jpeg";
+// import Tiktok from "~/assets/images/Tiktok2.png";
 import PropTypes from "prop-types";
 
 const Image = forwardRef(({ src, alt, width, height, ...props }, ref) => {
   return (
     <img
-      style={{ overflow: "hidden" }}
+      style={{ overflow: "hidden", objectFit: "cover" }}
       src={src}
       alt={alt}
       onError={({ currentTarget }) => {
         currentTarget.onerror = null;
-        currentTarget.src = `${Tiktok}`;
+        currentTarget.src = `${Avatar}`;
       }}
       ref={ref}
       {...props}
