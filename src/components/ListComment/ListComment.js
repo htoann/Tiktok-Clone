@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { commentService } from "~/services/commentService";
+import { getFullName } from "~/utils/common";
 import Button from "../Button";
 import Image from "../Image";
 import Loader from "../Loader";
 import WrapperAuth from "../WrapperAuth";
 import styles from "./ListComment.module.scss";
+import { FaRegHeart } from "react-icons/fa";
+import { config } from "~/config";
 
 function ListComment() {
   const location = useLocation();
@@ -13,10 +16,11 @@ function ListComment() {
 
   const [listComment, setListComment] = useState({});
   const [loading, setLoading] = useState(true);
+  const [comment, setComment] = useState("");
 
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await commentService.listComment(videoId);
+      const result = await commentService.getListComment(videoId);
       setListComment(result);
 
       setLoading(false);
@@ -25,11 +29,20 @@ function ListComment() {
     fetchApi();
   }, [location.pathname]);
 
-  // comment: "beau";
-  // created_at: "2022-10-29 22:30:04";
-  // id: 376;
-  // is_liked: false;
-  // likes_count: 2;
+  const handleComment = async () => {
+    const result = await commentService.postComment(videoId, {
+      comment: comment,
+    });
+    setComment("");
+    setListComment((prev) => [result, ...prev]);
+
+    setLoading(false);
+  };
+
+  const onFormSubmit = async (e) => {
+    e.preventDefault();
+    handleComment();
+  };
 
   return (
     <div className={styles.content_container}>
@@ -42,10 +55,31 @@ function ListComment() {
                   <div className={styles.comment_content_container}>
                     <Image src={comment.user.avatar} />
                     <div className={styles.comment_container}>
-                      <p> {comment.user.nickname}</p>
+                      <Link
+                        to={config.routes.profileLink(comment.user.nickname)}
+                        className={styles.account_item}
+                      >
+                        <p className={styles.comment_user}>
+                          {getFullName(comment.user)}
+                        </p>
+                      </Link>
+
                       <p className={styles.comment_text}>{comment.comment}</p>
-                      {/* <p>is_liked {comment.is_liked}</p> */}
-                      {/* <p>likes_count {comment.likes_count}</p> */}
+                      <p className={styles.created_at}>{comment.created_at}</p>
+                    </div>
+                    <div className={styles.action_container}>
+                      <div className={styles.like_wrapper}>
+                        <div
+                          className={
+                            comment.is_liked
+                              ? `${styles.icon} ${styles.liked}`
+                              : `${styles.icon}`
+                          }
+                        >
+                          <FaRegHeart />
+                        </div>
+                        <span>{comment.likes_count}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -61,12 +95,19 @@ function ListComment() {
         )}
       </div>
       <WrapperAuth>
-        <div className={styles.bottom_comment_container}>
-          <input type="text" placeholder="Add comment..." />
-          <Button primary onClick={() => alert("Tính năng đang phát triển")}>
-            Post
-          </Button>
-        </div>
+        <form onSubmit={onFormSubmit}>
+          <div className={styles.bottom_comment_container}>
+            <input
+              type="text"
+              placeholder="Add comment..."
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+            <Button type="submit" primary>
+              Post
+            </Button>
+          </div>
+        </form>
       </WrapperAuth>
     </div>
   );
