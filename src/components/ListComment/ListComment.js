@@ -27,7 +27,7 @@ function ListComment({ video }) {
   }, [video]);
 
   const handleComment = async () => {
-    const result = await commentService.postComment(videoId, {
+    const result = await commentService.postComment(video.id, {
       comment: comment,
     });
     setComment("");
