@@ -92,10 +92,8 @@ function ContentVideo({ data }) {
             </WrapperAuth>
           </div>
           <div className={styles.video_wrapper}>
-            <div className={styles.video_card}>
-              <Link to={config.routes.videoLink(content.id)}>
-                <Video data={content} />
-              </Link>
+            <div className={styles.video_card} onClick={openFromParent}>
+              <Video data={content} />
             </div>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
