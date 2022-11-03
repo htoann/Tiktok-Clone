@@ -4,18 +4,18 @@ import { FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
 import { IoHeart } from "react-icons/io5";
 import styles from "./ContentVideo.module.scss";
 import Verify from "~/assets/images/verify.svg";
-import Button from "~/components/Button";
+import Button from "~/components/Core/Button";
 import Menu from "~/components/Popper/Menu";
-import Video from "~/components/ContentVideo/Video/";
-import Image from "../Image";
 import PropTypes from "prop-types";
 import handleFollowFunc from "~/utils/handleFollow";
 import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
 import { config } from "~/config";
 import { getFullName } from "~/utils/common";
-import WrapperAuth from "../WrapperAuth";
 import handleLikeFunc from "~/utils/handleLike";
+import Video from "./Video";
+import WrapperAuth from "~/components/WrapperAuth";
 import ModalVideoDetail from "../ModalVideoDetail/ModalVideoDetail";
+import Image from "~/components/Image";
 
 function ContentVideo({ data }) {
   const [content, setContent] = useState(data);

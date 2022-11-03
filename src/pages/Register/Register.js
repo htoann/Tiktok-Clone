@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Error from "~/components/Error";
+import Error from "~/components/Core/Error";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { config } from "~/config";
-import { userRegister } from "~/features/user/userAction";
+import { userRegister } from "~/features/authentication/userAction";
 
 function Register() {
   const { loading, user, error } = useSelector((state) => state.user);

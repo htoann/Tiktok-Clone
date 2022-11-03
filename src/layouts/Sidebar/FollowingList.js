@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ListAccount from "~/components/ListAccount";
+import ListAccount from "~/features/account/components/ListAccount";
 import { getUsersService } from "~/services/getUsersService";
 
 function FollowingList() {

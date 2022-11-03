@@ -1,10 +1,10 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import Modal from "react-modal";
-import VideoDetail from "../VideoDetail/VideoDetail";
 import styles from "./ModalVideoDetail.module.scss";
 import Tiktok2 from "~/assets/images/Tiktok2.png";
-import Image from "../Image";
+import Image from "../../../../components/Image";
+import VideoDetail from "../VideoDetail";
 
 Modal.setAppElement("div");
 
