@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { commentService } from "~/features/comment/services/commentService";
+import { commentService } from "~/features/comments/services/commentService";
 import { getFullName } from "~/utils/common";
 import Button from "../../../../components/Core/Button";
 import Image from "../../../../components/Image";

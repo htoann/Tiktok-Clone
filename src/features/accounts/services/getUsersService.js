@@ -36,4 +36,4 @@ export const user = async (pathname) => {
   }
 };
 
-export * as getUsersService from "~/features/account/services/getUsersService";
+export * as getUsersService from "~/features/accounts/services/getUsersService";

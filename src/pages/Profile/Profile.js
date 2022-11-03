@@ -9,7 +9,7 @@ import Button from "~/components/Core/Button";
 import Loader from "~/components/Core/Loader";
 import WrapperAuth from "~/components/WrapperAuth";
 import handleFollowFunc from "~/utils/handleFollow";
-import { getUsersService } from "~/features/account/services/getUsersService";
+import { getUsersService } from "~/features/accounts/services/getUsersService";
 import { getFullName } from "~/utils/common";
 import { useSelector } from "react-redux";
 import { FaRegEdit } from "react-icons/fa";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ListAccount from "~/features/account/components/ListAccount";
-import { getUsersService } from "~/features/account/services/getUsersService";
+import ListAccount from "~/features/accounts/components/ListAccount";
+import { getUsersService } from "~/features/accounts/services/getUsersService";
 
 function SuggestedList() {
   const [perpage, setPerpage] = useState(5);

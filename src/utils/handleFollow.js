@@ -1,4 +1,4 @@
-import { followService } from "~/features/account/services/postFollowService";
+import { followService } from "~/features/accounts/services/postFollowService";
 
 const handleFollowFunc = async (user) => {
   let newUser;
