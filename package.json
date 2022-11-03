@@ -28,6 +28,7 @@
     "react-hook-form": "^7.37.0",
     "react-icons": "^4.4.0",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-modal": "^3.16.1",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.3.0",
     "use-debounce": "^8.0.4"
