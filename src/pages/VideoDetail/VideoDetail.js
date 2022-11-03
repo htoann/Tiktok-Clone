@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./VideoDetail.module.scss";
 import { Link, useLocation } from "react-router-dom";
-import { getVideosService } from "~/services/getVideosService";
+import { getVideosService } from "~/features/video/services/getVideosService";
 import Loader from "~/components/Core/Loader";
 import ListComment from "~/features/comment/components/ListComment";
 import Tiktok2 from "~/assets/images/Tiktok2.png";

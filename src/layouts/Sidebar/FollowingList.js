@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ListAccount from "~/features/account/components/ListAccount";
-import { getUsersService } from "~/services/getUsersService";
+import { getUsersService } from "~/features/account/services/getUsersService";
 
 function FollowingList() {
   const [page, setPage] = useState(1);

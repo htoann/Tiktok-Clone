@@ -18,4 +18,4 @@ export const postComment = async (id, comment) => {
   }
 };
 
-export * as commentService from "~/services/commentService";
+export * as commentService from "~/features/comment/services/commentService";

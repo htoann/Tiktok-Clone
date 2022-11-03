@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ListContentVideo.module.scss";
-import { getVideosService } from "~/services/getVideosService";
+import { getVideosService } from "~/features/video/services/getVideosService";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useSelector } from "react-redux";
 import Loader from "../../../../components/Core/Loader";

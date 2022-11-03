@@ -23,4 +23,4 @@ export const video = async (id) => {
   }
 };
 
-export * as getVideosService from "~/services/getVideosService";
+export * as getVideosService from "~/features/video/services/getVideosService";
