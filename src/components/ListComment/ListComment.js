@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { commentService } from "~/services/commentService";
 import { getFullName } from "~/utils/common";
 import Button from "../Button";
@@ -10,24 +10,21 @@ import styles from "./ListComment.module.scss";
 import { FaRegHeart } from "react-icons/fa";
 import { config } from "~/config";
 
-function ListComment() {
-  const location = useLocation();
-  const videoId = location.pathname.split("/")[2];
-
+function ListComment({ video }) {
   const [listComment, setListComment] = useState({});
   const [loading, setLoading] = useState(true);
   const [comment, setComment] = useState("");
 
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await commentService.getListComment(videoId);
+      const result = await commentService.getListComment(video.id);
       setListComment(result);
 
       setLoading(false);
     };
 
     fetchApi();
-  }, [location.pathname]);
+  }, [video]);
 
   const handleComment = async () => {
     const result = await commentService.postComment(videoId, {

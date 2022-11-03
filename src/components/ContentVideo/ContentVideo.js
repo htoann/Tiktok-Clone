@@ -15,10 +15,12 @@ import { config } from "~/config";
 import { getFullName } from "~/utils/common";
 import WrapperAuth from "../WrapperAuth";
 import handleLikeFunc from "~/utils/handleLike";
+import ModalVideoDetail from "../ModalVideoDetail/ModalVideoDetail";
 
 function ContentVideo({ data }) {
   const [content, setContent] = useState(data);
   const [user, setUser] = useState(content.user);
+  const [isOpen, setIsOpen] = useState(false);
   const profileLink = config.routes.profileLink(user.nickname);
 
   useEffect(() => {
@@ -37,6 +39,18 @@ function ContentVideo({ data }) {
       ...content,
       ...newContent,
     }));
+  };
+
+  const modalData = {
+    content: content,
+  };
+
+  const openFromParent = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -80,15 +94,7 @@ function ContentVideo({ data }) {
           <div className={styles.video_wrapper}>
             <div className={styles.video_card}>
               <Link to={config.routes.videoLink(content.id)}>
-                <Video
-                  // time={videoTime}
-                  // src={content.file_url}
-                  // loop
-                  // muted
-                  // autoPlay
-                  // poster={content.thumb_url}
-                  data={content}
-                />
+                <Video data={content} />
               </Link>
             </div>
             <div className={styles.action_items}>
@@ -107,7 +113,8 @@ function ContentVideo({ data }) {
                 </WrapperAuth>
                 <strong className={styles.count}>{content.likes_count}</strong>
               </div>
-              <div className={styles.action_button}>
+
+              <div className={styles.action_button} onClick={openFromParent}>
                 <div className={styles.icon}>
                   <FaCommentDots />
                 </div>
@@ -115,6 +122,13 @@ function ContentVideo({ data }) {
                   {content.comments_count}
                 </strong>
               </div>
+
+              <ModalVideoDetail
+                dynData={modalData}
+                IsModalOpened={isOpen}
+                onCloseModal={handleCloseModal}
+              />
+
               <div className={styles.action_button}>
                 <div className={styles.menu_share}>
                   <Menu items={MENU_ITEMS_SHARE} right>

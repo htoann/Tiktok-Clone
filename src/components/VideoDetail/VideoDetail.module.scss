@@ -51,39 +51,5 @@
         }
       }
     }
-
-    .close_button {
-      position: absolute;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      top: 20px;
-      transition: opacity 0.3s ease 0s;
-      left: 20px;
-
-      font-size: 30px;
-      color: white;
-    }
-
-    .home_button {
-      position: absolute;
-      z-index: 1;
-      top: 20px;
-      border-radius: 100px;
-      left: 84px;
-
-      img {
-        width: 40px;
-        height: 40px;
-      }
-    }
   }
 }

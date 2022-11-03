@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./ContentVideo.module.scss";
 
-function Video({
-  // src,
-  // loop = false,
-  // muted = false,
-  // autoPlay = false,
-  // time,
-  // poster,
-  data,
-}) {
+function Video({ data }) {
   // Automatically Play and Pause video as it enters and leaves the viewport/screen
   const videoRef = useRef(null);
   const [showControls, setShowControls] = useState(false);
@@ -46,7 +38,8 @@ function Video({
           observer.observe(videoRef.current);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
+          return;
         });
     }
   });
@@ -56,9 +49,6 @@ function Video({
       className={videoTime < 30 ? styles.video_short : ""}
       controls={showControls}
       src={data.file_url}
-      // loop={loop}
-      // muted={muted}
-      // autoPlay={autoPlay}
       loop
       muted
       autoPlay
