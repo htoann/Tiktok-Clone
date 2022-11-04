@@ -12,7 +12,7 @@ import { MENU_ITEMS_SHARE } from "~/data/dataMenu";
 import { config } from "~/config";
 import { getFullName } from "~/utils/common";
 import handleLikeFunc from "~/utils/handleLike";
-import Video from "./Video";
+import Video from "../Video";
 import WrapperAuth from "~/components/WrapperAuth";
 import ModalVideoDetail from "../ModalVideoDetail/ModalVideoDetail";
 import Image from "~/components/Image";
@@ -39,10 +39,6 @@ function ContentVideo({ data }) {
       ...content,
       ...newContent,
     }));
-  };
-
-  const modalData = {
-    content: content,
   };
 
   const openFromParent = () => {
@@ -122,7 +118,7 @@ function ContentVideo({ data }) {
               </div>
 
               <ModalVideoDetail
-                dynData={modalData}
+                data={content}
                 IsModalOpened={isOpen}
                 onCloseModal={handleCloseModal}
               />
