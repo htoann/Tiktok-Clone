@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./ContentVideo.module.scss";
+import styles from "../components/ContentVideo/ContentVideo.module.scss";
 
-function Video({ data }) {
+function Video({ data, onMouseEnter, onMouseLeave }) {
   // Automatically Play and Pause video as it enters and leaves the viewport/screen
   const videoRef = useRef(null);
   const [showControls, setShowControls] = useState(false);
@@ -9,6 +9,10 @@ function Video({ data }) {
 
   const handleShowControls = () => {
     setShowControls(true);
+  };
+
+  const handlePauseVideo = () => {
+    videoRef.current.pause();
   };
 
   useEffect(() => {
@@ -38,11 +42,10 @@ function Video({ data }) {
           observer.observe(videoRef.current);
         })
         .catch((err) => {
-          // console.log(err);
           return;
         });
     }
-  });
+  }, []);
 
   return (
     <video
@@ -57,6 +60,7 @@ function Video({ data }) {
       controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
       onMouseEnter={handleShowControls}
       poster={data.thumb_url}
+      onClick={handlePauseVideo}
     />
   );
 }

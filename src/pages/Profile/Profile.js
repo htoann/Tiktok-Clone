@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { BiUserCheck } from "react-icons/bi";
 import Verify from "~/assets/images/verify.svg";
 import Tippy from "@tippyjs/react";
@@ -13,12 +13,15 @@ import { getUsersService } from "~/features/accounts/services/getUsersService";
 import { getFullName } from "~/utils/common";
 import { useSelector } from "react-redux";
 import { FaRegEdit } from "react-icons/fa";
+import ModalVideoDetail from "~/features/videos/components/ModalVideoDetail/ModalVideoDetail";
 
 function Profile() {
   const { user: userRedux } = useSelector((state) => state.user);
   const [user, setUser] = useState({});
   const location = useLocation();
   const [loading, setLoading] = useState(true);
+  const [currentPlayVideoId, setcurrentPlayVideoIdId] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -45,112 +48,116 @@ function Profile() {
     setUser((user) => ({ ...user, is_followed: isFollowed }));
   };
 
+  const openFromParent = (id) => {
+    setcurrentPlayVideoIdId(id);
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className={styles.wrapper}>
-      {!loading ? (
-        <>
-          <div className={styles.header}>
-            <div className={styles.info}>
-              <Image
-                src={user.avatar}
-                width={116}
-                height={116}
-                className={styles.avatar}
-              />
-              <div className={styles.title_container}>
-                <h2 className={styles.user_title}>
-                  {user.nickname}
-                  {user.tick && (
-                    <Image src={Verify} className={styles.verify} />
-                  )}
-                </h2>
-                {getFullName(user) !== " " && (
-                  <h4 className={styles.user_fullname}>{getFullName(user)}</h4>
-                )}
-                {userRedux?.id !== user?.id ? (
-                  <WrapperAuth>
-                    <div className={styles.button_container}>
-                      {user.is_followed ? (
-                        <div className={styles.followed_container}>
-                          <Button outline large>
-                            Messenges
-                          </Button>
-                          <Tippy content="Unfollow" placement="bottom">
-                            <div
-                              className={styles.unfollow}
-                              onClick={handleFollow}
-                            >
-                              <BiUserCheck />
-                            </div>
-                          </Tippy>
-                        </div>
-                      ) : (
-                        <Button
-                          large
-                          className={styles.button_follow}
-                          onClick={handleFollow}
-                        >
-                          Follow
-                        </Button>
-                      )}
-                    </div>
-                  </WrapperAuth>
-                ) : (
-                  <div className={styles.button_container}>
-                    <Button text leftIcon={<FaRegEdit />}>
-                      Edit profile
-                    </Button>
-                  </div>
-                )}
-              </div>
-            </div>
-            <h2 className={styles.count_info}>
-              <div className={styles.number_container}>
-                <strong>{user.followings_count}</strong>
-                <span>Followings</span>
-              </div>
-              <div className={styles.number_container}>
-                <strong>{user.followers_count}</strong>
-                <span>Follower</span>
-              </div>
-              <div className={styles.number_container}>
-                <strong>{user.likes_count}</strong>
-                <span>Likes</span>
-              </div>
+      <div className={styles.header}>
+        <div className={styles.info}>
+          <Image
+            src={user.avatar}
+            width={116}
+            height={116}
+            className={styles.avatar}
+          />
+          <div className={styles.title_container}>
+            <h2 className={styles.user_title}>
+              {user.nickname}
+              {user.tick && <Image src={Verify} className={styles.verify} />}
             </h2>
-            <h2 className={styles.bio}>{user.bio || "No bio yet."}</h2>
-          </div>
-          <div className={styles.list_video_wrapper}>
-            <div className={styles.title_wrapper}>
-              <p className={styles.title}>Videos</p>
-              <p className={styles.title}>Liked</p>
-            </div>
-            <div className={styles.list_video_container}>
-              <div className={styles.list_video}>
-                {user?.videos?.map((video) => (
-                  <div className={styles.video_container} key={video.id}>
-                    <Link to="#">
-                      <video
-                        src={video.file_url}
-                        muted
-                        loop
-                        onMouseEnter={handleVideoPlay}
-                        onMouseLeave={handleVideoPause}
-                        poster={video.thumb_url}
-                      />
-                      <div className={styles.video_desc}>
-                        <p href="">{video.description}</p>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
+            <h4 className={styles.user_fullname}>{getFullName(user)}</h4>
+            {userRedux?.id !== user?.id ? (
+              <WrapperAuth>
+                <div className={styles.button_container}>
+                  {user.is_followed ? (
+                    <div className={styles.followed_container}>
+                      <Button outline large>
+                        Messenges
+                      </Button>
+                      <Tippy content="Unfollow" placement="bottom">
+                        <div className={styles.unfollow} onClick={handleFollow}>
+                          <BiUserCheck />
+                        </div>
+                      </Tippy>
+                    </div>
+                  ) : (
+                    <Button
+                      large
+                      className={styles.button_follow}
+                      onClick={handleFollow}
+                    >
+                      Follow
+                    </Button>
+                  )}
+                </div>
+              </WrapperAuth>
+            ) : (
+              <div className={styles.button_container}>
+                <Button text leftIcon={<FaRegEdit />}>
+                  Edit profile
+                </Button>
               </div>
-            </div>
+            )}
           </div>
-        </>
-      ) : (
-        <Loader />
-      )}
+        </div>
+        <h2 className={styles.count_info}>
+          <div className={styles.number_container}>
+            <strong>{user.followings_count}</strong>
+            <span>Followings</span>
+          </div>
+          <div className={styles.number_container}>
+            <strong>{user.followers_count}</strong>
+            <span>Follower</span>
+          </div>
+          <div className={styles.number_container}>
+            <strong>{user.likes_count}</strong>
+            <span>Likes</span>
+          </div>
+        </h2>
+        <h2 className={styles.bio}>{user.bio || "No bio yet."}</h2>
+      </div>
+      <div className={styles.list_video_wrapper}>
+        <div className={styles.title_wrapper}>
+          <p className={styles.title}>Videos</p>
+          <p className={styles.title}>Liked</p>
+        </div>
+        <div className={styles.list_video_container}>
+          <div className={styles.list_video}>
+            {user?.videos?.map((video) => (
+              <div className={styles.video_container} key={video.id}>
+                <video
+                  src={video.file_url}
+                  muted
+                  loop
+                  onMouseEnter={handleVideoPlay}
+                  onMouseLeave={handleVideoPause}
+                  poster={video.thumb_url}
+                  onClick={() => openFromParent(video.id)}
+                />
+                <div className={styles.video_desc}>
+                  <p>{video.description}</p>
+                </div>
+                <ModalVideoDetail
+                  data={user.videos.find((v) => v.id === currentPlayVideoId)}
+                  IsModalOpened={isOpen}
+                  onCloseModal={handleCloseModal}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

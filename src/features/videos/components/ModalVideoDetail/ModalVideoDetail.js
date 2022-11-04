@@ -29,18 +29,19 @@ function ModalVideoDetail(props) {
   }
 
   return (
-    <div>
-      <Modal isOpen={props.IsModalOpened} style={customStyles}>
-        <VideoDetail video={props.dynData.content} />
-
-        <div className={styles.close_button} onClick={onModalClose}>
-          <IoClose />
-        </div>
-        <div className={styles.home_button} onClick={onModalClose}>
-          <Image src={Tiktok2} />
-        </div>
-      </Modal>
-    </div>
+    <>
+      {props.IsModalOpened && (
+        <Modal isOpen={props.IsModalOpened} style={customStyles}>
+          <VideoDetail video={props.data} />
+          <div className={styles.close_button} onClick={onModalClose}>
+            <IoClose />
+          </div>
+          <div className={styles.home_button} onClick={onModalClose}>
+            <Image src={Tiktok2} />
+          </div>
+        </Modal>
+      )}
+    </>
   );
 }
 

@@ -82,10 +82,10 @@ function ListComment({ video }) {
                 </div>
               ))
             ) : (
-              <p>No comment</p>
+              <p className={styles.noti_text}>No comment</p>
             )
           ) : (
-            <p>Please login to see and comment</p>
+            <p className={styles.noti_text}>Please login to see and comment</p>
           )
         ) : (
           <Loader />
