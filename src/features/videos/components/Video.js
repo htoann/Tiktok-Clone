@@ -45,7 +45,7 @@ function Video({ data }) {
           return;
         });
     }
-  }, []);
+  });
 
   return (
     <video
@@ -60,7 +60,7 @@ function Video({ data }) {
       poster={data.thumb_url}
       onClick={handlePauseVideo}
       loop
-      autoPlay
+      autoPlay={true}
       playsInline
     />
   );
