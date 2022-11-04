@@ -52,7 +52,7 @@ function Video({ data }) {
       className={videoTime < 30 ? styles.video_short : ""}
       controls={showControls}
       src={data.file_url}
-      muted
+      // muted
       ref={videoRef}
       disablePictureInPicture
       controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
