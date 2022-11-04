@@ -53,7 +53,7 @@ function Video({ data, onMouseEnter, onMouseLeave }) {
       controls={showControls}
       src={data.file_url}
       loop
-      // muted
+      muted
       autoPlay
       ref={videoRef}
       disablePictureInPicture
