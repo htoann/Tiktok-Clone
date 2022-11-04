@@ -60,7 +60,7 @@ function Video({ data }) {
       poster={data.thumb_url}
       onClick={handlePauseVideo}
       loop
-      autoPlay={true}
+      autoPlay
       playsInline
     />
   );
