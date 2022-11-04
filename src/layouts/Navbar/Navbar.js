@@ -15,7 +15,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 
 import Avatar from "~/assets/images/Avatar.jpeg";
-import Button from "~/components/Button";
+import Button from "~/components/Core/Button";
 import Menu from "~/components/Popper/Menu";
 import Image from "~/components/Image";
 import Search from "~/components/Search";
@@ -23,7 +23,7 @@ import styles from "./Navbar.module.scss";
 import { MENU_ITEMS_1, MENU_ITEMS_2 } from "~/data/dataMenu";
 import { config } from "~/config";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogout } from "~/features/user/userAction";
+import { userLogout } from "~/features/authentication/userAction";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {

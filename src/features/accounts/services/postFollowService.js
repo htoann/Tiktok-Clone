@@ -18,4 +18,4 @@ export const unfollow = async (id) => {
   }
 };
 
-export * as followService from "~/services/postFollowService";
+export * as followService from "~/features/accounts/services/postFollowService";

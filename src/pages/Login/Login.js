@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { config } from "~/config";
-import { userLogin } from "~/features/user/userAction";
-import Error from "~/components/Error";
+import { userLogin } from "~/features/authentication/userAction";
+import Error from "~/components/Core/Error";
 
 function Login() {
   const { loading, user, error } = useSelector((state) => state.user);

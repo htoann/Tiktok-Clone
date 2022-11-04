@@ -14,7 +14,7 @@ import Messages from "~/pages/Messages";
 import Login from "~/pages/Login";
 import Register from "~/pages/Register/Register";
 import VideoDetail from "~/pages/VideoDetail";
-import ListComment from "~/components/ListComment";
+import ListComment from "~/features/comments/components/ListComment";
 
 // Public routes
 const publicRoutes = [

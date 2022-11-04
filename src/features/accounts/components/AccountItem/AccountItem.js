@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import Verify from "~/assets/images/verify.svg";
 import styles from "./AccountItem.module.scss";
-import Image from "../Image";
+import Image from "../../../../components/Image";
 import { Link } from "react-router-dom";
 import { config } from "~/config";
 import { getFullName } from "~/utils/common";

@@ -99,6 +99,8 @@
       align-items: flex-end;
 
       .video_card {
+        cursor: pointer;
+
         video {
           border-radius: 10px;
           width: 350px;

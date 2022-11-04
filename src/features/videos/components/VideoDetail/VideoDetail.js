@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./VideoDetail.module.scss";
-import Video from "~/components/ContentVideo/Video/";
-import ListComment from "~/components/ListComment";
+import Video from "../ContentVideo/Video";
+import ListComment from "~/features/comments/components/ListComment";
 
 function VideoDetail({ video }) {
   return (

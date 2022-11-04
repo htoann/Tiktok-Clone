@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import PopperWrapper from "~/components/Popper/Wrapper";
-import AccountItem from "~/components/AccountItem";
+import AccountItem from "~/features/accounts/components/AccountItem";
 import Tippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 import { FaSearch, FaSpinner, FaTimesCircle } from "react-icons/fa";

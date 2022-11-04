@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { commentService } from "~/services/commentService";
+import { commentService } from "~/features/comments/services/commentService";
 import { getFullName } from "~/utils/common";
-import Button from "../Button";
-import Image from "../Image";
-import Loader from "../Loader";
-import WrapperAuth from "../WrapperAuth";
+import Button from "../../../../components/Core/Button";
+import Image from "../../../../components/Image";
+import Loader from "../../../../components/Core/Loader";
+import WrapperAuth from "../../../../components/WrapperAuth";
 import styles from "./ListComment.module.scss";
 import { FaRegHeart } from "react-icons/fa";
 import { config } from "~/config";

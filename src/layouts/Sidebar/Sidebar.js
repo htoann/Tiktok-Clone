@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Sidebar.module.scss";
 import { config } from "~/config";
-import Button from "~/components/Button";
+import Button from "~/components/Core/Button";
 import SuggestedList from "./SuggestedList";
 import FollowingList from "./FollowingList";
 
