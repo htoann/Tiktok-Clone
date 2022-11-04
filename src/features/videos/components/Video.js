@@ -45,7 +45,7 @@ function Video({ data }) {
           return;
         });
     }
-  });
+  }, []);
 
   return (
     <video
