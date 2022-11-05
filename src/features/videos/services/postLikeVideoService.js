@@ -18,4 +18,4 @@ export const unlike = async (id) => {
   }
 };
 
-export * as likeService from "~/services/postLikeService";
+export * as likeService from "~/features/videos/services/postLikeVideoService";
