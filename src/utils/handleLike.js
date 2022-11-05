@@ -1,4 +1,4 @@
-import { likeService } from "~/services/postLikeService";
+import { likeService } from "~/features/videos/services/postLikeVideoService";
 
 const handleLikeFunc = async (video) => {
   let newVideo;
