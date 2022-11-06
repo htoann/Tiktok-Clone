@@ -7,7 +7,8 @@
     margin-top: 60px;
     display: flex;
     width: 100vw;
-    max-width: var(--default-layout-width);
+    width: var(--default-layout-width);
+    max-width: 100%;
     justify-content: space-between;
     align-self: center;
     flex: 1 1 auto;

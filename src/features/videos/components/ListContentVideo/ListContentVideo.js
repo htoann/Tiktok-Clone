@@ -44,6 +44,7 @@ function ListContentVideo({ type }) {
         hasMore={hasMore}
         loader={<Loader />}
         endMessage={<h4>End</h4>}
+        style={{ overflow: "inherit" }}
       >
         {listVideo.map((video) => (
           <div key={video.id}>
