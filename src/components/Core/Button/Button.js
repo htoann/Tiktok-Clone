@@ -39,9 +39,13 @@ function Button({
   if (to) {
     props.to = to;
     Comp = Link;
-  } else if (href) {
+  }
+
+  if (href) {
     props.href = href;
     Comp = "a";
+  } else {
+    Comp = "div";
   }
 
   const classes = cx(styles.btn_wrapper, {
