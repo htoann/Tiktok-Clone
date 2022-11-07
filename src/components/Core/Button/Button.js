@@ -44,7 +44,9 @@ function Button({
   if (href) {
     props.href = href;
     Comp = "a";
-  } else {
+  }
+
+  if (!to && !href && !onClick) {
     Comp = "div";
   }
 
