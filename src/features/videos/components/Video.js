@@ -18,7 +18,7 @@ function Video({ data }) {
   useEffect(() => {
     const options = {
       rootMargin: "0px",
-      threshold: [0.6, 0.75],
+      threshold: [0.7, 0.75],
     };
 
     const handlePlay = (entries) => {
