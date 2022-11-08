@@ -8,6 +8,7 @@ import styles from "./Upload.module.scss";
 function Upload() {
   const [filePreview, setFilePreview] = useState("");
   const [file, setFile] = useState("");
+  const [caption, setCaption] = useState("");
   const { register, handleSubmit } = useForm();
 
   const handleFile = (e) => {
@@ -23,9 +24,9 @@ function Upload() {
   const submitForm = (data) => {
     const fullData = { ...data, upload_file: file };
 
-    var formData = new FormData();
+    const formData = new FormData();
 
-    for (var key in fullData) {
+    for (const key in fullData) {
       if (key === "allows") {
         if (fullData[key]) formData.append("allows[]", fullData[key]);
       } else {
@@ -101,19 +102,25 @@ function Upload() {
               required
               type="file"
               accept="video/*"
+              // {...register("upload_file")}
             />
           </div>
           <div className={styles.upload_content_right}>
             <div className={styles.form_item}>
               <div className={styles.form_header}>
                 <span className={styles.form_label}>Caption</span>
-                <span className={styles.form_count}>0 / 150</span>
+                <span className={styles.form_count}>
+                  {caption.length} / 150
+                </span>
               </div>
               <div className={styles.form_footer}>
                 <textarea
+                  maxLength={150}
                   name="description"
                   id="description"
                   {...register("description")}
+                  value={caption}
+                  onChange={(e) => setCaption(e.target.value)}
                   className={styles.form_textarea}
                 />
               </div>
