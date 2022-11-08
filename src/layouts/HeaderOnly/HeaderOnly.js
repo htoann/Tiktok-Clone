@@ -5,7 +5,7 @@ import Navbar from "~/layouts/Navbar";
 
 function HeaderOnly({ children }) {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Navbar />
       <div className={styles.container}>
         <div className={styles.content}>{children}</div>

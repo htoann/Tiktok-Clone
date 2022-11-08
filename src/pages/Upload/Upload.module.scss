@@ -1,0 +1,265 @@
+.upload_wrapper {
+  background-color: rgb(248, 248, 248);
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  min-height: 100vh;
+  margin-top: 60px;
+  justify-content: space-between;
+
+  .upload_container {
+    width: var(--default-layout-headeronly-width);
+    box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    padding: 24px 56px;
+    margin: 0px auto;
+
+    .upload_title {
+      font-size: var(--tux-fontSizeP1);
+      line-height: 1.5;
+      font-weight: var(--tux-fontWeightBold);
+    }
+
+    .upload_sub_title {
+      margin-top: 2px;
+
+      span {
+        font-size: var(--tux-fontSizeP2);
+        line-height: 1.5;
+        font-weight: var(--tux-fontWeightRegular);
+        color: var(--tux-colorTextTertiary);
+      }
+    }
+
+    .upload_content {
+      display: flex;
+      margin-top: 24px;
+      margin-bottom: 130px;
+
+      .upload_content_left {
+        margin-top: 24px;
+
+        input {
+          display: none;
+        }
+
+        .upload_state {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          cursor: pointer;
+          transition: background 0.15s ease-in-out 0s;
+          padding-left: 35px;
+          padding-right: 35px;
+          width: 260px;
+          height: 458px;
+          border: 2px dashed rgba(22, 24, 35, 0.2);
+          border-radius: 8px;
+
+          &:hover {
+            background-color: var(--tux-colorBGView);
+            border: 2px dashed var(--tux-colorPrimary);
+          }
+
+          .upload_state_title {
+            margin-top: 24px;
+            font-size: var(--tux-fontSizeP2);
+            line-height: 1.5;
+            font-family: var(--tux-fontFamilyParagraph);
+            font-weight: var(--tux-fontWeightSemibold);
+            color: var(--tux-colorTextPrimary);
+          }
+          .upload_state_sub_title {
+            font-size: var(--tux-fontSizeP4);
+            line-height: 1.5;
+            font-weight: var(--tux-fontWeightRegular);
+            color: var(--tux-colorTextSecondary);
+            margin-top: 4px;
+            margin-bottom: 24px;
+          }
+
+          .upload_state_notice {
+            font-size: var(--tux-fontSizeP4);
+            line-height: 1.5;
+            font-weight: var(--tux-fontWeightRegular);
+            color: var(--tux-colorTextTertiary);
+            text-align: center;
+          }
+
+          .upload_state_notice:not(:last-child) {
+            margin-bottom: 8px;
+          }
+
+          .select_file {
+            width: 100%;
+            margin-top: 32px;
+            border-radius: unset;
+
+            span {
+              text-align: center;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+
+      .preview {
+        margin-left: -20px;
+        margin-right: 8px;
+
+        input {
+          display: none;
+        }
+
+        .preview_v2 {
+          position: relative;
+          background: rgb(255, 255, 255);
+          line-height: 0;
+          width: 284px;
+          height: 556px;
+
+          .video_preview {
+            height: 486px;
+            width: 260px;
+            background-color: rgb(0, 0, 0);
+            object-fit: contain;
+            margin-left: 12px;
+            margin-top: 12px;
+            border-radius: 0.5px;
+          }
+
+          .phone_preview {
+            background-image: url(../../assets/images/Phone.png);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+          }
+        }
+      }
+
+      .upload_content_right {
+        margin-left: 24px;
+        flex: 1 1 0%;
+
+        .form_item:not(:last-child) {
+          margin-bottom: 24px;
+
+          .form_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .form_label {
+              font-size: var(--tux-fontSizeP3);
+              line-height: 1.5;
+              font-weight: var(--tux-fontWeightSemibold);
+              color: var(--tux-colorTextPrimary);
+              display: inline;
+            }
+
+            .form_count {
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 17px;
+              color: rgba(22, 24, 35, 0.5);
+              white-space: pre;
+            }
+          }
+
+          .form_footer {
+            margin-top: 4px;
+            display: flex;
+
+            .form_textarea {
+              height: 60px;
+              width: 100%;
+              border: 1px solid var(--tux-colorLineSecondary2);
+              outline: none;
+              padding: 8px 12px;
+              border-radius: 4px;
+              resize: none;
+            }
+
+            .form_input {
+              height: 40px;
+              width: 100%;
+              border: 1px solid var(--tux-colorLineSecondary2);
+              outline: none;
+              padding: 8px 12px;
+              border-radius: 4px;
+              resize: none;
+            }
+
+            .form_select {
+              line-height: 1.5;
+              font-weight: var(--tux-fontWeightRegular);
+              color: var(--tux-colorTextPrimary);
+              appearance: none;
+              background: url(https://svgshare.com/i/nkj.svg) no-repeat right
+                12px center;
+              height: 40px;
+              width: 40%;
+              border: 1px solid var(--tux-colorLineSecondary2);
+              outline: none;
+              padding: 8px 12px;
+              border-radius: 4px;
+              resize: none;
+            }
+
+            .form_checkbox {
+              display: flex;
+              flex-direction: row;
+
+              label {
+                flex-grow: 1;
+                padding-inline: 12px 0px;
+                order: 1;
+              }
+
+              input {
+                position: relative;
+                width: 16px;
+                height: 16px;
+                flex-shrink: 0;
+                margin-block-start: 3px;
+              }
+
+              &:not(:last-child) {
+                margin-right: 32px;
+              }
+            }
+          }
+        }
+
+        .button_container {
+          display: flex;
+          flex-direction: row;
+          margin-top: 24px;
+
+          button {
+            padding: 10px 60px;
+
+            span {
+              text-align: center;
+              margin: 0 auto;
+            }
+          }
+
+          .discard {
+            margin-right: 16px;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
