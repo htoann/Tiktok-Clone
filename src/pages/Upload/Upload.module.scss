@@ -203,9 +203,9 @@
               line-height: 1.5;
               font-weight: var(--tux-fontWeightRegular);
               color: var(--tux-colorTextPrimary);
-              appearance: none;
-              background: url(https://svgshare.com/i/nkj.svg) no-repeat right
-                12px center;
+              // appearance: none;
+              // background: url(../../components/Icons/index.js) no-repeat right
+              //   12px center;
               height: 40px;
               width: 40%;
               border: 1px solid var(--tux-colorLineSecondary2);
@@ -218,6 +218,7 @@
             .form_checkbox {
               display: flex;
               flex-direction: row;
+              align-items: center;
 
               label {
                 flex-grow: 1;

@@ -1,18 +1,43 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import Button from "~/components/Core/Button";
 import { UploadIcon } from "~/components/Icons";
+import { videosService } from "~/features/videos/services/videosService";
 import styles from "./Upload.module.scss";
 
 function Upload() {
+  const [filePreview, setFilePreview] = useState("");
   const [file, setFile] = useState("");
+  const { register, handleSubmit } = useForm();
 
-  const handleFileChange = (e) => {
+  const handleFile = (e) => {
     const src = URL.createObjectURL(e.target.files[0]);
-    setFile(src);
+    setFilePreview(src);
+    setFile(e.target.files[0]);
+  };
+
+  const handleUploadVideo = async (data) => {
+    await videosService.postVideo(data);
+  };
+
+  const submitForm = (data) => {
+    const fullData = { ...data, upload_file: file };
+
+    var formData = new FormData();
+
+    for (var key in fullData) {
+      if (key === "allows") {
+        if (fullData[key]) formData.append("allows[]", fullData[key]);
+      } else {
+        formData.append(key, fullData[key]);
+      }
+    }
+
+    handleUploadVideo(formData);
   };
 
   return (
-    <div className={styles.upload_wrapper}>
+    <form onSubmit={handleSubmit(submitForm)} className={styles.upload_wrapper}>
       <div className={styles.upload_container}>
         <span className={styles.upload_title}>Upload video</span>
         <div className={styles.upload_sub_title}>
@@ -24,13 +49,13 @@ function Upload() {
               file ? `${styles.preview}` : `${styles.upload_content_left}`
             }
           >
-            <label htmlFor="video">
+            <label htmlFor="upload_file">
               <div className={styles.upload_state}>
                 {file ? (
                   <div className={styles.preview_v2}>
                     <video
                       className={styles.video_preview}
-                      src={file}
+                      src={filePreview}
                       autoPlay
                       preload="auto"
                       playsInline=""
@@ -62,7 +87,7 @@ function Upload() {
                     <span className={styles.upload_state_notice}>
                       Less than 2 GB
                     </span>
-                    <Button primary className={styles.select_file}>
+                    <Button primary noAction className={styles.select_file}>
                       Select File
                     </Button>
                   </>
@@ -70,8 +95,10 @@ function Upload() {
               </div>
             </label>
             <input
-              onChange={handleFileChange}
-              id="video"
+              onChange={handleFile}
+              name="upload_file"
+              id="upload_file"
+              required
               type="file"
               accept="video/*"
             />
@@ -80,12 +107,13 @@ function Upload() {
             <div className={styles.form_item}>
               <div className={styles.form_header}>
                 <span className={styles.form_label}>Caption</span>
-                <span className={styles.form_count}>0/150</span>
+                <span className={styles.form_count}>0 / 150</span>
               </div>
               <div className={styles.form_footer}>
                 <textarea
-                  // value={description}
-                  // onChange={(e) => setDescription(e.target.value)}
+                  name="description"
+                  id="description"
+                  {...register("description")}
                   className={styles.form_textarea}
                 />
               </div>
@@ -96,10 +124,11 @@ function Upload() {
               </div>
               <div className={styles.form_footer}>
                 <input
-                  // value={thumbnail}
-                  // onChange={(e) => setThumbnail(e.target.value)}
                   className={styles.form_input}
-                  type="number"
+                  name="thumbnail_time"
+                  id="thumbnail_time"
+                  {...register("thumbnail_time")}
+                  type="text"
                   placeholder="Thumbnail capture position, units of seconds (Ex: 2)"
                 />
               </div>
@@ -110,9 +139,10 @@ function Upload() {
               </div>
               <div className={styles.form_footer}>
                 <input
-                  // value={music}
-                  // onChange={(e) => setMusic(e.target.value)}
                   className={styles.form_input}
+                  name="music"
+                  id="music"
+                  {...register("music")}
                   type="text"
                   placeholder="Music"
                 />
@@ -126,8 +156,10 @@ function Upload() {
               </div>
               <div className={styles.form_footer}>
                 <select
-                  // onChange={(e) => setViewable(e.target.value)}
                   className={styles.form_select}
+                  name="viewable"
+                  id="viewable"
+                  {...register("viewable")}
                 >
                   <option value="public">Public</option>
                   <option value="friends">Friends</option>
@@ -142,45 +174,48 @@ function Upload() {
               <div className={styles.form_footer}>
                 <div className={styles.form_checkbox}>
                   <input
-                    // onChange={handleAllowsChange}
                     value="comment"
                     type="checkbox"
                     name="allows"
+                    id="allows"
+                    {...register("allows")}
                   />
                   <label htmlFor="">Comment</label>
                 </div>
                 <div className={styles.form_checkbox}>
                   <input
-                    // onChange={handleAllowsChange}
                     value="duet"
                     type="checkbox"
                     name="allows"
+                    id="allows"
+                    {...register("allows")}
                   />
                   <label htmlFor="">Duet</label>
                 </div>
                 <div className={styles.form_checkbox}>
                   <input
-                    // onChange={handleAllowsChange}
                     value="stitch"
                     type="checkbox"
                     name="allows"
+                    id="allows"
+                    {...register("allows")}
                   />
                   <label htmlFor="">Stitch</label>
                 </div>
               </div>
             </div>
             <div className={styles.button_container}>
-              <Button text className={styles.discard} onClick={true}>
+              <Button text className={styles.discard}>
                 Discard
               </Button>
-              <Button primary className={styles.post} onClick={true}>
+              <Button primary className={styles.post} type="submit">
                 Post
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 

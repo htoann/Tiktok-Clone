@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./VideoDetail.module.scss";
 import { Link, useLocation } from "react-router-dom";
-import { getVideosService } from "~/features/videos/services/getVideosService";
+import { videosService } from "~/features/videos/services/videosService";
 import Loader from "~/components/Core/Loader";
 import ListComment from "~/features/comments/components/ListComment";
 import Tiktok2 from "~/assets/images/Tiktok2.png";
@@ -18,7 +18,7 @@ function VideoDetail() {
 
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await getVideosService.video(videoId);
+      const result = await videosService.getVideo(videoId);
       setVideo(result);
 
       setLoading(false);

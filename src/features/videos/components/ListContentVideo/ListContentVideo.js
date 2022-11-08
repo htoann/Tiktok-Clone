@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ListContentVideo.module.scss";
-import { getVideosService } from "~/features/videos/services/getVideosService";
+import { videosService } from "~/features/videos/services/videosService";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useSelector } from "react-redux";
 import Loader from "../../../../components/Core/Loader";
@@ -14,7 +14,7 @@ function ListContentVideo({ type }) {
 
   useEffect(() => {
     const getListVideo = async () => {
-      const result = await getVideosService.listVideo(type);
+      const result = await videosService.getListVideo(type);
       setListVideo(result);
     };
 
@@ -22,7 +22,7 @@ function ListContentVideo({ type }) {
   }, [user]);
 
   const fetchListVideo = async () => {
-    const result = await getVideosService.listVideo(type, page);
+    const result = await videosService.getListVideo(type, page);
     return result;
   };
 

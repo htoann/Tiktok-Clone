@@ -36,7 +36,7 @@ function ListComment({ video }) {
     setLoading(false);
   };
 
-  const onFormSubmit = async (e) => {
+  const onFormSubmit = (e) => {
     e.preventDefault();
     handleComment();
   };

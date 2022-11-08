@@ -19,6 +19,7 @@ function Button({
   className,
   leftIcon,
   rightIcon,
+  noAction = false,
   ...passProps
 }) {
   let Comp = "button";
@@ -46,7 +47,7 @@ function Button({
     Comp = "a";
   }
 
-  if (!to && !href && !onClick) {
+  if (noAction) {
     Comp = "div";
   }
 
@@ -81,6 +82,7 @@ Button.prototype = {
   className: PropTypes.string,
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
+  noAction: PropTypes.bool,
 };
 
 export default Button;
