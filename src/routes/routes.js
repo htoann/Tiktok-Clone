@@ -1,20 +1,23 @@
+import { lazy } from "react";
 import { config } from "~/config";
 
 // Layouts
-import HeaderOnly from "~/layouts/HeaderOnly";
+const HeaderOnly = lazy(() => import("~/layouts/HeaderOnly"));
 
 // Pages
-import Following from "~/pages/Following";
-import Home from "~/pages/Home";
-import Live from "~/pages/Live";
-import NotFound from "~/pages/NotFound";
-import Profile from "~/pages/Profile";
-import Upload from "~/pages/Upload";
-import Messages from "~/pages/Messages";
-import Login from "~/pages/Login";
-import Register from "~/pages/Register/Register";
-import VideoDetail from "~/pages/VideoDetail";
-import ListComment from "~/features/comments/components/ListComment";
+const Following = lazy(() => import("~/pages/Following"));
+const Home = lazy(() => import("~/pages/Home"));
+const Live = lazy(() => import("~/pages/Live"));
+const NotFound = lazy(() => import("~/pages/NotFound"));
+const Profile = lazy(() => import("~/pages/Profile"));
+const Upload = lazy(() => import("~/pages/Upload"));
+const Messages = lazy(() => import("~/pages/Messages"));
+const Login = lazy(() => import("~/pages/Login"));
+const Register = lazy(() => import("~/pages/Register/Register"));
+const VideoDetail = lazy(() => import("~/pages/VideoDetail"));
+const ListComment = lazy(() =>
+  import("~/features/comments/components/ListComment")
+);
 
 // Public routes
 const publicRoutes = [
