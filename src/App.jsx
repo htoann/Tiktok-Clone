@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { publicRoutes } from "./routes";
 import { DefaultLayout } from "~/layouts";
 import "~/assets/sass/styles.scss";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense>
         <div className="App">
           <Routes>
             {publicRoutes.map((route, index) => {

@@ -135,7 +135,7 @@ function Upload() {
                   name="thumbnail_time"
                   id="thumbnail_time"
                   {...register("thumbnail_time")}
-                  type="text"
+                  type="number"
                   placeholder="Thumbnail capture position, units of seconds (Ex: 2)"
                 />
               </div>
