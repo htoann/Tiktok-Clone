@@ -1,8 +1,8 @@
 import { lazy } from "react";
 import { config } from "~/config";
+import { HeaderOnly } from "~/layouts";
 
 // Layouts
-const HeaderOnly = lazy(() => import("~/layouts/HeaderOnly"));
 
 // Pages
 const Following = lazy(() => import("~/pages/Following"));
