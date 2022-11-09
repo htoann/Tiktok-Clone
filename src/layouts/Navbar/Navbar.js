@@ -25,6 +25,7 @@ import { config } from "~/config";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "~/features/authentication/userAction";
 import { useNavigate } from "react-router-dom";
+import WrapperAuth from "~/components/WrapperAuth";
 
 function Navbar() {
   const { user } = useSelector((state) => state.user);
@@ -68,14 +69,16 @@ function Navbar() {
         <Search />
 
         <div className={styles.navbar_right}>
-          <Button
-            className={styles.upload_icon}
-            text
-            leftIcon={<FaPlus />}
-            to={config.routes.upload}
-          >
-            Upload
-          </Button>
+          <WrapperAuth>
+            <Button
+              className={styles.upload_icon}
+              text
+              leftIcon={<FaPlus />}
+              to={config.routes.upload}
+            >
+              Upload
+            </Button>
+          </WrapperAuth>
 
           {theme === "dark" ? (
             <div
