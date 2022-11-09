@@ -86,3 +86,15 @@
   display: flex;
   width: 20px;
 }
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+  color: var(--tux-colorTextQuaternary) !important;
+  background-color: var(--tux-colorBGSecondary-tint-8) !important;
+  border-color: var(--tux-colorBGSecondary-tint-8) !important;
+
+  &:hover {
+    background: none;
+  }
+}

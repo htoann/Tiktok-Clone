@@ -215,7 +215,12 @@ function Upload() {
               <Button text className={styles.discard}>
                 Discard
               </Button>
-              <Button primary className={styles.post} type="submit">
+              <Button
+                primary
+                disabled={!file}
+                className={styles.post}
+                type="submit"
+              >
                 Post
               </Button>
             </div>
