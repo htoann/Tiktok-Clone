@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BiUserCheck } from "react-icons/bi";
 import Verify from "~/assets/images/verify.svg";
 import Tippy from "@tippyjs/react";
@@ -13,21 +13,18 @@ import { getUsersService } from "~/features/accounts/services/getUsersService";
 import { getFullName } from "~/utils/common";
 import { useSelector } from "react-redux";
 import { FaRegEdit } from "react-icons/fa";
-import ModalVideoDetail from "~/features/videos/components/ModalVideoDetail/ModalVideoDetail";
+import { config } from "~/config";
 
 function Profile() {
   const { user: userRedux } = useSelector((state) => state.user);
   const [user, setUser] = useState({});
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const [currentPlayVideoId, setcurrentPlayVideoIdId] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getUsersService.user(location.pathname);
       setUser(result);
-
       setLoading(false);
     };
 
@@ -46,15 +43,6 @@ function Profile() {
   const handleFollow = async () => {
     const isFollowed = await handleFollowFunc(user);
     setUser((user) => ({ ...user, is_followed: isFollowed }));
-  };
-
-  const openFromParent = (id) => {
-    setcurrentPlayVideoIdId(id);
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
   };
 
   if (loading) {
@@ -136,23 +124,22 @@ function Profile() {
           <div className={styles.list_video}>
             {user?.videos?.map((video) => (
               <div className={styles.video_container} key={video.id}>
-                <video
-                  src={video.file_url}
-                  muted
-                  loop
-                  onMouseEnter={handleVideoPlay}
-                  onMouseLeave={handleVideoPause}
-                  poster={video.thumb_url}
-                  onClick={() => openFromParent(video.id)}
-                />
+                <Link
+                  to={config.routes.videoLink(video.id)}
+                  state={{ videoDetail: true }}
+                >
+                  <video
+                    src={video.file_url}
+                    muted
+                    loop
+                    onMouseEnter={handleVideoPlay}
+                    onMouseLeave={handleVideoPause}
+                    poster={video.thumb_url}
+                  />
+                </Link>
                 <div className={styles.video_desc}>
                   <p>{video.description}</p>
                 </div>
-                <ModalVideoDetail
-                  data={user.videos.find((v) => v.id === currentPlayVideoId)}
-                  IsModalOpened={isOpen}
-                  onCloseModal={handleCloseModal}
-                />
               </div>
             ))}
           </div>

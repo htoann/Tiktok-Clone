@@ -1,42 +1,50 @@
 import { Fragment } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { publicRoutes } from "./routes";
 import { DefaultLayout } from "~/layouts";
 import "~/assets/sass/styles.scss";
 import React, { Suspense } from "react";
+import ModalVideo from "./pages/ModalVideo/ModalVideo";
+import { config } from "~/config";
 
 function App() {
+  const location = useLocation();
+  const videoDetail = location.state && location.state.videoDetail;
+
   return (
-    <Router>
+    <div className="App">
       <Suspense>
-        <div className="App">
+        <Routes location={videoDetail || location}>
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            let Layout = DefaultLayout;
+
+            if (route.layout) {
+              Layout = route.layout;
+            } else if (route.layout === null) {
+              Layout = Fragment;
+            }
+
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+        </Routes>
+        {videoDetail && (
           <Routes>
-            {publicRoutes.map((route, index) => {
-              const Page = route.component;
-              let Layout = DefaultLayout;
-
-              if (route.layout) {
-                Layout = route.layout;
-              } else if (route.layout === null) {
-                Layout = Fragment;
-              }
-
-              return (
-                <Route
-                  key={index}
-                  path={route.path}
-                  element={
-                    <Layout>
-                      <Page />
-                    </Layout>
-                  }
-                />
-              );
-            })}
+            <Route exact path={config.routes.video} element={<ModalVideo />} />
           </Routes>
-        </div>
+        )}
       </Suspense>
-    </Router>
+    </div>
   );
 }
 

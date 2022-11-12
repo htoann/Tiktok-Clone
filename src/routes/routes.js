@@ -1,8 +1,9 @@
 import { lazy } from "react";
 import { config } from "~/config";
-import { HeaderOnly } from "~/layouts";
 
 // Layouts
+const ModalVideo = lazy(() => import("~/pages/ModalVideo"));
+import { HeaderOnly } from "~/layouts";
 
 // Pages
 const Following = lazy(() => import("~/pages/Following"));
@@ -13,10 +14,6 @@ const Profile = lazy(() => import("~/pages/Profile"));
 const Upload = lazy(() => import("~/pages/Upload"));
 const Login = lazy(() => import("~/pages/Login"));
 const Register = lazy(() => import("~/pages/Register/Register"));
-const VideoDetail = lazy(() => import("~/pages/VideoDetail"));
-const ListComment = lazy(() =>
-  import("~/features/comments/components/ListComment")
-);
 
 // Public routes
 const publicRoutes = [
@@ -27,8 +24,11 @@ const publicRoutes = [
   { path: config.routes.upload, component: Upload, layout: HeaderOnly },
   { path: config.routes.login, component: Login, layout: HeaderOnly },
   { path: config.routes.register, component: Register, layout: HeaderOnly },
-  { path: config.routes.video, component: VideoDetail, layout: HeaderOnly },
-  { path: config.routes.comment, component: ListComment, layout: HeaderOnly },
+  {
+    path: config.routes.video,
+    component: ModalVideo,
+    layout: HeaderOnly,
+  },
   { path: "*", component: NotFound, layout: null },
 ];
 
