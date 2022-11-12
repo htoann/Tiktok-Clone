@@ -1,7 +1,6 @@
 import { lazy } from "react";
 import { config } from "~/config";
 import { HeaderOnly } from "~/layouts";
-import HeaderSidebar from "~/layouts/HeaderSidebar";
 
 // Layouts
 
@@ -24,7 +23,7 @@ const publicRoutes = [
   { path: config.routes.home, component: Home },
   { path: config.routes.following, component: Following },
   { path: config.routes.live, component: Live },
-  { path: config.routes.profile, component: Profile, layout: HeaderSidebar },
+  { path: config.routes.profile, component: Profile },
   { path: config.routes.upload, component: Upload, layout: HeaderOnly },
   { path: config.routes.login, component: Login, layout: HeaderOnly },
   { path: config.routes.register, component: Register, layout: HeaderOnly },
