@@ -21,14 +21,13 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 - Following accounts tab
 - Suggested accounts tab
 - View profile, accounts page
-- Infinite loading
+- Infinite loading list video
 - Interact and watch videos like Tiktok
+- Detail Video Page Modal
 - Dảk theme
 - ...
 
 <!-- - Auth (Google, Facebook) -->
-<!-- - Upload video with thumbnail -->
-
 <!-- - Share video on Facebook, Twitter, Reddit,... -->
 
 ## API
