@@ -30,9 +30,9 @@ import WrapperAuth from "~/components/WrapperAuth";
 function Navbar() {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const navigate = useNavigate();
   const location = useLocation();
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   const isLoginPage = location.pathname.includes("/login");
 
@@ -113,7 +113,7 @@ function Navbar() {
               <Menu items={MENU_ITEMS_2} onChange={handleMenuChange}>
                 <Image
                   className={styles.dropdown_avatar}
-                  src={Avatar}
+                  src={user.avatar}
                   alt="Avatar"
                 />
               </Menu>
