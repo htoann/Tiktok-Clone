@@ -6,6 +6,7 @@ import "~/assets/sass/styles.scss";
 import React, { Suspense } from "react";
 import ModalVideo from "./pages/ModalVideo/ModalVideo";
 import { config } from "~/config";
+import Loader from "./components/Core/Loader";
 
 function App() {
   const location = useLocation();
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Routes location={videoDetail || location}>
           {publicRoutes.map((route, index) => {
             const Page = route.component;
