@@ -13,15 +13,12 @@ const NotFound = lazy(() => import("~/pages/NotFound"));
 const Profile = lazy(() => import("~/pages/Profile"));
 const Upload = lazy(() => import("~/pages/Upload"));
 const Login = lazy(() => import("~/pages/Login"));
-const Register = lazy(() => import("~/pages/Register/Register"));
+const Register = lazy(() => import("~/pages/Register"));
 
 // Public routes
 const publicRoutes = [
   { path: config.routes.home, component: Home },
-  { path: config.routes.following, component: Following },
   { path: config.routes.live, component: Live },
-  { path: config.routes.profile, component: Profile },
-  { path: config.routes.upload, component: Upload, layout: HeaderOnly },
   { path: config.routes.login, component: Login, layout: HeaderOnly },
   { path: config.routes.register, component: Register, layout: HeaderOnly },
   {
@@ -32,6 +29,10 @@ const publicRoutes = [
   { path: "*", component: NotFound, layout: null },
 ];
 
-const privateRoutes = [];
+const privateRoutes = [
+  { path: config.routes.following, component: Following },
+  { path: config.routes.profile, component: Profile },
+  { path: config.routes.upload, component: Upload, layout: HeaderOnly },
+];
 
 export { publicRoutes, privateRoutes };
