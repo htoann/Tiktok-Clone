@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import styles from "./ListContentVideo.module.scss";
 import { videosService } from "~/features/videos/services/videosService";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -56,4 +56,4 @@ function ListContentVideo({ type }) {
   );
 }
 
-export default ListContentVideo;
+export default memo(ListContentVideo);
