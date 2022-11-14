@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaCommentDots, FaShare, FaMusic } from "react-icons/fa";
 import { IoHeart } from "react-icons/io5";
@@ -79,7 +79,7 @@ function ContentVideo({ data }) {
           </div>
           <div className={styles.video_wrapper}>
             <Link
-              to={config.routes.videoLink(content.id)}
+              to={config.routes.videoLink(content)}
               state={{ videoDetail: true, video: content }}
             >
               <div className={styles.video_card}>
@@ -102,9 +102,8 @@ function ContentVideo({ data }) {
                 </WrapperAuth>
                 <strong className={styles.count}>{content.likes_count}</strong>
               </div>
-
               <Link
-                to={config.routes.videoLink(content.id)}
+                to={config.routes.videoLink(content)}
                 state={{ videoDetail: true, video: content }}
               >
                 <div className={styles.action_button}>
@@ -141,4 +140,4 @@ ContentVideo.prototype = {
   data: PropTypes.object.isRequired,
 };
 
-export default ContentVideo;
+export default memo(ContentVideo);
