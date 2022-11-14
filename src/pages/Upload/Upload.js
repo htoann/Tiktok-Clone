@@ -28,7 +28,10 @@ function Upload() {
 
     for (const key in fullData) {
       if (key === "allows") {
-        if (fullData[key]) formData.append("allows[]", fullData[key]);
+        if (fullData[key])
+          fullData.allows.forEach(function (value) {
+            formData.append("allows[]", value);
+          });
       } else {
         formData.append(key, fullData[key]);
       }
