@@ -14,13 +14,11 @@ import { getFullName } from "~/utils/common";
 import handleLikeFunc from "~/utils/handleLike";
 import Video from "../Video";
 import WrapperAuth from "~/components/WrapperAuth";
-import ModalVideoDetail from "../ModalVideoDetail/ModalVideoDetail";
 import Image from "~/components/Image";
 
 function ContentVideo({ data }) {
   const [content, setContent] = useState(data);
   const [user, setUser] = useState(content.user);
-  const [isOpen, setIsOpen] = useState(false);
   const profileLink = config.routes.profileLink(user.nickname);
 
   useEffect(() => {
@@ -39,14 +37,6 @@ function ContentVideo({ data }) {
       ...content,
       ...newContent,
     }));
-  };
-
-  const openFromParent = () => {
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
   };
 
   return (
@@ -88,9 +78,14 @@ function ContentVideo({ data }) {
             </WrapperAuth>
           </div>
           <div className={styles.video_wrapper}>
-            <div className={styles.video_card} onClick={openFromParent}>
-              <Video data={content} />
-            </div>
+            <Link
+              to={config.routes.videoLink(content.id)}
+              state={{ videoDetail: true, video: content }}
+            >
+              <div className={styles.video_card}>
+                <Video data={content} />
+              </div>
+            </Link>
             <div className={styles.action_items}>
               <div className={styles.action_button}>
                 <WrapperAuth>
@@ -108,20 +103,19 @@ function ContentVideo({ data }) {
                 <strong className={styles.count}>{content.likes_count}</strong>
               </div>
 
-              <div className={styles.action_button} onClick={openFromParent}>
-                <div className={styles.icon}>
-                  <FaCommentDots />
+              <Link
+                to={config.routes.videoLink(content.id)}
+                state={{ videoDetail: true, video: content }}
+              >
+                <div className={styles.action_button}>
+                  <div className={styles.icon}>
+                    <FaCommentDots />
+                  </div>
+                  <strong className={styles.count}>
+                    {content.comments_count}
+                  </strong>
                 </div>
-                <strong className={styles.count}>
-                  {content.comments_count}
-                </strong>
-              </div>
-
-              <ModalVideoDetail
-                data={content}
-                IsModalOpened={isOpen}
-                onCloseModal={handleCloseModal}
-              />
+              </Link>
 
               <div className={styles.action_button}>
                 <div className={styles.menu_share}>
