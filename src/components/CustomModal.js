@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import Modal from "react-modal";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { redirectModal } from "~/utils/common";
 
 Modal.setAppElement("div");
 
@@ -24,12 +25,13 @@ const small = {};
 
 function CustomModal({ children, ...props }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <Modal
       isOpen={true}
       style={props.fullScreen ? fullScreen : small}
-      onRequestClose={() => navigate("/")}
+      onRequestClose={() => redirectModal(location, navigate)}
       {...props}
     >
       {children}
