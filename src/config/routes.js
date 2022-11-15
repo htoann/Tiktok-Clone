@@ -9,7 +9,7 @@ export const routes = {
   messages: "/messages",
   login: "/login",
   register: "/register",
-  video: "/videos/:id",
-  videoLink: (id) => `/videos/${id}`,
+  video: "/@:nickname/videos/:id",
+  videoLink: (content) => `/@${content.user.nickname}/videos/${content.id}`,
   comment: "/videos/:id/comments",
 };

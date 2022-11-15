@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Profile.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BiUserCheck } from "react-icons/bi";
 import Verify from "~/assets/images/verify.svg";
 import Tippy from "@tippyjs/react";
@@ -18,18 +18,19 @@ import { config } from "~/config";
 function Profile() {
   const { user: userRedux } = useSelector((state) => state.user);
   const [user, setUser] = useState({});
-  const location = useLocation();
   const [loading, setLoading] = useState(true);
+  const params = useParams();
+  const nickname = params.nickname;
 
   useEffect(() => {
     const fetchApi = async () => {
-      const result = await getUsersService.user(location.pathname);
+      const result = await getUsersService.user(nickname);
       setUser(result);
       setLoading(false);
     };
 
     fetchApi();
-  }, [location.pathname, userRedux, user.is_followed]);
+  }, [nickname, userRedux, user.is_followed]);
 
   const handleVideoPlay = (e) => {
     e.target.play();
@@ -123,11 +124,12 @@ function Profile() {
         <div className={styles.list_video_container}>
           <div className={styles.list_video}>
             {user?.videos?.map((video) => (
-              <div className={styles.video_container} key={video.id}>
-                <Link
-                  to={config.routes.videoLink(video.id)}
-                  state={{ videoDetail: true }}
-                >
+              <Link
+                key={video.id}
+                to={config.routes.videoLink(video)}
+                state={{ videoDetail: true, video: video }}
+              >
+                <div className={styles.video_container}>
                   <video
                     src={video.file_url}
                     muted
@@ -136,11 +138,11 @@ function Profile() {
                     onMouseLeave={handleVideoPause}
                     poster={video.thumb_url}
                   />
-                </Link>
-                <div className={styles.video_desc}>
-                  <p>{video.description}</p>
+                  <div className={styles.video_desc}>
+                    <p>{video.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

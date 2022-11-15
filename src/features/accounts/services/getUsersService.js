@@ -27,9 +27,9 @@ export const followingList = async (page = 1) => {
   }
 };
 
-export const user = async (pathname) => {
+export const user = async (nickname) => {
   try {
-    const res = await request.get(`users${pathname}`);
+    const res = await request.get(`users/@${nickname}`);
     return res.data;
   } catch (err) {
     console.log(err);

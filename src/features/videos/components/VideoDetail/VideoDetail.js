@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import styles from "./VideoDetail.module.scss";
 import Video from "../Video";
 import ListComment from "~/features/comments/components/ListComment";
@@ -44,4 +44,4 @@ function VideoDetail({ data }) {
   );
 }
 
-export default VideoDetail;
+export default memo(VideoDetail);
