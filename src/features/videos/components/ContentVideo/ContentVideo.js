@@ -80,7 +80,11 @@ function ContentVideo({ data }) {
           <div className={styles.video_wrapper}>
             <Link
               to={config.routes.videoLink(content)}
-              state={{ videoDetail: true, video: content }}
+              state={{
+                videoDetail: true,
+                video: content,
+                prevPath: location.pathname,
+              }}
             >
               <div className={styles.video_card}>
                 <Video data={content} />
@@ -104,7 +108,11 @@ function ContentVideo({ data }) {
               </div>
               <Link
                 to={config.routes.videoLink(content)}
-                state={{ videoDetail: true, video: content }}
+                state={{
+                  videoDetail: true,
+                  video: content,
+                  prevPath: location.pathname,
+                }}
               >
                 <div className={styles.action_button}>
                   <div className={styles.icon}>

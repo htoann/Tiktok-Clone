@@ -127,7 +127,11 @@ function Profile() {
               <Link
                 key={video.id}
                 to={config.routes.videoLink(video)}
-                state={{ videoDetail: true, video: video }}
+                state={{
+                  videoDetail: true,
+                  video: video,
+                  prevPath: location.pathname,
+                }}
               >
                 <div className={styles.video_container}>
                   <video

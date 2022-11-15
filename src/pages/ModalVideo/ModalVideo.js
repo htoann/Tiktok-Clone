@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Image from "~/components/Image";
 import VideoDetail from "~/features/videos/components/VideoDetail";
 import CustomModal from "~/components/CustomModal";
+import { redirectModal } from "~/utils/common";
 
 function ModalVideo() {
   const navigate = useNavigate();
@@ -14,10 +15,16 @@ function ModalVideo() {
   return (
     <CustomModal fullScreen>
       <VideoDetail data={location.state?.video} />
-      <div className={styles.close_button} onClick={() => navigate("/")}>
+      <div
+        className={styles.close_button}
+        onClick={() => redirectModal(location, navigate)}
+      >
         <IoClose />
       </div>
-      <div className={styles.home_button} onClick={() => navigate("/")}>
+      <div
+        className={styles.home_button}
+        onClick={() => redirectModal(location, navigate)}
+      >
         <Image src={Tiktok2} />
       </div>
     </CustomModal>
