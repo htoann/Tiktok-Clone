@@ -1,9 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/authentication/userSlice";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import userReducer from "~/features/authentication/userSlice";
+import videoReducer from "~/features/videos/videoSlice";
+import { videoApi } from "~/services/videoApi";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     user: userReducer,
+    video: videoReducer,
+    [videoApi.reducerPath]: videoApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(videoApi.middleware),
 });
-export default store;
+
+setupListeners(store.dispatch);
