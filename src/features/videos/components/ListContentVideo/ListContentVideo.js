@@ -2,56 +2,75 @@ import React, { memo, useEffect, useState } from "react";
 import styles from "./ListContentVideo.module.scss";
 import { videosService } from "~/features/videos/services/videosService";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../../../components/Core/Loader";
 import ContentVideo from "../ContentVideo";
+import { fetchMoreVideos, setVideos } from "../../videoSlice";
+import { useGetVideosQuery } from "~/services/videoApi";
 
 function ListContentVideo({ type }) {
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
-  const [listVideo, setListVideo] = useState([]);
+  const { videos } = useSelector((state) => state.video);
+
   const [hasMore, setHasMore] = useState(true);
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
+
+  const { data, isLoading, isSuccess } = useGetVideosQuery({
+    type: type,
+    page: page,
+  });
 
   useEffect(() => {
-    const getListVideo = async () => {
-      const result = await videosService.getListVideo(type);
-      setListVideo(result);
-    };
+    if (isSuccess) {
+      const videos = data.data;
+      dispatch(setVideos({ videos }));
 
-    getListVideo();
-  }, [user]);
+      setPage((prev) => prev + 1);
+    }
+  }, [dispatch, videos, isSuccess, user, hasMore, page, type]);
 
-  const fetchListVideo = async () => {
-    const result = await videosService.getListVideo(type, page);
-    return result;
-  };
+  // const fetchListVideo = async () => {
+  //   const result = await videosService.getListVideo(type, page);
+  //   return result;
+  // };
 
   const fetchData = async () => {
-    const listVideoNext = await fetchListVideo();
+    // setPage((prev) => prev + 1);
 
-    setListVideo([...listVideo, ...listVideoNext]);
-    if (listVideoNext.length === 0) {
+    dispatch(fetchMoreVideos({ videos }));
+
+    if (videos?.length === 0) {
       setHasMore(false);
     }
-    setPage((prev) => prev + 1);
   };
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className={styles.main_container}>
-      <InfiniteScroll
-        dataLength={listVideo.length}
+      <button onClick={() => fetchData()}>LLLLLLLLLLLL</button>
+      {/* <InfiniteScroll
+        dataLength={videos?.length}
         next={fetchData}
         hasMore={hasMore}
         loader={<Loader />}
         endMessage={<h4>End</h4>}
         style={{ overflow: "inherit" }}
       >
-        {listVideo.map((video) => (
+        {videos?.map((video) => (
           <div key={video.id}>
             <ContentVideo data={video} />
           </div>
         ))}
-      </InfiniteScroll>
+      </InfiniteScroll> */}
+      {videos?.map((video) => (
+        <div key={video.id}>
+          <ContentVideo data={video} />
+        </div>
+      ))}
     </div>
   );
 }

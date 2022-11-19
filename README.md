@@ -8,7 +8,7 @@ Official website: [https://tiktokt.vercel.app](https://tiktokt.vercel.app)
 
 ## Main technology used
 
-- Redux Toolkit
+- Test Redux Toolkit
 - Vite
 
 ## Features
