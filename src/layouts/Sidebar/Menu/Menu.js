@@ -16,42 +16,13 @@ function Menu() {
   }, [location.pathname]);
 
   return (
-    <>
-      <div className={styles.sidebar_tabs}>
-        <Tab
-          to={config.routes.home}
-          Icon={FaHome}
-          className={
-            isActive === "/"
-              ? `${styles.sidebar_tab} ${styles.sidebar_active}`
-              : styles.sidebar_tab
-          }
-        >
-          For you
-        </Tab>
-        <WrapperAuth>
-          <Tab
-            to={config.routes.following}
-            Icon={BsPeople}
-            className={
-              isActive === "/following"
-                ? `${styles.sidebar_tab} ${styles.sidebar_active}`
-                : styles.sidebar_tab
-            }
-          >
-            Following
-          </Tab>
-        </WrapperAuth>
-        <Tab
-          to={config.routes.live}
-          Icon={BsCameraVideo}
-          className={
-            isActive === "/live"
-              ? `${styles.sidebar_tab} ${styles.sidebar_active}`
-              : styles.sidebar_tab
-          }
-        >
-          Live
+    <nav className={styles.sidebar_tabs}>
+      <Tab to={config.routes.home} Icon={FaHome}>
+        For you
+      </Tab>
+      <WrapperAuth>
+        <Tab to={config.routes.following} Icon={BsPeople}>
+          Following
         </Tab>
       </div>
       <hr className={styles.hr} />
