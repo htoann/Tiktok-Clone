@@ -8,7 +8,7 @@ function Tab({ to, children, Icon, onClick }) {
       to={to}
       className={(nav) =>
         nav.isActive
-          ? `${styles.sidebar_tab} ${styles.sideabr_active}`
+          ? `${styles.sidebar_tab} ${styles.sidebar_active}`
           : styles.sidebar_tab
       }
       onClick={onClick}

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Menu.module.scss";
 import { BsCameraVideo, BsPeople } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { config } from "~/config";

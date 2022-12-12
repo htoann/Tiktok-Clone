@@ -1,5 +1,4 @@
-.sidebar_tabs {
-  .sidebar_tab {
+.sidebar_tab {
     display: flex;
     text-decoration: none;
     padding: 10px 10px;
@@ -26,4 +25,3 @@
   .sidebar_active {
     color: var(--red);
   }
-}
