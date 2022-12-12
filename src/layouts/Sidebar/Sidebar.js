@@ -16,7 +16,6 @@ function Sidebar() {
     <div className={styles.sidebar}>
       <div className={styles.sidebar_scrollbar}>
         <Menu />
-        <hr className={styles.hr} />
         {!user && (
           <>
             <div className={styles.sidebar_login}>
