@@ -7,7 +7,7 @@ import Tab from "./Tab";
 
 function Menu() {
   return (
-    <nav>
+    <nav className={styles.sidebar_tabs}>
       <Tab to={config.routes.home} Icon={FaHome}>
         For you
       </Tab>
