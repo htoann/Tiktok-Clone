@@ -1,10 +1,10 @@
-.sidebar_tab {
+.sidebar_tabs {
+  .sidebar_tab {
     display: flex;
     text-decoration: none;
     padding: 10px 10px;
     border-radius: 5px;
     color: var(--black);
-    transition: background ease-in-out 200ms;
 
     &:hover {
       background-color: var(--gray);
@@ -25,3 +25,12 @@
   .sidebar_active {
     color: var(--red);
   }
+}
+
+.hr {
+  color: grayx3;
+  opacity: 0.1;
+  margin: 15px 0;
+  padding: 0 10px !important;
+  margin-left: 10px;
+}
