@@ -35,4 +35,12 @@ export const postVideo = async (formData) => {
   }
 };
 
+export const deleteVideo = async (id) => {
+  try {
+    await request.remove(`videos/${id}`);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export * as videosService from "~/features/videos/services/videosService";

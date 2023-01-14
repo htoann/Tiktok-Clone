@@ -5,6 +5,10 @@
   flex-direction: column;
   padding: 32px 0px 0px;
 
+  button {
+    justify-content: center;
+  }
+
   .comment_list_container {
     width: 100%;
     padding: 24px 32px;
