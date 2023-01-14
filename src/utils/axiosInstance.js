@@ -18,6 +18,11 @@ export const post = async (url, data, options = {}) => {
   return response.data;
 };
 
+export const remove = async (url, data, options = {}) => {
+  const response = await axiosInstance.delete(url, data, options);
+  return response.data;
+};
+
 axiosInstance.interceptors.request.use(function (config) {
   const token =
     "Bearer " + JSON.parse(localStorage.getItem("user"))?.meta.token;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { commentService } from "~/features/comments/services/commentService";
 import { getFullName } from "~/utils/common";
 import Button from "../../../../components/Core/Button";
@@ -9,6 +9,8 @@ import WrapperAuth from "../../../../components/WrapperAuth";
 import styles from "./ListComment.module.scss";
 import { FaRegHeart } from "react-icons/fa";
 import { config } from "~/config";
+import { useSelector } from "react-redux";
+import { videosService } from "~/features/videos/services/videosService";
 
 function ListComment({ video }) {
   const [listComment, setListComment] = useState({});
@@ -36,6 +38,18 @@ function ListComment({ video }) {
     setLoading(false);
   };
 
+  // Delete a video
+  const { user } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  const deleteVideo = async () => {
+    if (user.id === video.user_id) {
+      await videosService.deleteVideo(video.id);
+      const userProfile = config.routes.profileLink(user.nickname);
+      navigate(userProfile);
+    }
+  };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     handleComment();
@@ -43,6 +57,9 @@ function ListComment({ video }) {
 
   return (
     <div className={styles.content_container}>
+      <Button type="submit" primary onClick={deleteVideo}>
+        Delete
+      </Button>
       <div className={styles.comment_list_container}>
         {!loading ? (
           listComment ? (
