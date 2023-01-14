@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Button from "~/components/Core/Button";
+import Loader from "~/components/Core/Loader";
 import { UploadIcon } from "~/components/Icons";
 import { videosService } from "~/features/videos/services/videosService";
 import styles from "./Upload.module.scss";
@@ -10,6 +12,9 @@ function Upload() {
   const [file, setFile] = useState("");
   const [caption, setCaption] = useState("");
   const { register, handleSubmit } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleFile = (e) => {
     const src = URL.createObjectURL(e.target.files[0]);
@@ -18,7 +23,10 @@ function Upload() {
   };
 
   const handleUploadVideo = async (data) => {
+    setIsLoading(true);
     await videosService.postVideo(data);
+    setIsLoading(false);
+    navigate("/");
   };
 
   const submitForm = (data) => {
@@ -105,7 +113,6 @@ function Upload() {
               required
               type="file"
               accept="video/*"
-              // {...register("upload_file")}
             />
           </div>
           <div className={styles.upload_content_right}>
@@ -140,6 +147,7 @@ function Upload() {
                   {...register("thumbnail_time")}
                   type="number"
                   placeholder="Thumbnail capture position, units of seconds (Ex: 2)"
+                  defaultValue={1}
                 />
               </div>
             </div>
@@ -152,9 +160,9 @@ function Upload() {
                   className={styles.form_input}
                   name="music"
                   id="music"
-                  {...register("music")}
                   type="text"
                   placeholder="Music"
+                  {...register("music")}
                 />
               </div>
             </div>
@@ -188,6 +196,7 @@ function Upload() {
                     type="checkbox"
                     name="allows"
                     id="allows"
+                    defaultChecked
                     {...register("allows")}
                   />
                   <label htmlFor="">Comment</label>
@@ -198,6 +207,7 @@ function Upload() {
                     type="checkbox"
                     name="allows"
                     id="allows"
+                    defaultChecked
                     {...register("allows")}
                   />
                   <label htmlFor="">Duet</label>
@@ -208,6 +218,7 @@ function Upload() {
                     type="checkbox"
                     name="allows"
                     id="allows"
+                    defaultChecked
                     {...register("allows")}
                   />
                   <label htmlFor="">Stitch</label>
@@ -220,11 +231,12 @@ function Upload() {
               </Button>
               <Button
                 primary
-                disabled={!file}
+                disabled={!file || isLoading}
                 className={styles.post}
                 type="submit"
+                leftIcon={isLoading ? <Loader /> : null}
               >
-                Post
+                {!isLoading && "Post"}
               </Button>
             </div>
           </div>
