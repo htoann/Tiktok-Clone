@@ -1,3 +1,5 @@
+@import "../../../../assets/sass/mixin.scss";
+
 .account_item {
   padding: 8px 10px;
   display: flex;
@@ -47,5 +49,15 @@
 
   .verify_author {
     margin-left: 4px;
+  }
+}
+
+@include w1100 {
+  .account_item_info {
+    display: none;
+  }
+
+  .account_item {
+    padding-right: 0 !important;
   }
 }

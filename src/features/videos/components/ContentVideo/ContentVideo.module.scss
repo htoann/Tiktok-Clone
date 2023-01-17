@@ -1,3 +1,5 @@
+@import "../../../../assets/sass/mixin.scss";
+
 .suggest_item {
   display: flex;
   flex-direction: row;
@@ -15,14 +17,14 @@
 
   .content {
     margin-left: 12px;
-    width: 624px;
+    max-width: 624px;
     flex: 1 1 624px;
 
     .info_containter {
       margin-right: 114px;
 
       .info {
-        inline-size: 500px;
+        // inline-size: 500px;
         overflow: hidden;
 
         .author_container {
@@ -62,6 +64,7 @@
         .video_desc {
           font-size: 16px;
           line-height: 22px;
+          max-width: 10px;
         }
 
         .video_music {
@@ -189,5 +192,19 @@
 
   &::-webkit-media-controls-time-remaining-display {
     display: none;
+  }
+}
+
+@include w480 {
+  .info_containter {
+    margin-right: 0px !important;
+  }
+
+  .suggest_item {
+    display: block;
+  }
+
+  .content {
+    margin-left: 0 !important;
   }
 }

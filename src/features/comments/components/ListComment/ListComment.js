@@ -58,7 +58,7 @@ function ListComment({ video }) {
   return (
     <div className={styles.content_container}>
       <Button type="submit" primary onClick={deleteVideo}>
-        Delete
+        Delete Video
       </Button>
       <div className={styles.comment_list_container}>
         {!loading ? (

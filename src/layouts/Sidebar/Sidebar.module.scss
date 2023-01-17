@@ -1,10 +1,12 @@
+@import "../../assets/sass/mixin.scss";
+
 .sidebar {
   flex-shrink: 0;
   padding: 16px 0 26px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 348px;
+  // width: 348px;
   max-width: 100%;
   padding-left: 10px;
 
@@ -36,10 +38,10 @@
     perspective-origin: right top;
     top: 80px;
     bottom: 0;
-    background: var(--white);
+    // background: var(--white);
     position: fixed;
     z-index: 9;
-    width: 348px;
+    max-width: 348px;
     padding-bottom: 15px;
 
     .sidebar_login {
@@ -63,9 +65,35 @@
 
 .contact {
   padding-left: 10px;
+
   .facebook {
     color: red !important;
     font-size: 18px;
     font-weight: 600;
+  }
+}
+
+@include w1100 {
+  .contact,
+  .sidebar_login_wrapper {
+    display: none;
+  }
+
+  .sidebar {
+    padding: 0 8px;
+    width: 72px;
+    flex: 0 0 72px;
+    border-right: 1px solid rgba(22, 24, 35, 0.12);
+    box-shadow: 0px 2px 8px rgb(0 0 0 / 6%);
+    margin-bottom: -22px;
+  }
+
+  .hr {
+    width: 30px;
+    margin: 10px 0 !important;
+  }
+
+  .sidebar_scrollbar {
+    background: none;
   }
 }

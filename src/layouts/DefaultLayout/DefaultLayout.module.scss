@@ -1,3 +1,5 @@
+@import "../../assets/sass/mixin.scss";
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -17,10 +19,16 @@
     .content {
       margin-right: 16px;
       margin-left: 16px;
-      width: 692px;
+      // width: 692px;
       max-width: 692px;
       padding: 24px 0;
       position: relative;
     }
+  }
+}
+
+@include w1100 {
+  .container {
+    gap: unset !important;
   }
 }
