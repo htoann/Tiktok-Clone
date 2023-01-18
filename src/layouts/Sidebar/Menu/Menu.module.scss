@@ -1,3 +1,5 @@
+@import "../../../assets/sass/mixin.scss";
+
 .sidebar_tabs {
   .sidebar_tab {
     display: flex;
@@ -25,5 +27,15 @@
 
   .sidebar_active {
     color: var(--red);
+  }
+}
+
+@include w1100 {
+  .sidebar_title {
+    display: none;
+  }
+
+  .sidebar_icon {
+    margin: auto; 
   }
 }

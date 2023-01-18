@@ -1,3 +1,5 @@
+@import "../../../../assets/sass/mixin.scss";
+
 .sidebar_list {
   .sidebar_seeAll {
     color: rgb(254, 44, 85);
@@ -25,4 +27,15 @@
   opacity: 0.1;
   margin: 15px 0;
   padding: 0 10px !important;
+}
+
+@include w1100 {
+  .account_title, .sidebar_seeAll {
+    display: none;
+  }
+
+  .hr {
+    width: 30px;
+    margin: 10px 0 !important;
+  }
 }

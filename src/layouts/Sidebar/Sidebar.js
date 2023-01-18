@@ -18,7 +18,7 @@ function Sidebar() {
         <Menu />
         <hr className={styles.hr} />
         {!user && (
-          <>
+          <div className={styles.sidebar_login_wrapper}>
             <div className={styles.sidebar_login}>
               <p className={styles.login_tip}>
                 Log in to follow creators, like videos, and view comments.
@@ -30,7 +30,7 @@ function Sidebar() {
               </Link>
             </div>
             <hr className={styles.hr} />
-          </>
+          </div>
         )}
 
         <SuggestedList />
